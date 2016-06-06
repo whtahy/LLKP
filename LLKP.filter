@@ -1,0 +1,669 @@
+#------------------------------------------------------------------------------
+# LLKP FILTER v1.6.0
+# LONG LIVE KAIPI!
+# Updated Patch 2.2.1
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# TABLE OF CONTENTS
+#------------------------------------------------------------------------------
+# 001 Settings
+# 002 Exceptions
+# 003 Template
+# 004 League
+# 005 Basic: Quest + Jewel + Div Card + Labyrinth
+# 006 Currency
+# 007 Uniques
+# 008 Maps
+# 009 Gems
+# 010 5L + 6L
+# 011 Recipe
+# 012 Item Level (ilvl)
+# 013 Rares: RAB
+# 014 Rares: Chest
+# 015 Rares: Shield
+# 016 Rares: Boots
+# 017 Rares: Gloves
+# 018 Rares: Helm
+# 019 Rares: Weapon
+# 020 Rares: Low Priority
+# 021 Flask
+# 022 Flask Leveling: Life + Mana
+# 023 Flask Leveling: Hybrid
+# 024 Leveling: 3L + 4L
+# 025 Leveling: Magic + Rare
+# 026 Other
+# 027 Reference
+
+#------------------------------------------------------------------------------
+# 001 SETTINGS
+#------------------------------------------------------------------------------
+# FONT
+# SetFontSize 38
+
+# COLOR
+# ilvl       Bo  Red: 255 40 0 205
+# Priority   Bo  Grey: 170 170 170 255
+# Labyrinth  Bo  Green: 74 230 58 255
+# Unique     Bg  Yellow: 250 250 210 240
+# Unique     Bo  Default: 175 96 37 255
+# Chaos+     Bg  White: 255 255 255 255
+# Mirror     Tx  Red:  255 0 0 255
+# Perandus   Bg  Gold: 254 170 0 185
+# Perandus   Tx  Black: 17 17 17 255
+# Perandus   Bo  Black: 17 17 17 200
+# Jewel      Bg  Purple: 17 17 67 240
+# Map: High  Bg  Red: 110 0 0 240
+# 6L         Bg  Grey: 95 95 95 240
+# Fadeout    Bg  Black: 17 17 17 90
+
+# AUDIO
+# High:  PlayAlertSound 1 300
+# Low:   PlayAlertSound 2 300
+
+#------------------------------------------------------------------------------
+# 002 EXCEPTIONS
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# 003 TEMPLATE
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# 004 LEAGUE
+#------------------------------------------------------------------------------
+Show
+    BaseType "Perandus Coin"
+    SetTextColor 17 17 17 255
+    SetBorderColor 17 17 17 200
+    SetBackgroundColor 254 170 0 185
+    SetFontSize 38
+Show
+    BaseType "Talisman"
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 005 BASIC: Quest + Jewel + Div Card + Labyrinth
+#------------------------------------------------------------------------------
+Show
+    Class "Quest Item" "Microtransaction" "Fishing Rod"
+    SetFontSize 38
+Show
+    Class "Jewel"
+    SetBackgroundColor 17 17 67 240
+    SetFontSize 38
+Show
+    Class "Divination Card"
+    SetFontSize 38
+Show
+    BaseType "Treasure Key" "Golden Key" "Silver Key" "Bane of the Loyal" "Orb of Elemental Essence" "Portal Shredder" "Rod of Detonation" "Sand of Eternity" "Heart of the Gargoyle" "Cube Of Absorption" "Cogs of Disruption"
+    SetBorderColor 74 230 58 255
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 006 CURRENCY
+#------------------------------------------------------------------------------
+Hide
+    Class "Currency"
+    BaseType "Wisdom" "Portal"
+    SetFontSize 38
+Show
+    Class "Currency"
+    BaseType "Mirror" "Rhoa" "Eternal"
+    SetTextColor 255 0 0 255
+    SetBorderColor 255 0 0 255
+    SetBackgroundColor 255 255 255 255
+    PlayAlertSound 1 300
+    SetFontSize 38
+Show
+    Class "Currency"
+    BaseType "Blessed" "Chaos" "Divine" "Exalted" "Gemcutter" "Regal" "Vaal"
+    SetBackgroundColor 255 255 255 255
+    PlayAlertSound 1 300
+    SetFontSize 38
+Show
+    Class "Currency"
+    BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
+    PlayAlertSound 2 300
+    SetFontSize 38
+#Show
+#    Class "Currency"
+#    BaseType "Alteration" "Chromatic" "Chance" "Whetstone"
+#    SetFontSize 38
+#Show
+#    Class "Currency"
+#    BaseType "Wisdom" "Portal" "Scrap" "Transmutation" "Augmentation"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 007 UNIQUES
+#------------------------------------------------------------------------------
+Show
+    Rarity = Unique
+    BaseType "Varnished Coat" "Gold Ring" "Ursine Pelt" "Champion Kite Shield" "Slaughter Knife" "Sapphire Flask" "Desert Brigandine" "Occultist" "Glorious" "Titanium"  "Judgement Staff" "Siege Axe" "Spine Bow" "Prophecy Wand" "Sacrificial Garb" "Sorcerer Boots" "Topaz Flask" "Deicide Mask" "Imperial Skean" "Rawhide Boots" "Fiend Dagger"
+    SetBackgroundColor 250 250 210 240
+    SetBorderColor 175 96 37 255
+    PlayAlertSound 1 300
+    SetFontSize 38
+Show
+    Rarity = Unique
+    BaseType "Onyx Amulet" "Golden Plate" "Nubuck Boots" "Serpentine Staff" "Vile Staff" "Terror Maul" "Full Wyrmscale" "Gavel" "Archon Kite Shield" "Opal Wand" "Reinforced Greaves" "Vaal Gauntlets" "Imperial Bow" "Conjurer Boots" "Steelscale Gauntlets" "Amethyst Ring" "Crusader Plate" "Ezomyte Burgonet" "Nightmare Bascinet" "Sharkskin Boots" "Two-Stone" "Granite Flask" "Imperial Staff" "Penetrating" "Deerskin Gloves" "Sinner Tricorne" "Karui Sceptre" "Large Hybrid Flask" "Paua Ring" "Hubris"
+    SetBorderColor 250 250 210 240
+    PlayAlertSound 2 300
+    SetFontSize 38
+Show
+    Rarity = Unique
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 008 MAPS
+#------------------------------------------------------------------------------
+Show
+    Class "Map Fragments"
+    SetBackgroundColor 110 0 0 240
+    SetFontSize 38
+Show
+    Class "Map"
+    DropLevel >= 79
+    SetBackgroundColor 110 0 0 240
+    PlayAlertSound 1 300
+    SetFontSize 38
+Show
+    Class "Map"
+    DropLevel >= 76
+    SetBorderColor 30 255 255 255
+    PlayAlertSound 2 300
+    SetFontSize 38
+Show
+    Class "Map"
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 009 GEMS
+#------------------------------------------------------------------------------
+Show
+    Class "Gem"
+    BaseType "Added Chaos" "Detonate Mines" "Empower" "Enhance" "Enlighten" "Portal"
+    SetFontSize 38
+Show
+    Class "Gem"
+    BaseType "Vaal"
+    SetFontSize 38
+Show
+    Class "Gem"
+    Quality > 0
+    SetFontSize 38
+Show
+    Class "Gem"
+    DropLevel >= 34
+    SetFontSize 38
+Show
+    Class "Gem"
+    BaseType "Item Quantity" "Cast when Damage Taken" "Clarity" "Blood Magic" "Increased Duration" "Less Duration" "Life Leech"
+    SetFontSize 38
+Hide
+    Class "Gem"
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 010 5L + 6L
+#------------------------------------------------------------------------------
+Show
+    LinkedSockets = 6
+    SetBackgroundColor 95 95 95 240
+    PlayAlertSound 1 300
+    SetFontSize 38
+#Show
+#    LinkedSockets = 5
+#    SetBorderColor 170 170 170 255
+#    PlayAlertSound 2 300
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 011 RECIPE
+#------------------------------------------------------------------------------
+Show
+    Sockets = 6
+    SetBorderColor 170 170 170 255
+    SetFontSize 38
+Show
+    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+    Rarity = Normal
+    Quality >= 0
+    SetFontSize 38
+#Show
+#    Class "Flask"
+#    Quality > 0
+#    SetFontSize 38
+#Show
+#    SocketGroup "RGB"
+#    Height = 2
+#    SetFontSize 38
+#Show
+#    SocketGroup "RGB"
+#    Height = 3
+#    Width = 1
+#    SetFontSize 38
+#Show
+#    Quality = 20
+#    Rarity = Normal
+#    Height = 2
+#    SetFontSize 38
+#Show
+#    Quality = 20
+#    Rarity = Normal
+#    Height = 3
+#    Width = 1
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 012 ITEM LEVEL (ilvl)
+#------------------------------------------------------------------------------
+Hide
+    Rarity <= Magic
+    BaseType "Cloth Belt" "Coral Amulet" "Paua Ring" "Studded Belt"
+    SetFontSize 38
+Show
+    ItemLevel >= 84
+    Class "Ring" "Amulet" "Belt"
+    SetBorderColor 255 40 0 205
+    SetFontSize 38
+Show
+    ItemLevel >= 84
+    BaseType "Vaal Regalia" "Sorcerer Boots" "Sorcerer Gloves" "Hubris Circlet" "Saintly Chainmail" "Titanium Spirit Shield" "Harmonic Spirit Shield" "Fossilised Spirit Shield" "Titan Gauntlets" "Slink Gloves" "Eternal Burgonet" "Lion Pelt" "Titan Greaves" "Slink Boots"
+    SetBorderColor 255 40 0 205
+    SetFontSize 38
+Show
+    ItemLevel >= 84
+    BaseType "Glass Shank" "Stiletto" "Poignard" "Ambusher" "Skean" "Kris" "Crystal Sceptre" "Quartz Sceptre" "Tornado Wand"
+    SetBorderColor 255 40 0 205
+    SetFontSize 38
+Show
+    ItemLevel >= 83
+    BaseType "Lion Sword" "Vaal Greatsword" "Vaal Axe" "Coronal Maul" "Exquisite Blade" "Fleshripper" "Harbinger Bow" "Gemini Claw" "Vaal Hatchet" "Runic Hatchet" "Behemoth Mace" "Eternal Sword" "Tiger Hook" "Eclipse Staff" "Maelstr" "Judgement Staff" "Jewelled Foil" "Dragoon Sword"
+    SetBorderColor 255 40 0 205
+    SetFontSize 38
+Show
+    ItemLevel >= 83
+    BaseType "Ambusher" "Demon Dagger" "Imperial Skean" "Platinum Kris" "Void Sceptre" "Opal Sceptre" "Sambar Sceptre" "Profane Wand" "Prophecy Wand" "Opal Wand" "Imbued Wand"
+    SetBorderColor 255 40 0 205
+    SetFontSize 38
+Show
+    ItemLevel >= 83
+    Class Dagger
+    BaseType "Sai"
+    SetBorderColor 255 40 0 205
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 013 RARES: RAB
+#------------------------------------------------------------------------------
+Show
+    Rarity = Rare
+    Class "Ring" "Amulet" "Belt"
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 014 RARES: Chest
+#------------------------------------------------------------------------------
+Show
+    Rarity >= Normal
+    BaseType "Sacrificial Garb"
+    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Glorious Plate" "Astral Plate"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Assassin's Garb" "Zodiac Leather"
+#    SetFontSize 38
+Show
+    Rarity = Rare
+    BaseType "Vaal Regalia" "Widowsilk Robe" "Occultist's Vestment"
+    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Triumphant Lamellar" "General's Brigandine" "Full Dragonscale"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Saintly Chainmail" "Saint's Hauberk"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Carnal Armour" "Sadist Garb"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 015 RARES: Shield
+#------------------------------------------------------------------------------
+#Show
+#    Rarity = Rare
+#    BaseType "Pinnacle Tower" "Colossal Tower" "Ezomyte Tower"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Imperial Buckler" "Crusader Buckler" "Vaal Buckler" "Lacquered Buckler"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Titanium Spirit" "Harmonic Spirit" "Vaal Spirit" "Fossilised Spirit"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Cardinal Round"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Archon Kite" "Mosaic Kite" "Champion Kite" "Branded Kite"
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Supreme Spiked"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 016 RARES: Boots
+#------------------------------------------------------------------------------
+Show
+    Rarity = Rare
+    BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
+    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 017 RARES: Gloves
+#------------------------------------------------------------------------------
+Show
+    Rarity = Rare
+    BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
+    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 018 RARES: Helm
+#------------------------------------------------------------------------------
+Show
+    Rarity = Rare
+    BaseType "Burgonet" "Lion Pelt" "Sinner Tricorne" "Hubris Circlet"
+    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Praetor Crown" "Prophet Crown"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 019 RARES: Weapons
+#------------------------------------------------------------------------------
+Show
+    Rarity = Rare
+    Class "Dagger" "Wand"
+    ItemLevel >= 68
+    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    Class "Sceptre" "Quiver"
+#    ItemLevel >= 68
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    Class "Two Hand Mace"
+#    DropLevel >= 57
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    Class "Bow" "Claw" "Staves"
+#    DropLevel >= 58
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    Class "One Hand Mace" "One Hand Sword" "Thrusting" "Two Hand Axe"
+#    DropLevel >= 60
+#    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    Class "One Hand Axe" "Two Hand Sword"
+#    DropLevel >= 61
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 020 RARES: Low Priority
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# 021 FLASK
+#------------------------------------------------------------------------------
+#Show
+#    Class "Life Flask" "Mana Flask"
+#    DropLevel >= 60
+#    SetFontSize 38
+#Show
+#    Class "Hybrid Flask"
+#    DropLevel >= 60
+#    SetFontSize 38
+#Show
+#    Class "Utility Flask"
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 022 FLASK LEVELING: Life + Mana
+#------------------------------------------------------------------------------
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 6
+    DropLevel >= 0
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 12
+    DropLevel >= 6
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 18
+    DropLevel >= 12
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 24
+    DropLevel >= 18
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 30
+    DropLevel >= 24
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 36
+    DropLevel >= 30
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 42
+    DropLevel >= 36
+    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    ItemLevel < 60
+    DropLevel >= 42
+    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 023 FLASK LEVELING: Hybrid
+#------------------------------------------------------------------------------
+#Show
+#    Class "Hybrid Flask"
+#    ItemLevel < 20
+#    DropLevel >= 0
+#    SetFontSize 38
+#Show
+#    Class "Hybrid Flask"
+#    ItemLevel < 30
+#    DropLevel >= 20
+#    SetFontSize 38
+#Show
+#    Class "Hybrid Flask"
+#    ItemLevel < 40
+#    DropLevel >= 30
+#    SetFontSize 38
+#Show
+#    Class "Hybrid Flask"
+#    ItemLevel < 50
+#    DropLevel >= 40
+#    SetFontSize 38
+#Show
+#    Class "Hybrid Flask"
+#    ItemLevel < 60
+#    DropLevel >= 50
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 024 LEVELING: 3L + 4L
+#------------------------------------------------------------------------------
+#Show
+#    LinkedSockets >= 3
+#    ItemLevel <= 24
+#    SetFontSize 38
+#Show
+#    LinkedSockets >= 4
+#    ItemLevel <= 42
+#    SetBorderColor 170 170 170 255
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 025 LEVELING: Magic + Rare
+#------------------------------------------------------------------------------
+#Show
+#    Rarity = Rare
+#    ItemLevel < 68
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 10
+#    DropLevel >= 2
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 14
+#    DropLevel >= 4
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 16
+#    DropLevel >= 6
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 18
+#    DropLevel >= 8
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 20
+#    DropLevel >= 10
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 22
+#    DropLevel >= 13
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 24
+#    DropLevel >= 16
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 26
+#    DropLevel >= 18
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 28
+#    DropLevel >= 20
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 30
+#    DropLevel >= 22
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 32
+#    DropLevel >= 24
+#    SetFontSize 38
+
+#------------------------------------------------------------------------------
+# 026 OTHER
+#------------------------------------------------------------------------------
+Hide
+    SetBackgroundColor 17 17 17 90
+
+#------------------------------------------------------------------------------
+# 027 REFERENCE
+#------------------------------------------------------------------------------
+# 3L 15
+# 4L 28
+# 5L 35
+# 6L 50
+
+# T1 01-06 68-73
+# T2 07-11 74-78
+# T3 12-15 79-83
+
+# CLASS
+#
+# Active Skill Gems
+# Support Skill Gems
+#
+# Currency
+# Stackable Currency
+# Quest Items
+# Divination Card
+# Maps
+# Map Fragments
+#
+# Amulets
+# Rings
+# Belts
+# Jewel
+#
+# Helmets
+# Gloves
+# Boots
+# Body Armours
+#
+# Claws
+# Daggers
+# Wands
+# One Hand Swords
+# Thrusting One Hand Swords
+# One Hand Axes
+# One Hand Maces
+# Bows
+# Staves
+# Two Hand Swords
+# Two Hand Axes
+# Two Hand Maces
+# Sceptres
+#
+# Quivers
+# Shields
+#
+# Life Flasks
+# Mana Flasks
+# Utility Flasks
+# Hybrid Flasks
+#
+# Fishing Rods
+# Hideout Doodads
+# Microtransactions
+#
