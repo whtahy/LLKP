@@ -1,7 +1,7 @@
 #------------------------------------------------------------------------------
-# LLKP FILTER v1.6.0
+# LLKP FILTER v1.6.1
 # LONG LIVE KAIPI!
-# Updated Patch 2.2.1
+# Updated Patch 2.2.2
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -73,6 +73,9 @@
 # 004 LEAGUE
 #------------------------------------------------------------------------------
 Show
+    BaseType "Silver Coin" "Prophecy"
+    SetFontSize 38
+Show
     BaseType "Perandus Coin"
     SetTextColor 17 17 17 255
     SetBorderColor 17 17 17 200
@@ -96,17 +99,13 @@ Show
     Class "Divination Card"
     SetFontSize 38
 Show
-    BaseType "Treasure Key" "Golden Key" "Silver Key" "Bane of the Loyal" "Orb of Elemental Essence" "Portal Shredder" "Rod of Detonation" "Sand of Eternity" "Heart of the Gargoyle" "Cube Of Absorption" "Cogs of Disruption"
+    Class "Labyrinth"
     SetBorderColor 74 230 58 255
     SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 006 CURRENCY
 #------------------------------------------------------------------------------
-Hide
-    Class "Currency"
-    BaseType "Wisdom" "Portal"
-    SetFontSize 38
 Show
     Class "Currency"
     BaseType "Mirror" "Rhoa" "Eternal"
@@ -126,14 +125,14 @@ Show
     BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
     PlayAlertSound 2 300
     SetFontSize 38
-#Show
-#    Class "Currency"
-#    BaseType "Alteration" "Chromatic" "Chance" "Whetstone"
-#    SetFontSize 38
-#Show
-#    Class "Currency"
-#    BaseType "Wisdom" "Portal" "Scrap" "Transmutation" "Augmentation"
-#    SetFontSize 38
+Show
+    Class "Currency"
+    BaseType "Alteration" "Chromatic" "Chance" "Whetstone"
+    SetFontSize 38
+Show
+    Class "Currency"
+    BaseType "Wisdom" "Portal" "Scrap" "Transmutation" "Augmentation"
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 007 UNIQUES
@@ -230,31 +229,32 @@ Show
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
     Rarity = Normal
     Quality >= 0
+    ItemLevel >= 60
     SetFontSize 38
-#Show
-#    Class "Flask"
-#    Quality > 0
-#    SetFontSize 38
-#Show
-#    SocketGroup "RGB"
-#    Height = 2
-#    SetFontSize 38
-#Show
-#    SocketGroup "RGB"
-#    Height = 3
-#    Width = 1
-#    SetFontSize 38
-#Show
-#    Quality = 20
-#    Rarity = Normal
-#    Height = 2
-#    SetFontSize 38
-#Show
-#    Quality = 20
-#    Rarity = Normal
-#    Height = 3
-#    Width = 1
-#    SetFontSize 38
+Show
+    Class "Flask"
+    Quality > 0
+    SetFontSize 38
+Show
+    SocketGroup "RGB"
+    Height = 2
+    SetFontSize 38
+Show
+    SocketGroup "RGB"
+    Height = 3
+    Width = 1
+    SetFontSize 38
+Show
+    Quality = 20
+    Rarity = Normal
+    Height = 2
+    SetFontSize 38
+Show
+    Quality = 20
+    Rarity = Normal
+    Height = 3
+    Width = 1
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 012 ITEM LEVEL (ilvl)
@@ -440,17 +440,17 @@ Show
 #------------------------------------------------------------------------------
 # 021 FLASK
 #------------------------------------------------------------------------------
-#Show
-#    Class "Life Flask" "Mana Flask"
-#    DropLevel >= 60
-#    SetFontSize 38
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 60
+    SetFontSize 38
 #Show
 #    Class "Hybrid Flask"
 #    DropLevel >= 60
 #    SetFontSize 38
-#Show
-#    Class "Utility Flask"
-#    SetFontSize 38
+Show
+    Class "Utility Flask"
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 022 FLASK LEVELING: Life + Mana
@@ -528,53 +528,52 @@ Show
 #------------------------------------------------------------------------------
 # 024 LEVELING: 3L + 4L
 #------------------------------------------------------------------------------
-#Show
-#    LinkedSockets >= 3
-#    ItemLevel <= 24
-#    SetFontSize 38
-#Show
-#    LinkedSockets >= 4
-#    ItemLevel <= 42
-#    SetBorderColor 170 170 170 255
-#    SetFontSize 38
+Show
+    Class "Helm" "Boots" "Gloves"
+    LinkedSockets >= 3
+    ItemLevel <= 24
+    SetFontSize 38
+Show
+    Class "Helm" "Boots" "Gloves"
+    LinkedSockets >= 4
+    ItemLevel <= 42
+    SetBorderColor 170 170 170 255
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
-# 025 LEVELING: Magic + Rare
+# 025 LEVELING: Magic + Rare + White
 #------------------------------------------------------------------------------
-#Show
-#    Rarity = Rare
-#    ItemLevel < 68
-#    SetFontSize 38
-#Show
-#    Rarity = Magic
-#    ItemLevel < 10
-#    DropLevel >= 2
-#    SetFontSize 38
-#Show
-#    Rarity = Magic
-#    ItemLevel < 14
-#    DropLevel >= 4
-#    SetFontSize 38
-#Show
-#    Rarity = Magic
-#    ItemLevel < 16
-#    DropLevel >= 6
-#    SetFontSize 38
-#Show
-#    Rarity = Magic
-#    ItemLevel < 18
-#    DropLevel >= 8
-#    SetFontSize 38
-#Show
-#    Rarity = Magic
-#    ItemLevel < 20
-#    DropLevel >= 10
-#    SetFontSize 38
-#Show
-#    Rarity = Magic
-#    ItemLevel < 22
-#    DropLevel >= 13
-#    SetFontSize 38
+Show
+    Rarity = Rare
+    ItemLevel < 68
+    SetFontSize 38
+Show
+    ItemLevel < 10
+    DropLevel >= 2
+    SetFontSize 38
+Show
+    ItemLevel < 14
+    DropLevel >= 4
+    SetFontSize 38
+Show
+    ItemLevel < 16
+    DropLevel >= 6
+    SetFontSize 38
+Show
+    Rarity = Magic
+    ItemLevel < 18
+    DropLevel >= 8
+    SetFontSize 38
+Show
+    Rarity = Magic
+    ItemLevel < 20
+    DropLevel >= 10
+    SetFontSize 38
+Show
+    Rarity = Magic
+    ItemLevel < 22
+    DropLevel >= 13
+    SetFontSize 38
 #Show
 #    Rarity = Magic
 #    ItemLevel < 24
@@ -621,6 +620,9 @@ Hide
 
 # CLASS
 #
+# Labyrinth Item
+# Labyrinth Trinket
+#
 # Active Skill Gems
 # Support Skill Gems
 #
@@ -666,4 +668,3 @@ Hide
 # Fishing Rods
 # Hideout Doodads
 # Microtransactions
-#
