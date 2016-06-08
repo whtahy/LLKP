@@ -73,6 +73,7 @@
 # 004 LEAGUE
 #------------------------------------------------------------------------------
 Show
+    Class "Currency"
     BaseType "Silver Coin" "Prophecy"
     SetFontSize 38
 Show
@@ -132,6 +133,10 @@ Show
 Show
     Class "Currency"
     BaseType "Wisdom" "Portal" "Scrap" "Transmutation" "Augmentation"
+    SetFontSize 38
+Show
+    Class "Currency"
+    BaseType "Wisdom" "Portal"
     SetFontSize 38
 
 #------------------------------------------------------------------------------
