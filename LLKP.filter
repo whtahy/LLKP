@@ -132,12 +132,12 @@ Show
     SetFontSize 38
 Show
     Class "Currency"
-    BaseType "Wisdom" "Portal" "Scrap" "Transmutation" "Augmentation"
+    BaseType "Scrap" "Transmutation" "Augmentation"
     SetFontSize 38
-Show
-    Class "Currency"
-    BaseType "Wisdom" "Portal"
-    SetFontSize 38
+#Show
+#    Class "Currency"
+#    BaseType "Wisdom" "Portal"
+#    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 007 UNIQUES
