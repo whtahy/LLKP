@@ -554,7 +554,7 @@ Show
     SetFontSize 38
 Show
     ItemLevel < 10
-    DropLevel >= 2
+    DropLevel >= 3
     SetFontSize 38
 Show
     ItemLevel < 14
