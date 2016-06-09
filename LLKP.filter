@@ -174,7 +174,7 @@ Show
     SetFontSize 38
 Show
     Class "Map"
-    DropLevel >= 76
+    DropLevel >= 74
     SetBorderColor 30 255 255 255
     PlayAlertSound 1 200
     SetFontSize 38
