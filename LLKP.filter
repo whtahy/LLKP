@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# LLKP FILTER v1.6.2
+# LLKP FILTER v1.6.3
 # LONG LIVE KAIPI!
 # Updated Patch 2.2.2
 #------------------------------------------------------------------------------
@@ -250,17 +250,17 @@ Show
     Height = 3
     Width = 1
     SetFontSize 38
-Show
-    Quality = 20
-    Rarity = Normal
-    Height = 2
-    SetFontSize 38
-Show
-    Quality = 20
-    Rarity = Normal
-    Height = 3
-    Width = 1
-    SetFontSize 38
+#Show
+#    Quality = 20
+#    Rarity = Normal
+#    Height = 2
+#    SetFontSize 38
+#Show
+#    Quality = 20
+#    Rarity = Normal
+#    Height = 3
+#    Width = 1
+#    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 012 ITEM LEVEL (ilvl)
@@ -316,10 +316,10 @@ Show
     Rarity >= Normal
     BaseType "Sacrificial Garb"
     SetFontSize 38
-#Show
-#    Rarity = Rare
-#    BaseType "Glorious Plate" "Astral Plate"
-#    SetFontSize 38
+Show
+    Rarity = Rare
+    BaseType "Glorious Plate" "Astral Plate"
+    SetFontSize 38
 #Show
 #    Rarity = Rare
 #    BaseType "Assassin's Garb" "Zodiac Leather"
@@ -376,10 +376,10 @@ Show
     Rarity = Rare
     BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
     SetFontSize 38
-#Show
-#    Rarity = Rare
-#    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
-#    SetFontSize 38
+Show
+    Rarity = Rare
+    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 017 RARES: Gloves
@@ -388,10 +388,10 @@ Show
     Rarity = Rare
     BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
     SetFontSize 38
-#Show
-#    Rarity = Rare
-#    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
-#    SetFontSize 38
+Show
+    Rarity = Rare
+    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 018 RARES: Helm
@@ -400,10 +400,10 @@ Show
     Rarity = Rare
     BaseType "Burgonet" "Lion Pelt" "Sinner Tricorne" "Hubris Circlet"
     SetFontSize 38
-#Show
-#    Rarity = Rare
-#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Praetor Crown" "Prophet Crown"
-#    SetFontSize 38
+Show
+    Rarity = Rare
+    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Praetor Crown" "Prophet Crown"
+    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 019 RARES: Weapons
@@ -547,7 +547,7 @@ Show
     SetFontSize 38
 
 #------------------------------------------------------------------------------
-# 025 LEVELING: Magic + Rare + White
+# 025 LEVELING: Rarity
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
