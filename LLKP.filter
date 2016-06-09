@@ -445,10 +445,10 @@ Show
 #------------------------------------------------------------------------------
 # 021 FLASK
 #------------------------------------------------------------------------------
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 60
-    SetFontSize 38
+#Show
+#    Class "Life Flask" "Mana Flask"
+#    DropLevel >= 60
+#    SetFontSize 38
 #Show
 #    Class "Hybrid Flask"
 #    DropLevel >= 60
