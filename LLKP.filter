@@ -241,10 +241,10 @@ Show
     Class "Flask"
     Quality > 0
     SetFontSize 38
-Show
-    SocketGroup "RGB"
-    Height = 2
-    SetFontSize 38
+#Show
+#    SocketGroup "RGB"
+#    Height = 2
+#    SetFontSize 38
 Show
     SocketGroup "RGB"
     Height = 3
