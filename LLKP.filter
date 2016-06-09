@@ -58,8 +58,8 @@
 # Fadeout    Bg  Black: 17 17 17 90
 
 # AUDIO
-# High:  PlayAlertSound 1 300
-# Low:   PlayAlertSound 2 300
+# High:  PlayAlertSound 2 300
+# Low:   PlayAlertSound 1 200
 
 #------------------------------------------------------------------------------
 # 002 EXCEPTIONS
@@ -113,18 +113,18 @@ Show
     SetTextColor 255 0 0 255
     SetBorderColor 255 0 0 255
     SetBackgroundColor 255 255 255 255
-    PlayAlertSound 1 300
+    PlayAlertSound 2 300
     SetFontSize 38
 Show
     Class "Currency"
     BaseType "Blessed" "Chaos" "Divine" "Exalted" "Gemcutter" "Regal" "Vaal"
     SetBackgroundColor 255 255 255 255
-    PlayAlertSound 1 300
+    PlayAlertSound 2 300
     SetFontSize 38
 Show
     Class "Currency"
     BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
-    PlayAlertSound 2 300
+    PlayAlertSound 1 200
     SetFontSize 38
 Show
     Class "Currency"
@@ -147,13 +147,13 @@ Show
     BaseType "Varnished Coat" "Gold Ring" "Ursine Pelt" "Champion Kite Shield" "Slaughter Knife" "Sapphire Flask" "Desert Brigandine" "Occultist" "Glorious" "Titanium"  "Judgement Staff" "Siege Axe" "Spine Bow" "Prophecy Wand" "Sacrificial Garb" "Sorcerer Boots" "Topaz Flask" "Deicide Mask" "Imperial Skean" "Rawhide Boots" "Fiend Dagger"
     SetBackgroundColor 250 250 210 240
     SetBorderColor 175 96 37 255
-    PlayAlertSound 1 300
+    PlayAlertSound 2 300
     SetFontSize 38
 Show
     Rarity = Unique
     BaseType "Onyx Amulet" "Golden Plate" "Nubuck Boots" "Serpentine Staff" "Vile Staff" "Terror Maul" "Full Wyrmscale" "Gavel" "Archon Kite Shield" "Opal Wand" "Reinforced Greaves" "Vaal Gauntlets" "Imperial Bow" "Conjurer Boots" "Steelscale Gauntlets" "Amethyst Ring" "Crusader Plate" "Ezomyte Burgonet" "Nightmare Bascinet" "Sharkskin Boots" "Two-Stone" "Granite Flask" "Imperial Staff" "Penetrating" "Deerskin Gloves" "Sinner Tricorne" "Karui Sceptre" "Large Hybrid Flask" "Paua Ring" "Hubris"
     SetBorderColor 250 250 210 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 200
     SetFontSize 38
 Show
     Rarity = Unique
@@ -170,13 +170,13 @@ Show
     Class "Map"
     DropLevel >= 79
     SetBackgroundColor 110 0 0 240
-    PlayAlertSound 1 300
+    PlayAlertSound 2 300
     SetFontSize 38
 Show
     Class "Map"
     DropLevel >= 76
     SetBorderColor 30 255 255 255
-    PlayAlertSound 2 300
+    PlayAlertSound 1 200
     SetFontSize 38
 Show
     Class "Map"
@@ -215,12 +215,12 @@ Hide
 Show
     LinkedSockets = 6
     SetBackgroundColor 95 95 95 240
-    PlayAlertSound 1 300
+    PlayAlertSound 2 300
     SetFontSize 38
 #Show
 #    LinkedSockets = 5
 #    SetBorderColor 170 170 170 255
-#    PlayAlertSound 2 300
+#    PlayAlertSound 1 200
 #    SetFontSize 38
 
 #------------------------------------------------------------------------------
