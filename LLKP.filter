@@ -230,6 +230,7 @@ Show
     Sockets = 6
     SetBorderColor 170 170 170 255
     SetFontSize 38
+    PlayAlertSound 2 300
 Show
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
     Rarity = Normal
