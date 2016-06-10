@@ -245,11 +245,11 @@ Show
 #    SocketGroup "RGB"
 #    Height = 2
 #    SetFontSize 38
-Show
-    SocketGroup "RGB"
-    Height = 3
-    Width = 1
-    SetFontSize 38
+#Show
+#    SocketGroup "RGB"
+#    Height = 3
+#    Width = 1
+#    SetFontSize 38
 #Show
 #    Quality = 20
 #    Rarity = Normal
