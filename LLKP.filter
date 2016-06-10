@@ -130,10 +130,10 @@ Show
     Class "Currency"
     BaseType "Alteration" "Chromatic" "Chance" "Whetstone"
     SetFontSize 38
-Show
-    Class "Currency"
-    BaseType "Scrap" "Transmutation" "Augmentation"
-    SetFontSize 38
+#Show
+#    Class "Currency"
+#    BaseType "Scrap" "Transmutation" "Augmentation"
+#    SetFontSize 38
 #Show
 #    Class "Currency"
 #    BaseType "Wisdom" "Portal"
