@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# LLKP FILTER v1.6.3
+# LLKP FILTER v1.6.4
 # LONG LIVE KAIPI!
 # Updated Patch 2.2.2
 #------------------------------------------------------------------------------
@@ -454,9 +454,9 @@ Show
 #    Class "Hybrid Flask"
 #    DropLevel >= 60
 #    SetFontSize 38
-Show
-    Class "Utility Flask"
-    SetFontSize 38
+#Show
+#    Class "Utility Flask"
+#    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 022 FLASK LEVELING: Life + Mana
