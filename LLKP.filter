@@ -64,6 +64,9 @@
 #------------------------------------------------------------------------------
 # 002 EXCEPTIONS
 #------------------------------------------------------------------------------
+#Show
+#    Rarity = Rare
+#    Class "Boots" "Armour"
 
 #------------------------------------------------------------------------------
 # 003 TEMPLATE
@@ -126,10 +129,10 @@ Show
     BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
     PlayAlertSound 1 200
     SetFontSize 38
-Show
-    Class "Currency"
-    BaseType "Alteration" "Chromatic" "Chance" "Whetstone"
-    SetFontSize 38
+#Show
+#    Class "Currency"
+#    BaseType "Alteration" "Chromatic" "Chance" "Whetstone"
+#    SetFontSize 38
 #Show
 #    Class "Currency"
 #    BaseType "Scrap" "Transmutation" "Augmentation"
@@ -174,7 +177,7 @@ Show
     SetFontSize 38
 Show
     Class "Map"
-    DropLevel >= 74
+    DropLevel >= 76
     SetBorderColor 30 255 255 255
     PlayAlertSound 1 200
     SetFontSize 38
@@ -235,12 +238,12 @@ Show
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
     Rarity = Normal
     Quality >= 0
-    ItemLevel >= 60
+    ItemLevel >= 68
     SetFontSize 38
-Show
-    Class "Flask"
-    Quality > 0
-    SetFontSize 38
+#Show
+#    Class "Flask"
+#    Quality > 0
+#    SetFontSize 38
 #Show
 #    SocketGroup "RGB"
 #    Height = 2
