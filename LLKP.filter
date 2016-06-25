@@ -1,7 +1,7 @@
 #------------------------------------------------------------------------------
-# LLKP FILTER v1.6.5
+# LLKP FILTER v1.6.6
 # LONG LIVE KAIPI!
-# Updated Patch 2.2.2
+# Updated Patch 2.3
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -379,10 +379,10 @@ Show
     Rarity = Rare
     BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
     SetFontSize 38
-Show
-    Rarity = Rare
-    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
-    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
+#    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 017 RARES: Gloves
@@ -391,10 +391,10 @@ Show
     Rarity = Rare
     BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
     SetFontSize 38
-Show
-    Rarity = Rare
-    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
-    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
+#    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 018 RARES: Helm
@@ -403,10 +403,10 @@ Show
     Rarity = Rare
     BaseType "Burgonet" "Lion Pelt" "Sinner Tricorne" "Hubris Circlet"
     SetFontSize 38
-Show
-    Rarity = Rare
-    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Praetor Crown" "Prophet Crown"
-    SetFontSize 38
+#Show
+#    Rarity = Rare
+#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Praetor Crown" "Prophet Crown"
+#    SetFontSize 38
 
 #------------------------------------------------------------------------------
 # 019 RARES: Weapons
