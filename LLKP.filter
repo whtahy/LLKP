@@ -564,25 +564,25 @@ Show
     ItemLevel < 14
     DropLevel >= 4
     SetFontSize 38
-Show
-    ItemLevel < 16
-    DropLevel >= 6
-    SetFontSize 38
-Show
-    Rarity = Magic
-    ItemLevel < 18
-    DropLevel >= 8
-    SetFontSize 38
-Show
-    Rarity = Magic
-    ItemLevel < 20
-    DropLevel >= 10
-    SetFontSize 38
-Show
-    Rarity = Magic
-    ItemLevel < 22
-    DropLevel >= 13
-    SetFontSize 38
+#Show
+#    ItemLevel < 16
+#    DropLevel >= 6
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 18
+#    DropLevel >= 8
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 20
+#    DropLevel >= 10
+#    SetFontSize 38
+#Show
+#    Rarity = Magic
+#    ItemLevel < 22
+#    DropLevel >= 13
+#    SetFontSize 38
 #Show
 #    Rarity = Magic
 #    ItemLevel < 24
