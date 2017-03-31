@@ -39,7 +39,8 @@
 # 022 Flask Leveling: Life + Mana
 # 023 Flask Leveling: Hybrid
 # 024 Leveling: 3L + 4L
-# 025 Leveling: Rarity
+# 025 Leveling: Jewelry
+# 026 Leveling: Other
 # 026 Other
 # 027 Reference
 #------------------------------------------------------------------------------
@@ -617,7 +618,28 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 025 LEVELING: Rarity
+# 025 LEVELING: Jewelry
+#------------------------------------------------------------------------------
+Show
+    Class "Ring"
+    BaseType "Coral" "Sapphire"
+    Rarity >= Normal
+    ItemLevel <= 12
+    SetFontSize 40
+Show
+    Class "Ring"
+    BaseType "Coral" "Sapphire" "Ruby" "Topaz" "Two-Stone" "Prismatic"
+    Rarity = Magic
+    ItemLevel <= 28
+    SetFontSize 40
+Show
+    Class "Amulet"
+    Rarity = Magic
+    ItemLevel <= 28
+    SetFontSize 40
+
+#------------------------------------------------------------------------------
+# 025 LEVELING: Other
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
@@ -625,21 +647,21 @@ Show
     SetFontSize 40
 Show
     Rarity >= Normal
-    ItemLevel <= 3
+    ItemLevel < 4
     DropLevel >= 0
     SetFontSize 40
 Show
-    Rarity >= Normal
+    Rarity = Magic
     ItemLevel < 10
     DropLevel >= 3
     SetFontSize 40
-Show
-    Rarity >= Normal
-    ItemLevel < 14
-    DropLevel >= 4
-    SetFontSize 40
 #Show
-#    Rarity >= Normal
+#    Rarity = Magic
+#    ItemLevel < 14
+#    DropLevel >= 4
+#    SetFontSize 40
+#Show
+#    Rarity = Magic
 #    ItemLevel < 16
 #    DropLevel >= 6
 #    SetFontSize 40
