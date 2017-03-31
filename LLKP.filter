@@ -51,20 +51,20 @@
 # SetFontSize 40
 #
 # COLOR
-# ilvl       Bo  Red: 255 40 0 205
-# Priority   Bo  Grey: 170 170 170 255
-# Labyrinth  Bo  Green: 74 230 58 255
-# Unique     Bg  Yellow: 250 250 210 240
-# Unique     Bo  Default: 175 96 37 255
-# Chaos+     Bg  White: 255 255 255 255
-# Mirror     Tx  Red:  255 0 0 255
-# Perandus   Bg  Gold: 254 170 0 185
-# Perandus   Tx  Black: 17 17 17 255
-# Perandus   Bo  Black: 17 17 17 200
-# Jewel      Bg  Purple: 17 17 67 240
-# Map: High  Bg  Red: 110 0 0 240
-# 6L         Bg  Grey: 95 95 95 240
-# Fadeout    Bg  Black: 17 17 17 90
+# ilvl       Bo  Red:       255 040 000 205
+# Priority   Bo  Grey:      170 170 170 255
+# Labyrinth  Bo  Green:     074 230 058 255
+# Unique     Bg  Yellow:    250 250 210 240
+# Unique     Bo  Default:   175 096 037 255
+# Chaos+     Bg  White:     255 255 255 255
+# Mirror     Tx  Red:       255 000 000 255
+# Perandus   Bg  Gold:      254 170 000 185
+# Perandus   Tx  Black:     017 017 017 255
+# Perandus   Bo  Black:     017 017 017 200
+# Jewel      Bg  Purple:    017 017 067 240
+# Map: High  Bg  Red:       110 000 000 240
+# 6L         Bg  Grey:      095 095 095 240
+# Fadeout    Bg  Black:     017 017 017 090
 #
 # AUDIO
 # High:  PlayAlertSound 2 300
@@ -96,14 +96,14 @@ Show
     SetFontSize 40
 Show
     Class "Jewel"
-    SetBackgroundColor 17 17 67 240
+    SetBackgroundColor 017 017 067 240
     SetFontSize 40
 Show
     Class "Divination Card"
     SetFontSize 40
 Show
     Class "Labyrinth"
-    SetBorderColor 74 230 58 255
+    SetBorderColor 074 230 058 255
     SetFontSize 40
 Show
     Class "Amulet"
@@ -119,8 +119,8 @@ Show
 Show
     Class "Currency"
     BaseType "Mirror" "Rhoa" "Eternal"
-    SetTextColor 255 0 0 255
-    SetBorderColor 255 0 0 255
+    SetTextColor 255 000 000 255
+    SetBorderColor 255 000 000 255
     SetBackgroundColor 255 255 255 255
     PlayAlertSound 2 300
     SetFontSize 40
@@ -162,9 +162,9 @@ Show
 Show
     Class "Currency"
     BaseType "Perandus"
-    SetTextColor 17 17 17 255
-    SetBorderColor 17 17 17 200
-    SetBackgroundColor 254 170 0 185
+    SetTextColor 017 017 017 255
+    SetBorderColor 017 017 017 200
+    SetBackgroundColor 254 170 000 185
     SetFontSize 40
 Show
     Class "Currency"
@@ -182,7 +182,7 @@ Show
 #    Rarity = Unique
 #    BaseType ""
 #    SetBackgroundColor 250 250 210 240
-#    SetBorderColor 175 96 37 255
+#    SetBorderColor 175 096 037 255
 #    PlayAlertSound 2 300
 #    SetFontSize 40
 #Show
@@ -200,13 +200,13 @@ Show
 Show
     Class "Map"
     DropLevel >= 78
-    SetBackgroundColor 110 0 0 240
+    SetBackgroundColor 110 000 000 240
     PlayAlertSound 2 300
     SetFontSize 40
 Show
     Class "Map"
     DropLevel >= 73
-    SetBorderColor 30 255 255 255
+    SetBorderColor 030 255 255 255
     PlayAlertSound 1 200
     SetFontSize 40
 Show
@@ -219,12 +219,12 @@ Show
 Show
     Class "Map Fragment"
     BaseType "Sacrifice"
-    SetBackgroundColor 110 0 0 240
+    SetBackgroundColor 110 000 000 240
     SetFontSize 40
 Show
     Class "Map Fragment"
     BaseType "Mortal"
-    SetBackgroundColor 110 0 0 240
+    SetBackgroundColor 110 000 000 240
     SetFontSize 40
 Show
     Class "Map Fragment"
@@ -268,7 +268,7 @@ Show
 #------------------------------------------------------------------------------
 Show
     LinkedSockets = 6
-    SetBackgroundColor 95 95 95 240
+    SetBackgroundColor 095 095 095 240
     PlayAlertSound 2 300
     SetFontSize 40
 Show
@@ -350,33 +350,33 @@ Hide
 Show
     ItemLevel >= 84
     Class "Ring" "Amulet" "Belt"
-    SetBorderColor 255 40 0 205
+    SetBorderColor 255 040 000 205
     SetFontSize 40
 Show
     ItemLevel >= 84
     BaseType "Vaal Regalia" "Sorcerer Boots" "Sorcerer Gloves" "Hubris Circlet" "Saintly Chainmail" "Titanium Spirit Shield" "Harmonic Spirit Shield" "Fossilised Spirit Shield" "Titan Gauntlets" "Slink Gloves" "Eternal Burgonet" "Lion Pelt" "Titan Greaves" "Slink Boots"
-    SetBorderColor 255 40 0 205
+    SetBorderColor 255 040 000 205
     SetFontSize 40
 Show
     ItemLevel >= 84
     BaseType "Glass Shank" "Stiletto" "Poignard" "Ambusher" "Skean" "Kris" "Crystal Sceptre" "Quartz Sceptre" "Tornado Wand"
-    SetBorderColor 255 40 0 205
+    SetBorderColor 255 040 000 205
     SetFontSize 40
 Show
     ItemLevel >= 83
     BaseType "Lion Sword" "Vaal Greatsword" "Vaal Axe" "Coronal Maul" "Exquisite Blade" "Fleshripper" "Harbinger Bow" "Gemini Claw" "Vaal Hatchet" "Runic Hatchet" "Behemoth Mace" "Eternal Sword" "Tiger Hook" "Eclipse Staff" "Maelstr" "Judgement Staff" "Jewelled Foil" "Dragoon Sword"
-    SetBorderColor 255 40 0 205
+    SetBorderColor 255 040 000 205
     SetFontSize 40
 Show
     ItemLevel >= 83
     BaseType "Ambusher" "Demon Dagger" "Imperial Skean" "Platinum Kris" "Void Sceptre" "Opal Sceptre" "Sambar Sceptre" "Profane Wand" "Prophecy Wand" "Opal Wand" "Imbued Wand"
-    SetBorderColor 255 40 0 205
+    SetBorderColor 255 040 000 205
     SetFontSize 40
 Show
     ItemLevel >= 83
     Class Dagger
     BaseType "Sai"
-    SetBorderColor 255 40 0 205
+    SetBorderColor 255 040 000 205
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -688,7 +688,7 @@ Show
 # 026 OTHER
 #------------------------------------------------------------------------------
 Hide
-    SetBackgroundColor 17 17 17 90
+    SetBackgroundColor 017 017 017 090
 
 #------------------------------------------------------------------------------
 # 027 REFERENCE
