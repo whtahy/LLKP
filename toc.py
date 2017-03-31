@@ -1,18 +1,18 @@
 import fileinput, re
 
-defaults = {'filter': 'LLKP.filter',
-            'regex_match': r'# \d\d\d ',
-            'replacement': '# {} ',
-            'pivot': 'SETTINGS',
-            'index_start': 0,
-            'digits': 3}
+file_name = 'LLKP.filter'
+regex_match = r'# \d\d\d '
+replacement = '# {} '
+pivot = 'SETTINGS'
+index_start = 0
+digits = 3
 
-def regex(filter=defaults['filter'],
-          regex_match=defaults['regex_match'],
-          replacement=defaults['replacement'],
-          pivot=defaults['pivot'],
-          index_start=defaults['index_start'],
-          digits=defaults['digits']):
+def regex(filter,
+          regex_match,
+          replacement,
+          pivot,
+          index_start,
+          digits):
     with fileinput.FileInput(filter, inplace=True) as text:
         pattern = re.compile(regex_match)
         restart = False
@@ -28,4 +28,9 @@ def regex(filter=defaults['filter'],
             print(line, end='')
 
 if __name__ == '__main__':
-    regex()
+    regex(filter=file_name,
+          regex_match=regex_match,
+          replacement=replacement,
+          pivot=pivot,
+          index_start=index_start,
+          digits=digits)
