@@ -2,11 +2,11 @@ import fileinput, re
 
 
 def toc(file='LLKP.filter',
-          regex_match=r'# \d\d\d',
-          replacement='# {}',
-          pivot='SETTINGS',
-          index_start=0,
-          digits=3):
+        regex_match=r'# \d\d\d',
+        replacement='# {}',
+        pivot='SETTINGS',
+        index_start=0,
+        digits=3):
     with fileinput.FileInput(file, inplace=True) as text:
         pattern = re.compile(regex_match)
         restart = False
