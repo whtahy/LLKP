@@ -564,6 +564,7 @@ Show
     SetFontSize 40
 Show
     Class "Utility Flask"
+    ItemLevel < 78
     SetFontSize 40
 
 #------------------------------------------------------------------------------
