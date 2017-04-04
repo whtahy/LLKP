@@ -457,7 +457,6 @@ Show
 Hide
     Rarity <= Magic
     BaseType "Cloth Belt" "Coral Amulet" "Paua Ring" "Studded Belt"
-    SetTextColor 200 247 197 255
     SetFontSize 40
 Show
     ItemLevel >= 84
