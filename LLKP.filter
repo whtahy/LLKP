@@ -53,10 +53,10 @@
 #------------------------------------------------------------------------------
 # 000 SETTINGS
 #------------------------------------------------------------------------------
-# FONT
+# FONT SIZE
 # SetFontSize 40
 #
-# COLOR
+# COLORS
 #
 # AUDIO
 # High:  PlayAlertSound 2 300
@@ -85,7 +85,10 @@ Show
 # 003 Quest + Labyrinth
 #------------------------------------------------------------------------------
 Show
-    Class "Labyrinth" "Quest Item" "Fishing Rod"
+    Class "Quest"
+    SetFontSize 40
+Show
+    Class "Labyrinth" "Fishing Rod"
     SetTextColor 074 230 058 255
     SetFontSize 40
 Show
@@ -698,7 +701,7 @@ Show
 Show
     Rarity >= Normal
     ItemLevel <= 3
-    DropLevel >= 0
+    ItemLevel > 0
     SetFontSize 40
 
 #------------------------------------------------------------------------------
