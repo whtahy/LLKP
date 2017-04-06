@@ -34,18 +34,18 @@ Top
     SetBackgroundColor  255 255 255 253
 Currency: Top
     SetTextColor        130 096 037 255
-    SetBackgroundColor  240 240 240 240
+    SetBackgroundColor  250 250 250 240
 Breach: Blessing
     SetTextColor        238 238 238 255
     SetBackgroundColor  065 020 080 240
 Breachstone
     SetTextColor        102 051 153 255
-    SetBackgroundColor  240 240 240 240
+    SetBackgroundColor  250 250 250 240
 #------------------------------------------------------------------------------
 Map: Top
     SetTextColor        170 000 000 255
     SetBorderColor      000 000 000 000
-    SetBackgroundColor  240 240 240 240
+    SetBackgroundColor  250 250 250 240
 #------------------------------------------------------------------------------
 Map: Fragment
     SetBorderColor      255 255 255 241
@@ -69,7 +69,7 @@ Recipe
     SetBackgroundColor  160 160 160 200
 6L
     SetTextColor        200 247 197 255
-    SetBackgroundColor  240 240 240 240
+    SetBackgroundColor  250 250 250 240
 #------------------------------------------------------------------------------
 Bases
     SetTextColor        200 247 197 255
