@@ -75,7 +75,7 @@ Show
 Show
     BaseType "Ancient Reliquary Key"
     SetTextColor 207 000 015 255
-    SetBackgroundColor 255 255 255 255
+    SetBackgroundColor 255 255 255 253
     PlayAlertSound 2 300
     SetFontSize 40
 
@@ -112,7 +112,7 @@ Show
     Class "Currency"
     BaseType "Mirror" "Rhoa" "Eternal" "Imprint"
     SetTextColor 207 000 015 255
-    SetBackgroundColor 255 255 255 255
+    SetBackgroundColor 255 255 255 253
     PlayAlertSound 2 300
     SetFontSize 40
 Show
@@ -255,13 +255,13 @@ Show
 Show
     Class "Map Fragment"
     BaseType "Sacrifice"
-    SetBorderColor 255 255 255 240
+    SetBorderColor 255 255 255 241
     SetBackgroundColor 110 000 000 240
     SetFontSize 40
 Show
     Class "Map Fragment"
     BaseType "Volkuur" "Eber" "Yriel" "Inya"
-    SetBorderColor 255 255 255 240
+    SetBorderColor 255 255 255 241
     SetBackgroundColor 110 000 000 240
     SetFontSize 40
 Show
@@ -293,20 +293,20 @@ Show
     Class "Map"
     DropLevel >= 78
     SetTextColor 215 000 015 242
-    SetBorderColor 255 255 255 240
+    SetBorderColor 255 255 255 241
     PlayAlertSound 1 250
     SetFontSize 40
 Show
     Class "Map"
     DropLevel >= 73
     SetTextColor 245 215 110 242
-    SetBorderColor 255 255 255 240
+    SetBorderColor 255 255 255 241
     SetFontSize 40
 Show
     Class "Map"
     DropLevel >= 0
     SetTextColor 236 236 236 242
-    SetBorderColor 255 255 255 240
+    SetBorderColor 255 255 255 241
     SetFontSize 40
 
 #------------------------------------------------------------------------------

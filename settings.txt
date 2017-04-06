@@ -31,7 +31,7 @@ High
 #------------------------------------------------------------------------------
 Top
     SetTextColor        207 000 015 255
-    SetBackgroundColor  255 255 255 255
+    SetBackgroundColor  255 255 255 253
 Currency: Top
     SetTextColor        130 096 037 255
     SetBackgroundColor  240 240 240 240
@@ -90,7 +90,7 @@ Essence: Top
 Essence: Other
     SetTextColor        250 222 241 255
 #------------------------------------------------------------------------------
-Lab
+Lab + Fishing rod
     SetTextColor        074 230 058 255
 #------------------------------------------------------------------------------
 Map: Unique
