@@ -2,7 +2,7 @@
 
 A simple Path of Exile item filter.
 
-Updated for patch 2.6 Legacy.
+Updated for patch **2.6 Legacy**.
 
 # License
 
