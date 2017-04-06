@@ -1,0 +1,68 @@
+#------------------------------------------------------------------------------
+Top
+    SetTextColor        207 000 015 255
+    SetBackgroundColor  255 255 255 255
+Currency: Top
+    SetTextColor        130 096 037 255
+    SetBackgroundColor  240 240 240 240
+Breach: Blessing
+    SetTextColor        238 238 238 255
+    SetBackgroundColor  065 020 080 240
+Breachstone
+    SetTextColor        102 051 153 255
+    SetBackgroundColor  240 240 240 240
+#------------------------------------------------------------------------------
+Map: Top
+    SetTextColor        170 000 000 255
+    SetBorderColor      000 000 000 000
+    SetBackgroundColor  240 240 240 240
+#------------------------------------------------------------------------------
+Map: Fragment
+    SetBorderColor      255 255 255 241
+    SetBackgroundColor  110 000 000 240
+#------------------------------------------------------------------------------
+Map: T1
+    SetTextColor        236 236 236 242
+    SetBorderColor      255 255 255 241
+Map: T2
+    SetTextColor        245 215 110 242
+    SetBorderColor      255 255 255 241
+Map: T3
+    SetTextColor        215 000 015 242
+    SetBorderColor      255 255 255 241
+#------------------------------------------------------------------------------
+Jewel
+    SetTextColor        238 238 238 255
+    SetBackgroundColor  034 049 105 240
+Recipe
+    SetTextColor        238 238 238 255
+    SetBackgroundColor  160 160 160 200
+6L
+    SetTextColor        200 247 197 255
+    SetBackgroundColor  240 240 240 240
+#------------------------------------------------------------------------------
+Bases
+    SetTextColor        200 247 197 255
+#------------------------------------------------------------------------------
+Prophecy
+    SetTextColor        149 165 200 255
+Perandus
+    SetTextColor        244 179 080 255
+Breach: Splinter
+    SetTextColor        166 090 255 255
+Leaguestone
+    SetTextColor        000 133 222 255
+#------------------------------------------------------------------------------
+Essence: Corruption
+    SetTextColor        255 013 152 255
+Essence: Top
+    SetTextColor        255 178 186 255
+Essence: Other
+    SetTextColor        250 222 241 255
+#------------------------------------------------------------------------------
+Lab
+    SetTextColor        074 230 058 255
+#------------------------------------------------------------------------------
+Map: Unique
+    SetBorderColor      255 255 255 241
+#------------------------------------------------------------------------------
