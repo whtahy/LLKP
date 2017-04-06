@@ -700,7 +700,7 @@ Show
 Show
     Rarity >= Normal
     ItemLevel <= 3
-    ItemLevel > 0
+    ItemLevel >= 0
     SetFontSize 40
 
 #------------------------------------------------------------------------------
