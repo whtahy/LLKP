@@ -2,7 +2,7 @@
 
 A simple Path of Exile item filter.
 
-**Out of date** as of patch 2.4.0 (Atlas of Worlds).
+Updated for patch 2.6 Legacy.
 
 # License
 
