@@ -1,4 +1,34 @@
 #------------------------------------------------------------------------------
+# SOUND
+#------------------------------------------------------------------------------
+Low
+    PlayAlertSound 1 250
+
+    Currency: Chisel+
+    Map: T2 + Unique
+    Leaguestone
+    Labyrinth
+    Talisman
+    Rare: RAB
+    6S
+    Quest
+#------------------------------------------------------------------------------
+High
+    PlayAlertSound 2 300
+
+    Currency: Chaos+
+    Currency: Atlas
+    Map: T3 + Atlas + Uber Atziri
+    Essence: Corruption + Top
+    Reliquary Key
+    Fishing rod
+    Breachstone + Blessing
+    6L
+    Bases
+    MTX
+#------------------------------------------------------------------------------
+# COLOR
+#------------------------------------------------------------------------------
 Top
     SetTextColor        207 000 015 255
     SetBackgroundColor  255 255 255 255
