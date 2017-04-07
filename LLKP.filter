@@ -45,10 +45,9 @@
 # 027 Leveling: Hybrid Flasks
 # 028 Leveling: 3L + 4L
 # 029 Leveling: RAB
-# 030 Leveling: Rares + Whites
-# 031 Leveling: Blues
-# 032 Hidden
-# 033 Reference
+# 030 Leveling: Other
+# 031 Hidden
+# 032 Reference
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -70,7 +69,6 @@
 Show
     Class "Leaguestone"
     SetTextColor 000 133 222 255
-    PlayAlertSound 1 250
     SetFontSize 40
 Show
     BaseType "Ancient Reliquary Key"
@@ -676,56 +674,52 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 030 LEVELING: Rares + Whites
+# 030 LEVELING: Other
 #------------------------------------------------------------------------------
+Show
+    Rarity = Normal
+    ItemLevel <= 3
+    ItemLevel >= 1
+    SetFontSize 40
 Show
     Rarity = Rare
     ItemLevel <= 44
     Class "Helm" "Gloves" "Boots" "Armour"
     SetFontSize 40
 Show
-    Rarity = Normal
-    ItemLevel <= 3
-    ItemLevel >= 0
-    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 031 LEVELING: Blues
-#------------------------------------------------------------------------------
-Show
-    Rarity = Magic
+    Rarity >= Magic
     ItemLevel <= 6
     DropLevel >= 0
     SetFontSize 40
 Show
-    Rarity = Magic
+    Rarity >= Magic
     ItemLevel <= 13
     DropLevel >= 4
     SetFontSize 40
 Show
-    Rarity = Magic
+    Rarity >= Magic
     ItemLevel <= 23
     DropLevel >= 14
     SetFontSize 40
 Show
-    Rarity = Magic
+    Rarity >= Magic
     ItemLevel <= 33
     DropLevel >= 24
     SetFontSize 40
 Show
-    Rarity = Magic
+    Rarity >= Magic
     ItemLevel <= 40
     DropLevel >= 31
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 032 HIDDEN
+# 031 HIDDEN
 #------------------------------------------------------------------------------
 Hide
-    SetBackgroundColor 017 017 017 090
+    SetBackgroundColor 017 017 017 140
 
 #------------------------------------------------------------------------------
-# 033 REFERENCE
+# 032 REFERENCE
 #------------------------------------------------------------------------------
 
 # LINK
