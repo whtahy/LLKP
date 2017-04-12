@@ -62,7 +62,7 @@
 # 0.1 SETTINGS: Sound
 #------------------------------------------------------------------------------
 #
-# LOW:  PlayAlertSound 2 300
+# LOW:  PlayAlertSound 2 250
 #------------------------------------------------------------------------------
 # Quest
 # Labyrinth
@@ -74,7 +74,7 @@
 # Talismans
 # Recipe: 6S
 #
-# MID:  PlayAlertSound 1 350
+# MID:  PlayAlertSound 1 300
 #------------------------------------------------------------------------------
 # Currency: Atlas
 # Currency: Chaos
@@ -88,7 +88,7 @@
 # Gear: Atlas Bases
 # Recipe: 6L
 #
-# HIGH: PlayAlertSound 3 375
+# HIGH: PlayAlertSound 3 300
 #------------------------------------------------------------------------------
 # Reliquary Key
 # Fishing Rod + MTX
@@ -116,7 +116,7 @@
 # Reliquary Key + Currency: Exalt
 #     SetTextColor 207 000 015 255
 #     SetBackgroundColor 255 255 255 253
-# Currency: Atlas + Chaos
+# Currency: Atlas + Chaos + 6S
 #     SetTextColor 130 096 037 255
 #     SetBackgroundColor 250 250 250 240
 # Breachstone
@@ -152,7 +152,7 @@
 # Jewels
 #     SetTextColor 238 238 238 255
 #     SetBackgroundColor 034 049 105 240
-# Recipes
+# Recipes: RGB etc
 #     SetTextColor 238 238 238 255
 #     SetBackgroundColor 160 160 160 200
 #------------------------------------------------------------------------------
@@ -166,7 +166,6 @@
 #     SetTextColor 244 179 080 255
 # Breach: Splinter
 #     SetTextColor 166 090 255 255
-#------------------------------------------------------------------------------
 # Fishing Rod + Labyrinth
 #     SetTextColor 074 230 058 255
 #------------------------------------------------------------------------------
@@ -176,6 +175,9 @@
 #     SetTextColor 255 178 186 255
 # Essence: T1
 #     SetTextColor 250 222 241 255
+#------------------------------------------------------------------------------
+# Talismans
+#     SetBackgroundColor 004 034 011 240
 #------------------------------------------------------------------------------
 # Hidden
 #     SetBackgroundColor 017 017 017 140
@@ -196,7 +198,7 @@ Show
     BaseType "Ancient Reliquary Key"
     SetTextColor 207 000 015 255
     SetBackgroundColor 255 255 255 253
-    PlayAlertSound 3 375
+    PlayAlertSound 3 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -206,15 +208,15 @@ Show
     Class "Fishing Rod"
     SetTextColor 074 230 058 255
     SetFontSize 40
-    PlayAlertSound 3 375
+    PlayAlertSound 3 300
 Show
     Class "Quest"
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Microtransaction" "Doodad"
     SetFontSize 40
-    PlayAlertSound 3 375
+    PlayAlertSound 3 300
 
 #------------------------------------------------------------------------------
 # 0.6 LABYRINTH
@@ -222,7 +224,7 @@ Show
 Show
     Class "Labyrinth"
     SetTextColor 074 230 058 255
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -233,26 +235,26 @@ Show
     BaseType "Mirror" "Rhoa" "Eternal" "Imprint" "Exalted"
     SetTextColor 207 000 015 255
     SetBackgroundColor 255 255 255 253
-    PlayAlertSound 3 375
+    PlayAlertSound 3 300
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Sextant" "Seal" "Unshaping"
     SetTextColor 130 096 037 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Blessed" "Chaos" "Divine" "Gemcutter" "Regal" "Vaal"
     SetTextColor 130 096 037 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Currency"
@@ -278,13 +280,13 @@ Show
     Class "Currency"
     BaseType "Remnant" "Hysteria" "Insanity" "Horror" "Delirium"
     SetTextColor 255 013 152 255
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Screaming" "Shrieking" "Deafening"
     SetTextColor 255 178 186 255
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Currency"
@@ -315,7 +317,7 @@ Show
     BaseType "Blessing"
     SetTextColor 238 238 238 255
     SetBackgroundColor 065 020 080 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -362,7 +364,7 @@ Show
     SetTextColor 170 000 000 255
     SetBorderColor 000 000 000 000
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Map Fragment"
@@ -370,7 +372,7 @@ Show
     SetTextColor 170 000 000 255
     SetBorderColor 000 000 000 000
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Map Fragment"
@@ -389,7 +391,7 @@ Show
     BaseType "Breachstone"
     SetTextColor 102 051 153 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -399,7 +401,7 @@ Show
     Class "Map"
     Rarity = Unique
     SetBorderColor 255 255 255 240
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Map"
@@ -407,14 +409,14 @@ Show
     SetTextColor 170 000 000 255
     SetBorderColor 000 000 000 000
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     Class "Map"
     DropLevel >= 78
     SetTextColor 215 000 015 242
     SetBorderColor 255 255 255 241
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Map"
@@ -434,7 +436,7 @@ Show
 #------------------------------------------------------------------------------
 Show
     Rarity = Unique
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -444,7 +446,7 @@ Show
     Class "Jewel"
     SetTextColor 238 238 238 255
     SetBackgroundColor 034 049 105 240
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -453,7 +455,7 @@ Show
 Show
     Class "Amulet"
     BaseType "Talisman"
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -613,13 +615,13 @@ Show
     BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
     BaseType "Two-Toned Boots"
     SetTextColor 200 247 197 255
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     BaseType "Sacrificial Garb"
     BaseType "Steel Ring" "Opal Ring" "Crystal Belt"
     SetTextColor 200 247 197 255
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -629,7 +631,7 @@ Show
     LinkedSockets = 6
     SetTextColor 130 096 037 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 350
+    PlayAlertSound 1 300
     SetFontSize 40
 Show
     LinkedSockets = 5
@@ -642,7 +644,7 @@ Show
     Sockets = 6
     SetTextColor 238 238 238 255
     SetBackgroundColor 160 160 160 200
-    PlayAlertSound 2 300
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
