@@ -1,6 +1,4 @@
-# LLKP
-
-A simple Path of Exile item filter.
+# Version
 
 Updated for patch **2.6 Legacy**.
 
