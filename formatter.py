@@ -2,8 +2,8 @@ import fileinput, re
 
 
 def toc(file='LLKP.filter',
-        regex_match=r'# \d\d\d',
-        replacement='# {}',
+        regex_match=r'# \d\.\d ',
+        replacement=r'# {} ',
         pivot='SETTINGS',
         index_start=0,
         digits=3):
@@ -16,7 +16,7 @@ def toc(file='LLKP.filter',
                 index = index_start
                 restart = True
             if pattern.match(line):
-                index_str = str(index).zfill(digits)
+                index_str = str(index/10).zfill(digits)
                 line = pattern.sub(replacement.format(index_str), line)
                 index += 1
             print(line, end='')

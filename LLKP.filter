@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# LLKP FILTER v2.6b
+# LLKP FILTER v2.6c
 # LONG LIVE KAIPI!
 # Updated for Patch 2.6 Legacy
 #------------------------------------------------------------------------------
@@ -15,56 +15,178 @@
 #------------------------------------------------------------------------------
 # TABLE OF CONTENTS
 #------------------------------------------------------------------------------
-# 000 Settings
-# 001 Exceptions
-# 002 Current League
-# 003 Misc: Quest + Fishing + MTX
-# 004 Labyrinth
-# 005 Currency: Crafting + Atlas
-# 006 Currency: Essence
-# 007 Currency: Prophey + Perandus + Breach
-# 008 Divination Cards
-# 009 Gems
-# 010 Maps: Fragments + Breachstones
-# 011 Maps: T1 + T2 + T3
-# 012 Uniques
-# 013 Jewels
-# 014 Talismans
-# 015 Rares: RAB
-# 016 Rares: Chests
-# 017 Rares: Shields
-# 018 Rares: Boots
-# 019 Rares: Gloves
-# 020 Rares: Helms
-# 021 Rares: Weapon
-# 022 Bases: ilvl + Atlas
-# 023 Link: 5L + 6L
-# 024 Recipes
-# 025 Flasks
-# 026 Leveling: Life + Mana Flasks
-# 027 Leveling: Hybrid Flasks
-# 028 Leveling: 3L + 4L
-# 029 Leveling: RAB
-# 030 Leveling: Other
-# 031 Hidden
-# 032 Reference
+# 0.0 Settings: Font Size
+# 0.1 Settings: Sound
+# 0.2 Settings: Color
+# 0.3 Exceptions
+# 0.4 Current League
+# 0.5 Misc: Quest + Fishing + MTX
+# 0.6 Labyrinth
+# 0.7 Currency: Crafting + Atlas
+# 0.8 Currency: Essence
+# 0.9 Currency: Prophey + Perandus + Breach
+# 1.0 Divination Cards
+# 1.1 Gems
+# 1.2 Maps: Fragments + Breachstones
+# 1.3 Maps: T1 + T2 + T3
+# 1.4 Uniques
+# 1.5 Jewels
+# 1.6 Talismans
+# 1.7 Rares: RAB
+# 1.8 Rares: Chests
+# 1.9 Rares: Shields
+# 2.0 Rares: Boots
+# 2.1 Rares: Gloves
+# 2.2 Rares: Helms
+# 2.3 Rares: Weapon
+# 2.4 Bases: ilvl + Atlas
+# 2.5 Link: 5L + 6L
+# 2.6 Recipes: 6S etc
+# 2.7 Flasks
+# 2.8 Leveling: Life + Mana Flasks
+# 2.9 Leveling: Hybrid Flasks
+# 3.0 Leveling: 3L + 4L
+# 3.1 Leveling: RAB
+# 3.2 Leveling: Rarity + DropLevel
+# 3.3 Hidden
+# 3.4 Reference
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# 000 SETTINGS
+# 0.0 SETTINGS: Font Size
 #------------------------------------------------------------------------------
 # SetFontSize 40
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# 0.1 SETTINGS: Sound
+#------------------------------------------------------------------------------
 #
-# High:  PlayAlertSound 2 300
-# Low:   PlayAlertSound 1 250
+# LOW:  PlayAlertSound 2 300
+#------------------------------------------------------------------------------
+# Quest
+# Labyrinth
+# Currency: Alchemy
+# Breachstone
+# Maps: Red
+# Uniques + Unique Maps
+# Jewels
+# Talismans
+# Recipe: 6S
+#
+# MID:  PlayAlertSound 1 350
+#------------------------------------------------------------------------------
+# Currency: Atlas
+# Currency: Chaos
+# Essence: Corruption
+# Essence: T5
+# Breach: Blessing
+# Maps: Shaper
+# Maps: Uber Atziri
+# Maps: T16
+# Gear: ilvl
+# Gear: Atlas Bases
+# Recipe: 6L
+#
+# HIGH: PlayAlertSound 3 375
+#------------------------------------------------------------------------------
+# Reliquary Key
+# Fishing Rod + MTX
+# Currency: Exalt
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# 001 EXCEPTIONS
+# 0.2 SETTINGS: Color
+#------------------------------------------------------------------------------
+#
+# DEFAULT
+#------------------------------------------------------------------------------
+# Quest
+# MTX
+# Div Card
+# Currency: Alchemy + Alteration + Wisdom etc
+# Gems
+# Rares
+# Uniques
+# Talismans
+# Leveling
+#
+# MODIFIED
+#------------------------------------------------------------------------------
+# Reliquary Key + Currency: Exalt
+#     SetTextColor 207 000 015 255
+#     SetBackgroundColor 255 255 255 253
+# Currency: Atlas + Chaos
+#     SetTextColor 130 096 037 255
+#     SetBackgroundColor 250 250 250 240
+# Breachstone
+#     SetTextColor 102 051 153 255
+#     SetBackgroundColor 250 250 250 240
+# Breach: Blessing
+#     SetTextColor 238 238 238 255
+#     SetBackgroundColor 065 020 080 240
+#------------------------------------------------------------------------------
+# Maps: Unique
+#     SetBorderColor 255 255 255 240
+# Maps: Atziri + Pale Council
+#     SetBorderColor 255 255 255 241
+#     SetBackgroundColor 110 000 000 240
+# Maps: T16 + Shaper + Uber Atziri
+#     SetTextColor 170 000 000 255
+#     SetBorderColor 000 000 000 000
+#     SetBackgroundColor 250 250 250 240
+#------------------------------------------------------------------------------
+# Maps: T1
+#     SetTextColor 236 236 236 242
+#     SetBorderColor 255 255 255 241
+# Maps: Yellow
+#     SetTextColor 245 215 110 242
+#     SetBorderColor 255 255 255 241
+# Maps: Red
+#     SetTextColor 215 000 015 242
+#     SetBorderColor 255 255 255 241
+#------------------------------------------------------------------------------
+# 6L
+#     SetTextColor 130 096 037 255
+#     SetBackgroundColor 250 250 250 240
+# Jewels
+#     SetTextColor 238 238 238 255
+#     SetBackgroundColor 034 049 105 240
+# Recipes
+#     SetTextColor 238 238 238 255
+#     SetBackgroundColor 160 160 160 200
+#------------------------------------------------------------------------------
+# Gear: ilvl + Atlas Bases
+#     SetTextColor 200 247 197 255
+# Leaguestone
+#     SetTextColor 000 133 222 255
+# Prophecy
+#     SetTextColor 149 165 200 255
+# Perandus
+#     SetTextColor 244 179 080 255
+# Breach: Splinter
+#     SetTextColor 166 090 255 255
+#------------------------------------------------------------------------------
+# Fishing Rod + Labyrinth
+#     SetTextColor 074 230 058 255
+#------------------------------------------------------------------------------
+# Essence: Corruption
+#     SetTextColor 255 013 152 255
+# Essence: T5
+#     SetTextColor 255 178 186 255
+# Essence: T1
+#     SetTextColor 250 222 241 255
+#------------------------------------------------------------------------------
+# Hidden
+#     SetBackgroundColor 017 017 017 140
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# 002 CURRENT LEAGUE
+# 0.3 EXCEPTIONS
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# 0.4 CURRENT LEAGUE
 #------------------------------------------------------------------------------
 Show
     Class "Leaguestone"
@@ -74,63 +196,63 @@ Show
     BaseType "Ancient Reliquary Key"
     SetTextColor 207 000 015 255
     SetBackgroundColor 255 255 255 253
-    PlayAlertSound 2 300
+    PlayAlertSound 3 375
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 003 MISC: Quest + Fishing + MTX
+# 0.5 MISC: Quest + Fishing + MTX
 #------------------------------------------------------------------------------
 Show
     Class "Fishing Rod"
     SetTextColor 074 230 058 255
     SetFontSize 40
-    PlayAlertSound 2 300
+    PlayAlertSound 3 375
 Show
     Class "Quest"
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 Show
     Class "Microtransaction" "Doodad"
     SetFontSize 40
-    PlayAlertSound 2 300
+    PlayAlertSound 3 375
 
 #------------------------------------------------------------------------------
-# 004 LABYRINTH
+# 0.6 LABYRINTH
 #------------------------------------------------------------------------------
 Show
     Class "Labyrinth"
     SetTextColor 074 230 058 255
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 005 CURRENCY: Crafting + Atlas
+# 0.7 CURRENCY: Crafting + Atlas
 #------------------------------------------------------------------------------
 Show
     Class "Currency"
-    BaseType "Mirror" "Rhoa" "Eternal" "Imprint"
+    BaseType "Mirror" "Rhoa" "Eternal" "Imprint" "Exalted"
     SetTextColor 207 000 015 255
     SetBackgroundColor 255 255 255 253
-    PlayAlertSound 2 300
+    PlayAlertSound 3 375
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Sextant" "Seal" "Unshaping"
     SetTextColor 130 096 037 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Currency"
-    BaseType "Blessed" "Chaos" "Divine" "Exalted" "Gemcutter" "Regal" "Vaal"
+    BaseType "Blessed" "Chaos" "Divine" "Gemcutter" "Regal" "Vaal"
     SetTextColor 130 096 037 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 Show
     Class "Currency"
@@ -140,29 +262,29 @@ Show
     Class "Currency"
     BaseType "Scrap" "Augmentation"
     SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Wisdom" "Portal"
-    SetFontSize 40
+#Show
+#    Class "Currency"
+#    BaseType "Wisdom" "Portal"
+#    SetFontSize 40
 Show
     Class "Currency"
     BaseType "Fragment" "Shard"
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 006 CURRENCY: Essence
+# 0.8 CURRENCY: Essence
 #------------------------------------------------------------------------------
 Show
     Class "Currency"
     BaseType "Remnant" "Hysteria" "Insanity" "Horror" "Delirium"
     SetTextColor 255 013 152 255
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Currency"
     BaseType "Screaming" "Shrieking" "Deafening"
     SetTextColor 255 178 186 255
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Currency"
@@ -171,7 +293,7 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 007 CURRENCY: Prophecy + Perandus + Breach
+# 0.9 CURRENCY: Prophecy + Perandus + Breach
 #------------------------------------------------------------------------------
 Show
     Class "Currency"
@@ -193,11 +315,11 @@ Show
     BaseType "Blessing"
     SetTextColor 238 238 238 255
     SetBackgroundColor 065 020 080 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 008 DIVINATION CARDS
+# 1.0 DIVINATION CARDS
 #------------------------------------------------------------------------------
 Show
     Class "Divination Card"
@@ -209,7 +331,7 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 009 GEMS
+# 1.1 GEMS
 #------------------------------------------------------------------------------
 Show
     Class "Gem"
@@ -232,7 +354,7 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 010 MAPS: Fragments + Breachstones
+# 1.2 MAPS: Fragments + Breachstones
 #------------------------------------------------------------------------------
 Show
     Class "Map Fragment"
@@ -240,7 +362,7 @@ Show
     SetTextColor 170 000 000 255
     SetBorderColor 000 000 000 000
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Map Fragment"
@@ -248,7 +370,7 @@ Show
     SetTextColor 170 000 000 255
     SetBorderColor 000 000 000 000
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Map Fragment"
@@ -267,17 +389,17 @@ Show
     BaseType "Breachstone"
     SetTextColor 102 051 153 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 011 MAPS: T1 + T2 + T3
+# 1.3 MAPS: T1 + T2 + T3
 #------------------------------------------------------------------------------
 Show
     Class "Map"
     Rarity = Unique
     SetBorderColor 255 255 255 240
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 Show
     Class "Map"
@@ -285,14 +407,14 @@ Show
     SetTextColor 170 000 000 255
     SetBorderColor 000 000 000 000
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     Class "Map"
     DropLevel >= 78
     SetTextColor 215 000 015 242
     SetBorderColor 255 255 255 241
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 Show
     Class "Map"
@@ -308,41 +430,42 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 012 UNIQUES
+# 1.4 UNIQUES
 #------------------------------------------------------------------------------
 Show
     Rarity = Unique
+    PlayAlertSound 2 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 013 JEWELS
+# 1.5 JEWELS
 #------------------------------------------------------------------------------
 Show
     Class "Jewel"
     SetTextColor 238 238 238 255
     SetBackgroundColor 034 049 105 240
+    PlayAlertSound 2 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 014 TALISMANS
+# 1.6 TALISMANS
 #------------------------------------------------------------------------------
 Show
     Class "Amulet"
     BaseType "Talisman"
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 015 RARES: RAB
+# 1.7 RARES: RAB
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
     Class "Ring" "Amulet" "Belt"
-    PlayAlertSound 1 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 016 RARES: Chests
+# 1.8 RARES: Chests
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
@@ -370,7 +493,7 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 017 RARES: Shields
+# 1.9 RARES: Shields
 #------------------------------------------------------------------------------
 #Show
 #    Rarity = Rare
@@ -398,7 +521,7 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 018 RARES: Boots
+# 2.0 RARES: Boots
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
@@ -414,7 +537,7 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 019 RARES: Gloves
+# 2.1 RARES: Gloves
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
@@ -430,7 +553,7 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 020 RARES: Helmets
+# 2.2 RARES: Helmets
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
@@ -448,7 +571,7 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 021 RARES: Weapons + Quivers
+# 2.3 RARES: Weapons + Quivers
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
@@ -482,7 +605,7 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 022 BASES: ilvl + Atlas
+# 2.4 BASES: ilvl + Atlas
 #------------------------------------------------------------------------------
 Show
     ItemLevel >= 84
@@ -490,36 +613,36 @@ Show
     BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
     BaseType "Two-Toned Boots"
     SetTextColor 200 247 197 255
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     BaseType "Sacrificial Garb"
     BaseType "Steel Ring" "Opal Ring" "Crystal Belt"
     SetTextColor 200 247 197 255
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 023 LINK: 5L + 6L
+# 2.5 LINK: 5L + 6L
 #------------------------------------------------------------------------------
 Show
     LinkedSockets = 6
     SetTextColor 130 096 037 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 300
+    PlayAlertSound 1 350
     SetFontSize 40
 Show
     LinkedSockets = 5
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 024 RECIPES
+# 2.6 RECIPES: 6S etc
 #------------------------------------------------------------------------------
 Show
     Sockets = 6
     SetTextColor 238 238 238 255
     SetBackgroundColor 160 160 160 200
-    PlayAlertSound 1 250
+    PlayAlertSound 2 300
     SetFontSize 40
 Show
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
@@ -531,7 +654,7 @@ Show
     SetFontSize 40
 Show
     Class "Flask"
-    Quality > 0
+    Quality >= 10
     SetTextColor 238 238 238 255
     SetBackgroundColor 160 160 160 200
     SetFontSize 40
@@ -550,23 +673,23 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 025 FLASKS
+# 2.7 FLASKS
 #------------------------------------------------------------------------------
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 60
-    SetFontSize 40
+#Show
+#    Class "Life Flask" "Mana Flask"
+#    DropLevel >= 60
+#    SetFontSize 40
 #Show
 #    Class "Hybrid Flask"
 #    DropLevel >= 60
 #    SetFontSize 40
-Show
-    Class "Utility Flask"
-    ItemLevel < 78
-    SetFontSize 40
+#Show
+#    Class "Utility Flask"
+#    ItemLevel < 78
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 026 LEVELING: Life + Mana Flasks
+# 2.8 LEVELING: Life + Mana Flasks
 #------------------------------------------------------------------------------
 Show
     Class "Life Flask" "Mana Flask"
@@ -610,7 +733,7 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 027 LEVELING: Hybrid Flasks
+# 2.9 LEVELING: Hybrid Flasks
 #------------------------------------------------------------------------------
 #Show
 #    Class "Hybrid Flask"
@@ -639,102 +762,102 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 028 LEVELING: 3L + 4L
+# 3.0 LEVELING: 3L + 4L
 #------------------------------------------------------------------------------
-Show
-    LinkedSockets >= 4
-    Class "Helm" "Boots" "Gloves" "Armour"
-    ItemLevel <= 44
-    SetFontSize 40
-Show
-    LinkedSockets >= 3
-    Class "Helm" "Boots" "Gloves" "Armour"
-    ItemLevel <= 23
-    SetFontSize 40
+#Show
+#    LinkedSockets >= 4
+#    Class "Helm" "Boots" "Gloves" "Armour"
+#    ItemLevel <= 44
+#    SetFontSize 40
+#Show
+#    LinkedSockets >= 3
+#    Class "Helm" "Boots" "Gloves" "Armour"
+#    ItemLevel <= 23
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 029 LEVELING: RAB
+# 3.1 LEVELING: RAB
 #------------------------------------------------------------------------------
-Show
-    Class "Ring"
-    BaseType "Coral" "Sapphire"
-    Rarity >= Normal
-    ItemLevel <= 13
-    SetFontSize 40
-Show
-    Class "Ring"
-    BaseType "Sapphire" "Ruby" "Topaz" "Two-Stone" "Prismatic"
-    Rarity = Magic
-    ItemLevel <= 40
-    SetFontSize 40
-Show
-    Class "Amulet"
-    Rarity = Magic
-    ItemLevel <= 33
-    SetFontSize 40
+#Show
+#    Class "Ring"
+#    BaseType "Coral" "Sapphire"
+#    Rarity >= Normal
+#    ItemLevel <= 13
+#    SetFontSize 40
+#Show
+#    Class "Ring"
+#    BaseType "Sapphire" "Ruby" "Topaz" "Two-Stone" "Prismatic"
+#    Rarity = Magic
+#    ItemLevel <= 40
+#    SetFontSize 40
+#Show
+#    Class "Amulet"
+#    Rarity = Magic
+#    ItemLevel <= 33
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 030 LEVELING: Other
+# 3.2 LEVELING: Rarity + DropLevel
 #------------------------------------------------------------------------------
-Show
-    Rarity = Normal
-    ItemLevel <= 3
-    ItemLevel >= 1
-    SetFontSize 40
-Show
-    Rarity = Rare
-    ItemLevel <= 44
-    Class "Helm" "Gloves" "Boots" "Armour"
-    SetFontSize 40
-Show
-    Rarity >= Magic
-    ItemLevel <= 6
-    DropLevel >= 0
-    SetFontSize 40
-Show
-    Rarity >= Magic
-    ItemLevel <= 13
-    DropLevel >= 4
-    SetFontSize 40
-Show
-    Rarity >= Magic
-    ItemLevel <= 23
-    DropLevel >= 14
-    SetFontSize 40
-Show
-    Rarity >= Magic
-    ItemLevel <= 33
-    DropLevel >= 24
-    SetFontSize 40
-Show
-    Rarity >= Magic
-    ItemLevel <= 40
-    DropLevel >= 31
-    SetFontSize 40
+#Show
+#    Rarity = Normal
+#    ItemLevel <= 3
+#    ItemLevel >= 1
+#    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    ItemLevel <= 44
+#    Class "Helm" "Gloves" "Boots" "Armour"
+#    SetFontSize 40
+#Show
+#    Rarity >= Magic
+#    ItemLevel <= 6
+#    DropLevel >= 0
+#    SetFontSize 40
+#Show
+#    Rarity >= Magic
+#    ItemLevel <= 13
+#    DropLevel >= 4
+#    SetFontSize 40
+#Show
+#    Rarity >= Magic
+#    ItemLevel <= 23
+#    DropLevel >= 14
+#    SetFontSize 40
+#Show
+#    Rarity >= Magic
+#    ItemLevel <= 33
+#    DropLevel >= 24
+#    SetFontSize 40
+#Show
+#    Rarity >= Magic
+#    ItemLevel <= 40
+#    DropLevel >= 31
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 031 HIDDEN
+# 3.3 HIDDEN
 #------------------------------------------------------------------------------
 Hide
     SetBackgroundColor 017 017 017 140
 
 #------------------------------------------------------------------------------
-# 032 REFERENCE
+# 3.4 REFERENCE
 #------------------------------------------------------------------------------
-
+#
 # LINK
 #------------------------------------------------------------------------------
 # 3L 15
 # 4L 28
 # 5L 35
 # 6L 50
-
+#
 # MAP
 #------------------------------------------------------------------------------
 # T1 01-05 68-72
 # T2 06-10 73-77
 # T3 11-16 78-83
-
+#
 # ZONE
 #------------------------------------------------------------------------------
 # NA1: 13
@@ -751,7 +874,7 @@ Hide
 # MA2: 63
 # MA3: 67
 # MA4: 70
-
+#
 # ITEM CLASS
 #------------------------------------------------------------------------------
 # Fishing Rod
