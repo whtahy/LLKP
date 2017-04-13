@@ -48,7 +48,7 @@
 # 3.0 Leveling: 3L + 4L
 # 3.1 Leveling: RAB
 # 3.2 Leveling: Rarity + DropLevel
-# 3.3 Hidden
+# 3.3 Hidden + Backup
 # 3.4 Reference
 #------------------------------------------------------------------------------
 
@@ -253,25 +253,21 @@ Show
     SetFontSize 40
 Show
     Class "Currency"
-    BaseType "Chisel" "Alchemy" "Jeweller" "Fusing" "Regret" "Scouring" "Bauble"
+    BaseType "Chisel" "Alchemy" "Fusing" "Regret" "Scouring"
     PlayAlertSound 2 250
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Alteration" "Chromatic" "Chance" "Transmutation" "Whetstone"
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Scrap" "Augmentation"
     SetFontSize 40
 #Show
 #    Class "Currency"
-#    BaseType "Wisdom" "Portal"
+#    BaseType "Jeweller"
+#    BaseType "Bauble"
+#    BaseType "Whetstone"
+#    BaseType "Alteration" "Chromatic" "Chance"
+#    BaseType "Transmutation"
+#    BaseType "Scrap" "Augmentation"
+#    BaseType "Wisdom"
+#    BaseType "Portal"
+#    BaseType "Fragment" "Shard"
 #    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Fragment" "Shard"
-    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.8 CURRENCY: Essence
@@ -288,11 +284,11 @@ Show
     SetTextColor 255 178 186 255
     PlayAlertSound 1 300
     SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Essence"
-    SetTextColor 250 222 241 255
-    SetFontSize 40
+#Show
+#    Class "Currency"
+#    BaseType "Essence"
+#    SetTextColor 250 222 241 255
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.9 CURRENCY: Prophecy + Perandus + Breach
@@ -838,8 +834,11 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 3.3 HIDDEN
+# 3.3 HIDDEN + BACKUP
 #------------------------------------------------------------------------------
+Show
+    Identified = True
+    SetFontSize 40
 Hide
     SetBackgroundColor 017 017 017 140
 
