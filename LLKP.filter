@@ -220,8 +220,8 @@ Show
     SetFontSize 40
 Show
     Class "Microtransaction" "Doodad"
-    SetFontSize 40
     PlayAlertSound 3 300
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.6 LABYRINTH
