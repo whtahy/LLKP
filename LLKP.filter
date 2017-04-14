@@ -262,10 +262,10 @@ Show
     BaseType "Chisel" "Alchemy" "Fusing" "Regret" "Scouring"
     PlayAlertSound 2 280
     SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Jeweller" "Bauble" "Whetstone" "Alteration" "Chromatic" "Chance" "Transmutation" "Scrap" "Augmentation" "Wisdom" "Portal" "Fragment" "Shard"
-    SetFontSize 40
+#Show
+#    Class "Currency"
+#    BaseType "Jeweller" "Bauble" "Whetstone" "Alteration" "Chromatic" "Chance" "Transmutation" "Scrap" "Augmentation" "Wisdom" "Portal" "Fragment" "Shard"
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.8 CURRENCY: Essence
