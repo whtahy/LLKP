@@ -632,7 +632,6 @@ Show
     Rarity = Rare
     Height = 3
     Width = 1
-    ItemLevel >= 68
     DropLevel >= 60
     SetFontSize 40
 
