@@ -832,11 +832,11 @@ Show
 #------------------------------------------------------------------------------
 # 3.2 LEVELING: Rarity + DropLevel
 #------------------------------------------------------------------------------
-#Show
-#    Rarity = Normal
-#    ItemLevel <= 3
-#    ItemLevel >= 1
-#    SetFontSize 40
+Show
+    Rarity = Normal
+    ItemLevel <= 3
+    ItemLevel >= 1
+    SetFontSize 40
 #Show
 #    Rarity = Rare
 #    ItemLevel <= 44
