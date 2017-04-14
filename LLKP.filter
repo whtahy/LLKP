@@ -7,7 +7,7 @@
 #------------------------------------------------------------------------------
 # TODO
 #------------------------------------------------------------------------------
-# Tier lists for uniques + div cards
+# Tier list: uniques
 # GLANCE VALUE
 # Early / mid / late game versioning
 #------------------------------------------------------------------------------
@@ -25,7 +25,7 @@
 # 0.7 Currency: Crafting + Atlas
 # 0.8 Currency: Essence
 # 0.9 Currency: Prophey + Perandus + Breach
-# 1.0 Divination Cards
+# 1.0 Div Cards
 # 1.1 Gems
 # 1.2 Maps: Fragments + Breachstones
 # 1.3 Maps: T1 + T2 + T3
@@ -73,6 +73,7 @@
 # Jewels
 # Talismans
 # Recipe: 6S
+# Div Cards: Low
 #
 # MID:  PlayAlertSound 1 290
 #------------------------------------------------------------------------------
@@ -88,12 +89,14 @@
 # Gear: ilvl
 # Gear: Atlas Bases
 # Recipe: 6L
+# Div Cards: Mid
 #
 # HIGH: PlayAlertSound 3 300
 #------------------------------------------------------------------------------
 # Reliquary Key
 # Fishing Rod + MTX
 # Currency: Exalt
+# Div Cards: Top
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -319,8 +322,58 @@ Show
     SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 1.0 DIVINATION CARDS
+# 1.0 DIV CARDS
 #------------------------------------------------------------------------------
+Hide
+    Class "Divination Card"
+    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow"
+    BaseType "Struck by Lightning" "The Hermit" "Thunderous Skies"
+    BaseType "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born"
+    BaseType "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity"
+    BaseType "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris"
+    BaseType "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour"
+    BaseType "The Gemcutter" "The Warden" "The Scarred Meadow"
+    BaseType "Lantador's Lost Love" "The Watcher" "Call to the First Ones"
+    BaseType "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun"
+    BaseType "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble"
+    BaseType "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst"
+    BaseType "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm"
+    BaseType "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich"
+    BaseType "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish"
+    BaseType "Rain of Chaos" "The Oath" "Prosperity" "The Endurance"
+    BaseType "The Gentleman" "Rain Templar" "The Lord in Black" "Tranquility"
+    BaseType "The Avenger" "The Lover "The Sigil" "The Explorer"
+    BaseType "Birth of the Three" "The Doppleganger" "The Calling" "The Siren"
+    BaseType "The Conduit" "The Mercenary"
+    SetBackgroundColor 017 017 017 140
+Show
+    Class "Divination Card"
+    BaseType "House of Mirrors" "The Doctor" "The Fiend" "The Immortal"
+    BaseType "The Queen" "The Offering" "Abandoned Wealth" "The Dragon's Heart"
+    PlayAlertSound 3 300
+    SetFontSize 40
+Show
+    Class "Divination Card"
+    BaseType "Wealth and Power" "Mawr Blaidd" "The Spark and the Flame"
+    BaseType "Hunter's Reward" "The Last One Standing" "The Ethereal"
+    BaseType "The Artist" "Bowyer's Dream" "The Polymath" "The Saint's Treasure"
+    BaseType "The Celestial Justicar" "Last Hope" "The Thaumaturgist"
+    BaseType "The Hunger" "The Valkyrie" "The Sephirot" "The Enlightened"
+    BaseType "The Void" "The Brittle Emperor" "The Vast" "Pride Before the Fall"
+    BaseType "The Hoarder" "The King's Heart" "Lucky Deck" "Chaotic Disposition"
+    BaseType "The Aesthete" "The Fletcher" "Heterochromia" "The Cartographer"
+    BaseType "The Dapper Prodigy"
+    PlayAlertSound 1 290
+    SetFontSize 40
+Show
+    Class "Divination Card"
+    BaseType "The Valley of Steel Boxes" "The Risk" "The Porcupine"
+    BaseType "The Wolven King's Bite" "Lingering Remnants"
+    BaseType "The Chains that Bind" "The Stormcaller" "The Cursed King"
+    BaseType "The Standoff" "The Wretched" "The Warlord" "The Dark Mage"
+    BaseType "Scholar of the Seas" "The Tyrant" "Humility" "The Union"
+    PlayAlertSound 2 280
+    SetFontSize 40
 Show
     Class "Divination Card"
     SetFontSize 40
