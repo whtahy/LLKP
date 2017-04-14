@@ -349,6 +349,7 @@ Show
     PlayAlertSound 2 280
     SetFontSize 40
 Show
+    Class "Gem"
     BaseType "Added Chaos" "Detonate Mines" "Portal" "Cast when Damage Taken" "Clarity"
     SetFontSize 40
 Show
