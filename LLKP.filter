@@ -67,13 +67,12 @@
 # Quest
 # Labyrinth
 # Currency: Alchemy
+# Leaguestone
 # Breachstone
-# Maps: Red
 # Uniques + Unique Maps
 # Jewels
 # Talismans
 # Recipe: 6S
-# Leaguestone
 #
 # MID:  PlayAlertSound 1 290
 #------------------------------------------------------------------------------
@@ -85,6 +84,7 @@
 # Maps: Shaper
 # Maps: Uber Atziri
 # Maps: T16
+# Maps: Red
 # Gear: ilvl
 # Gear: Atlas Bases
 # Recipe: 6L
@@ -416,7 +416,7 @@ Show
     DropLevel >= 78
     SetTextColor 215 000 015 242
     SetBorderColor 255 255 255 241
-    PlayAlertSound 2 280
+    PlayAlertSound 1 290
     SetFontSize 40
 Show
     Class "Map"
