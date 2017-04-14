@@ -73,7 +73,6 @@
 # Jewels
 # Talismans
 # Recipe: 6S
-# Div Cards: Low
 # Gems: Empower etc
 #
 # MID:  PlayAlertSound 1 290
@@ -90,15 +89,14 @@
 # Gear: ilvl
 # Gear: Atlas Bases
 # Recipe: 6L
-# Div Cards: Mid
-# Gems: Mid
+# Div Cards: 1-40c
 #
 # HIGH: PlayAlertSound 3 300
 #------------------------------------------------------------------------------
 # Reliquary Key
 # Fishing Rod + MTX
 # Currency: Exalt
-# Div Cards: Top
+# Div Cards: 40c+
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -329,13 +327,8 @@ Show
     SetFontSize 40
 Show
     Class "Divination Card"
-    BaseType "Wealth and Power" "Mawr Blaidd" "The Spark and the Flame" "Hunter's Reward" "The Last One Standing" "The Ethereal" "The Artist" "Bowyer's Dream" "The Polymath" "The Saint's Treasure" "The Celestial Justicar" "Last Hope" "The Thaumaturgist" "The Hunger" "The Valkyrie" "The Sephirot" "The Enlightened" "The Void" "The Brittle Emperor" "The Vast" "Pride Before the Fall" "The Hoarder" "The King's Heart" "Lucky Deck" "Chaotic Disposition" "The Aesthete" "The Fletcher" "Heterochromia" "The Cartographer" "The Dapper Prodigy"
+    BaseType "Wealth and Power" "Mawr Blaidd" "The Spark and the Flame" "Hunter's Reward" "The Last One Standing" "The Ethereal" "The Artist" "Bowyer's Dream" "The Polymath" "The Saint's Treasure" "The Celestial Justicar" "Last Hope" "The Thaumaturgist" "The Hunger" "The Valkyrie" "The Sephirot" "The Enlightened" "The Void" "The Brittle Emperor" "The Vast" "Pride Before the Fall" "The Hoarder" "The King's Heart" "Lucky Deck" "Chaotic Disposition" "The Aesthete" "The Fletcher" "Heterochromia" "The Cartographer" "The Dapper Prodigy" "The Valley of Steel Boxes" "The Risk" "The Porcupine" "The Wolven King's Bite" "Lingering Remnants" "The Chains that Bind" "The Stormcaller" "The Cursed King" "The Standoff" "The Wretched" "The Warlord" "The Dark Mage" "Scholar of the Seas" "The Tyrant" "Humility" "The Union"
     PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Divination Card"
-    BaseType "The Valley of Steel Boxes" "The Risk" "The Porcupine" "The Wolven King's Bite" "Lingering Remnants" "The Chains that Bind" "The Stormcaller" "The Cursed King" "The Standoff" "The Wretched" "The Warlord" "The Dark Mage" "Scholar of the Seas" "The Tyrant" "Humility" "The Union"
-    PlayAlertSound 2 280
     SetFontSize 40
 Show
     Class "Divination Card"
