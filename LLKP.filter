@@ -74,6 +74,7 @@
 # Talismans
 # Recipe: 6S
 # Div Cards: Low
+# Gems: Empower etc
 #
 # MID:  PlayAlertSound 1 290
 #------------------------------------------------------------------------------
@@ -90,6 +91,7 @@
 # Gear: Atlas Bases
 # Recipe: 6L
 # Div Cards: Mid
+# Gems: Mid
 #
 # HIGH: PlayAlertSound 3 300
 #------------------------------------------------------------------------------
@@ -261,18 +263,10 @@ Show
     BaseType "Chisel" "Alchemy" "Fusing" "Regret" "Scouring"
     PlayAlertSound 2 280
     SetFontSize 40
-#Show
-#    Class "Currency"
-#    BaseType "Jeweller"
-#    BaseType "Bauble"
-#    BaseType "Whetstone"
-#    BaseType "Alteration" "Chromatic" "Chance"
-#    BaseType "Transmutation"
-#    BaseType "Scrap" "Augmentation"
-#    BaseType "Wisdom"
-#    BaseType "Portal"
-#    BaseType "Fragment" "Shard"
-#    SetFontSize 40
+Show
+    Class "Currency"
+    BaseType "Jeweller" "Bauble" "Whetstone" "Alteration" "Chromatic" "Chance" "Transmutation" "Scrap" "Augmentation" "Wisdom" "Portal" "Fragment" "Shard"
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.8 CURRENCY: Essence
@@ -326,52 +320,21 @@ Show
 #------------------------------------------------------------------------------
 Hide
     Class "Divination Card"
-    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow"
-    BaseType "Struck by Lightning" "The Hermit" "Thunderous Skies"
-    BaseType "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born"
-    BaseType "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity"
-    BaseType "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris"
-    BaseType "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour"
-    BaseType "The Gemcutter" "The Warden" "The Scarred Meadow"
-    BaseType "Lantador's Lost Love" "The Watcher" "Call to the First Ones"
-    BaseType "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun"
-    BaseType "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble"
-    BaseType "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst"
-    BaseType "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm"
-    BaseType "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich"
-    BaseType "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish"
-    BaseType "Rain of Chaos" "The Oath" "Prosperity" "The Endurance"
-    BaseType "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquility"
-    BaseType "The Avenger" "The Lover" "The Sigil" "The Explorer"
-    BaseType "Birth of the Three" "The Doppleganger" "The Calling" "The Siren"
-    BaseType "The Conduit" "The Mercenary"
+    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquility" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppleganger" "The Calling" "The Siren" "The Conduit" "The Mercenary"
     SetBackgroundColor 017 017 017 140
 Show
     Class "Divination Card"
-    BaseType "House of Mirrors" "The Doctor" "The Fiend" "The Immortal"
-    BaseType "The Queen" "The Offering" "Abandoned Wealth" "The Dragon's Heart"
+    BaseType "House of Mirrors" "The Doctor" "The Fiend" "The Immortal" "The Queen" "The Offering" "Abandoned Wealth" "The Dragon's Heart"
     PlayAlertSound 3 300
     SetFontSize 40
 Show
     Class "Divination Card"
-    BaseType "Wealth and Power" "Mawr Blaidd" "The Spark and the Flame"
-    BaseType "Hunter's Reward" "The Last One Standing" "The Ethereal"
-    BaseType "The Artist" "Bowyer's Dream" "The Polymath" "The Saint's Treasure"
-    BaseType "The Celestial Justicar" "Last Hope" "The Thaumaturgist"
-    BaseType "The Hunger" "The Valkyrie" "The Sephirot" "The Enlightened"
-    BaseType "The Void" "The Brittle Emperor" "The Vast" "Pride Before the Fall"
-    BaseType "The Hoarder" "The King's Heart" "Lucky Deck" "Chaotic Disposition"
-    BaseType "The Aesthete" "The Fletcher" "Heterochromia" "The Cartographer"
-    BaseType "The Dapper Prodigy"
+    BaseType "Wealth and Power" "Mawr Blaidd" "The Spark and the Flame" "Hunter's Reward" "The Last One Standing" "The Ethereal" "The Artist" "Bowyer's Dream" "The Polymath" "The Saint's Treasure" "The Celestial Justicar" "Last Hope" "The Thaumaturgist" "The Hunger" "The Valkyrie" "The Sephirot" "The Enlightened" "The Void" "The Brittle Emperor" "The Vast" "Pride Before the Fall" "The Hoarder" "The King's Heart" "Lucky Deck" "Chaotic Disposition" "The Aesthete" "The Fletcher" "Heterochromia" "The Cartographer" "The Dapper Prodigy"
     PlayAlertSound 1 290
     SetFontSize 40
 Show
     Class "Divination Card"
-    BaseType "The Valley of Steel Boxes" "The Risk" "The Porcupine"
-    BaseType "The Wolven King's Bite" "Lingering Remnants"
-    BaseType "The Chains that Bind" "The Stormcaller" "The Cursed King"
-    BaseType "The Standoff" "The Wretched" "The Warlord" "The Dark Mage"
-    BaseType "Scholar of the Seas" "The Tyrant" "Humility" "The Union"
+    BaseType "The Valley of Steel Boxes" "The Risk" "The Porcupine" "The Wolven King's Bite" "Lingering Remnants" "The Chains that Bind" "The Stormcaller" "The Cursed King" "The Standoff" "The Wretched" "The Warlord" "The Dark Mage" "Scholar of the Seas" "The Tyrant" "Humility" "The Union"
     PlayAlertSound 2 280
     SetFontSize 40
 Show
@@ -388,11 +351,11 @@ Show
 #------------------------------------------------------------------------------
 Show
     Class "Gem"
-    BaseType "Empower" "Enhance" "Enlighten"
-    BaseType "Added Chaos" "Detonate Mines" "Portal"
-    BaseType "Item Quantity"
-    BaseType "Cast when Damage Taken"
-    BaseType "Clarity"
+    BaseType "Empower" "Enhance" "Enlighten" "Item Quantity"
+    PlayAlertSound 2 280
+    SetFontSize 40
+Show
+    BaseType "Added Chaos" "Detonate Mines" "Portal" "Cast when Damage Taken" "Clarity"
     SetFontSize 40
 Show
     Class "Gem"
@@ -616,9 +579,7 @@ Show
     SetFontSize 40
 #Show
 #    Rarity = Rare
-#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet"
-#    BaseType "Prophet Crown" "Praetor Crown"
-#    BaseType "Vaal Mask" "Deicide Mask"
+#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Vaal Mask" "Deicide Mask"
 #    SetFontSize 40
 Show
     Rarity = Rare
@@ -640,15 +601,12 @@ Show
 #------------------------------------------------------------------------------
 Show
     ItemLevel >= 84
-    BaseType "Bone Helmet"
-    BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
-    BaseType "Two-Toned Boots"
+    BaseType "Bone Helmet" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Two-Toned Boots"
     SetTextColor 200 247 197 255
     PlayAlertSound 1 290
     SetFontSize 40
 Show
-    BaseType "Sacrificial Garb"
-    BaseType "Steel Ring" "Opal Ring" "Crystal Belt"
+    BaseType "Sacrificial Garb" "Steel Ring" "Opal Ring" "Crystal Belt"
     SetTextColor 200 247 197 255
     PlayAlertSound 1 290
     SetFontSize 40
