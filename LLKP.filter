@@ -492,18 +492,18 @@ Show
     Rarity = Rare
     BaseType "Vaal Regalia" "Widowsilk Robe" "Occultist's Vestment"
     SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Triumphant Lamellar" "General's Brigandine" "Full Dragonscale"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Saintly Chainmail" "Saint's Hauberk"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Carnal Armour" "Sadist Garb"
-#    SetFontSize 40
+Hide
+    Rarity = Rare
+    BaseType "Triumphant Lamellar" "General's Brigandine" "Full Dragonscale"
+    SetFontSize 40
+Hide
+    Rarity = Rare
+    BaseType "Saintly Chainmail" "Saint's Hauberk"
+    SetFontSize 40
+Hide
+    Rarity = Rare
+    BaseType "Carnal Armour" "Sadist Garb"
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 1.9 RARES: Shields
@@ -538,15 +538,15 @@ Show
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
-    BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
+    BaseType "Two-Toned Boots"
     SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
-#    SetFontSize 40
 Show
     Rarity = Rare
-    BaseType "Two-Toned Boots"
+    BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
+    SetFontSize 40
+Hide
+    Rarity = Rare
+    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -554,15 +554,15 @@ Show
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
-    BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
+    BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
     SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
-#    SetFontSize 40
 Show
     Rarity = Rare
-    BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+    BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
+    SetFontSize 40
+Hide
+    Rarity = Rare
+    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -570,15 +570,15 @@ Show
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
-    BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet"
+    BaseType "Bone Helmet"
     SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Vaal Mask" "Deicide Mask"
-#    SetFontSize 40
 Show
     Rarity = Rare
-    BaseType "Bone Helmet"
+    BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet"
+    SetFontSize 40
+Hide
+    Rarity = Rare
+    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Vaal Mask" "Deicide Mask"
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -595,13 +595,13 @@ Show
 # 2.4 BASES: ilvl + Atlas
 #------------------------------------------------------------------------------
 Show
-    ItemLevel >= 84
-    BaseType "Bone Helmet" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Two-Toned Boots"
+    BaseType "Sacrificial Garb" "Steel Ring" "Opal Ring" "Crystal Belt"
     SetTextColor 200 247 197 255
     PlayAlertSound 1 290
     SetFontSize 40
 Show
-    BaseType "Sacrificial Garb" "Steel Ring" "Opal Ring" "Crystal Belt"
+    ItemLevel >= 84
+    BaseType "Bone Helmet" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Two-Toned Boots"
     SetTextColor 200 247 197 255
     PlayAlertSound 1 290
     SetFontSize 40
@@ -670,7 +670,6 @@ Show
 #    SetFontSize 40
 #Show
 #    Class "Utility Flask"
-#    ItemLevel < 78
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
