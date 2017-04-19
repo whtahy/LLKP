@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# LLKP FILTER v2.6d
+# LLKP FILTER v2.6e
 #------------------------------------------------------------------------------
 # LONG LIVE KAIPI!
 # Updated for Patch 2.6 Legacy
@@ -63,18 +63,23 @@
 # 0.1 SETTINGS: Sound
 #------------------------------------------------------------------------------
 #
-# LOW:  PlayAlertSound 2 280
+# MISC: PlayAlertSound 3 250
+#------------------------------------------------------------------------------
+# Leaguestone: White + low ilvl
+#
+# LOW:  PlayAlertSound 2 250
 #------------------------------------------------------------------------------
 # Quest
 # Labyrinth
 # Currency: Alchemy
-# Leaguestone
+# Leaguestone: Breach + Magic
 # Breachstone
 # Uniques + Unique Maps
 # Jewels
 # Talismans
 # Recipe: 6S
 # Gems: Empower etc
+# Div Cards: 1c
 #
 # MID:  PlayAlertSound 1 290
 #------------------------------------------------------------------------------
@@ -90,9 +95,9 @@
 # Gear: ilvl
 # Gear: Atlas Bases
 # Recipe: 6L
-# Div Cards: 1-40c
+# Div Cards: 2-40c
 #
-# HIGH: PlayAlertSound 3 300
+# HIGH: PlayAlertSound 5 300
 #------------------------------------------------------------------------------
 # Reliquary Key
 # Fishing Rod + MTX
@@ -185,7 +190,7 @@
 #     SetBackgroundColor 004 034 011 240
 #------------------------------------------------------------------------------
 # Hidden
-#     SetBackgroundColor 017 017 017 140
+#     SetBackgroundColor 017 017 017 40
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -196,15 +201,28 @@
 # 0.4 CURRENT LEAGUE
 #------------------------------------------------------------------------------
 Show
-    Class "Leaguestone"
-    SetTextColor 000 133 222 255
-    PlayAlertSound 2 280
-    SetFontSize 40
-Show
     BaseType "Ancient Reliquary Key"
     SetTextColor 207 000 015 255
     SetBackgroundColor 255 255 255 253
-    PlayAlertSound 3 300
+    PlayAlertSound 5 300
+    SetFontSize 40
+Show
+    Class "Leaguestone"
+    ItemLevel >= 68
+    BaseType "Breach"
+    SetTextColor 000 133 222 255
+    PlayAlertSound 2 250
+    SetFontSize 40
+Show
+    Class "Leaguestone"
+    Rarity >= Magic
+    ItemLevel >= 68
+    SetTextColor 000 133 222 255
+    PlayAlertSound 2 250
+    SetFontSize 40
+Show
+    Class "Leaguestone"
+    SetTextColor 000 133 222 255
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -214,14 +232,14 @@ Show
     Class "Fishing Rod"
     SetTextColor 074 230 058 255
     SetFontSize 40
-    PlayAlertSound 3 300
+    PlayAlertSound 5 300
 Show
     Class "Quest"
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Microtransaction" "Doodad"
-    PlayAlertSound 3 300
+    PlayAlertSound 5 300
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -230,7 +248,7 @@ Show
 Show
     Class "Labyrinth"
     SetTextColor 074 230 058 255
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -241,7 +259,7 @@ Show
     BaseType "Mirror" "Rhoa" "Eternal" "Imprint" "Exalted"
     SetTextColor 207 000 015 255
     SetBackgroundColor 255 255 255 253
-    PlayAlertSound 3 300
+    PlayAlertSound 5 300
     SetFontSize 40
 Show
     Class "Currency"
@@ -260,12 +278,12 @@ Show
 Show
     Class "Currency"
     BaseType "Chisel" "Alchemy" "Fusing" "Regret" "Scouring"
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
-#Show
-#    Class "Currency"
-#    BaseType "Jeweller" "Bauble" "Whetstone" "Alteration" "Chromatic" "Chance" "Transmutation" "Scrap" "Augmentation" "Wisdom" "Portal" "Fragment" "Shard"
-#    SetFontSize 40
+Hide
+    Class "Currency"
+    BaseType "Jeweller" "Bauble" "Whetstone" "Alteration" "Chromatic" "Chance" "Transmutation" "Scrap" "Augmentation" "Wisdom" "Portal" "Fragment" "Shard"
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.8 CURRENCY: Essence
@@ -282,11 +300,11 @@ Show
     SetTextColor 255 178 186 255
     PlayAlertSound 1 290
     SetFontSize 40
-#Show
-#    Class "Currency"
-#    BaseType "Essence"
-#    SetTextColor 250 222 241 255
-#    SetFontSize 40
+Hide
+    Class "Currency"
+    BaseType "Essence"
+    SetTextColor 250 222 241 255
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 0.9 CURRENCY: Prophecy + Perandus + Breach
@@ -319,12 +337,12 @@ Show
 #------------------------------------------------------------------------------
 Hide
     Class "Divination Card"
-    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquillity" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppelganger" "The Calling" "The Siren" "The Conduit" "The Mercenary"
-    SetBackgroundColor 017 017 017 140
+    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquillity" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppelganger" "The Calling" "The Siren" "The Conduit" "The Mercenary" "Road to Power" "The Wind" "The Throne" "The Encroaching Darkness" "The Arena Champion" "The Fox" "The Demoness" "Three Faces in the Dark"
+    SetBackgroundColor 017 017 017 40
 Show
     Class "Divination Card"
     BaseType "House of Mirrors" "The Doctor" "The Fiend" "The Immortal" "The Queen" "The Offering" "Abandoned Wealth" "The Dragon's Heart"
-    PlayAlertSound 3 300
+    PlayAlertSound 5 300
     SetFontSize 40
 Show
     Class "Divination Card"
@@ -333,6 +351,7 @@ Show
     SetFontSize 40
 Show
     Class "Divination Card"
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Currency"
@@ -346,7 +365,7 @@ Show
 Show
     Class "Gem"
     BaseType "Empower" "Enhance" "Enlighten" "Item Quantity"
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Gem"
@@ -402,7 +421,7 @@ Show
     BaseType "Breachstone"
     SetTextColor 102 051 153 255
     SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -412,7 +431,7 @@ Show
     Class "Map"
     Rarity = Unique
     SetBorderColor 255 255 255 240
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     Class "Map"
@@ -435,19 +454,19 @@ Show
     SetTextColor 245 215 110 242
     SetBorderColor 255 255 255 241
     SetFontSize 40
-Show
-    Class "Map"
-    DropLevel >= 0
-    SetTextColor 236 236 236 242
-    SetBorderColor 255 255 255 241
-    SetFontSize 40
+#Show
+#    Class "Map"
+#    DropLevel >= 1
+#    SetTextColor 236 236 236 242
+#    SetBorderColor 255 255 255 241
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 1.4 UNIQUES
 #------------------------------------------------------------------------------
 Show
     Rarity = Unique
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -457,7 +476,7 @@ Show
     Class "Jewel"
     SetTextColor 238 238 238 255
     SetBackgroundColor 034 049 105 240
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -466,7 +485,7 @@ Show
 Show
     Class "Amulet"
     BaseType "Talisman"
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 
 #------------------------------------------------------------------------------
@@ -627,12 +646,12 @@ Show
     Sockets = 6
     SetTextColor 238 238 238 255
     SetBackgroundColor 160 160 160 200
-    PlayAlertSound 2 280
+    PlayAlertSound 2 250
     SetFontSize 40
 Show
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
     Rarity = Normal
-    Quality >= 0
+    Quality >= 15
     ItemLevel >= 68
     SetTextColor 238 238 238 255
     SetBackgroundColor 160 160 160 200
@@ -825,7 +844,7 @@ Show
 Show
     Identified True
 Hide
-    SetBackgroundColor 017 017 017 140
+    SetBackgroundColor 017 017 017 40
 
 #------------------------------------------------------------------------------
 # 3.4 REFERENCE
