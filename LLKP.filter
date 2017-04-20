@@ -337,7 +337,7 @@ Show
 #------------------------------------------------------------------------------
 Hide
     Class "Divination Card"
-    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquillity" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppelganger" "The Calling" "The Siren" "The Conduit" "The Mercenary" "Road to Power" "The Wind" "The Throne" "The Encroaching Darkness" "The Arena Champion" "The Fox" "The Demoness" "Three Faces in the Dark"
+    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquillity" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppelganger" "The Calling" "The Siren" "The Conduit" "The Mercenary" "Road to Power" "The Wind" "The Throne" "The Encroaching Darkness" "The Arena Champion" "The Fox" "The Demoness" "Three Faces in the Dark" "The Flora's Gift"
     SetBackgroundColor 017 017 017 40
 Show
     Class "Divination Card"
@@ -380,10 +380,10 @@ Show
     Quality >= 20
     PlayAlertSound 1 290
     SetFontSize 40
-#Show
-#    Class "Gem"
-#    DropLevel >= 34
-#    SetFontSize 40
+Hide
+    Class "Gem"
+    DropLevel >= 34
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 1.2 MAPS: Fragments + Breachstones
@@ -503,7 +503,7 @@ Show
     Rarity = Rare
     BaseType "Glorious Plate" "Astral Plate"
     SetFontSize 40
-Show
+Hide
     Rarity = Rare
     BaseType "Assassin's Garb" "Zodiac Leather"
     SetFontSize 40
