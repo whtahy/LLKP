@@ -190,7 +190,7 @@
 #     SetBackgroundColor 004 034 011 240
 #------------------------------------------------------------------------------
 # Hidden
-#     SetBackgroundColor 017 017 017 40
+#     SetBackgroundColor 017 017 017 040
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -338,7 +338,7 @@ Show
 Hide
     Class "Divination Card"
     BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquillity" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppelganger" "The Calling" "The Siren" "The Conduit" "The Mercenary" "Road to Power" "The Wind" "The Throne" "The Encroaching Darkness" "The Arena Champion" "The Fox" "The Demoness" "Three Faces in the Dark" "The Flora's Gift"
-    SetBackgroundColor 017 017 017 40
+    SetBackgroundColor 017 017 017 040
 Show
     Class "Divination Card"
     BaseType "House of Mirrors" "The Doctor" "The Fiend" "The Immortal" "The Queen" "The Offering" "Abandoned Wealth" "The Dragon's Heart"
@@ -454,12 +454,12 @@ Show
     SetTextColor 245 215 110 242
     SetBorderColor 255 255 255 241
     SetFontSize 40
-#Show
-#    Class "Map"
-#    DropLevel >= 1
-#    SetTextColor 236 236 236 242
-#    SetBorderColor 255 255 255 241
-#    SetFontSize 40
+Hide
+    Class "Map"
+    DropLevel >= 1
+    SetTextColor 236 236 236 242
+    SetBorderColor 255 255 255 241
+    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 1.4 UNIQUES
@@ -503,26 +503,26 @@ Show
     Rarity = Rare
     BaseType "Glorious Plate" "Astral Plate"
     SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Assassin's Garb" "Zodiac Leather"
-    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Assassin's Garb" "Zodiac Leather"
+#    SetFontSize 40
 Show
     Rarity = Rare
     BaseType "Vaal Regalia" "Widowsilk Robe" "Occultist's Vestment"
     SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Triumphant Lamellar" "General's Brigandine" "Full Dragonscale"
-    SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Saintly Chainmail" "Saint's Hauberk"
-    SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Carnal Armour" "Sadist Garb"
-    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Triumphant Lamellar" "General's Brigandine" "Full Dragonscale"
+#    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Saintly Chainmail" "Saint's Hauberk"
+#    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Carnal Armour" "Sadist Garb"
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 1.9 RARES: Shields
@@ -563,10 +563,10 @@ Show
     Rarity = Rare
     BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
     SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
-    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 2.1 RARES: Gloves
@@ -579,10 +579,10 @@ Show
     Rarity = Rare
     BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
     SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
-    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 2.2 RARES: Helmets
@@ -595,10 +595,10 @@ Show
     Rarity = Rare
     BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet"
     SetFontSize 40
-Hide
-    Rarity = Rare
-    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Vaal Mask" "Deicide Mask"
-    SetFontSize 40
+#Show
+#    Rarity = Rare
+#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Vaal Mask" "Deicide Mask"
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 2.3 RARES: Weapons + Quivers
@@ -844,7 +844,7 @@ Show
 Show
     Identified True
 Hide
-    SetBackgroundColor 017 017 017 40
+    SetBackgroundColor 017 017 017 040
 
 #------------------------------------------------------------------------------
 # 3.4 REFERENCE
