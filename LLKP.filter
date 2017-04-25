@@ -95,14 +95,14 @@
 # Gear: ilvl
 # Gear: Atlas Bases
 # Recipe: 6L
-# Div Cards: 2-40c
+# Div Cards: 2-60c
 #
 # HIGH: PlayAlertSound 5 300
 #------------------------------------------------------------------------------
 # Reliquary Key
 # Fishing Rod + MTX
 # Currency: Exalt
-# Div Cards: 40c+
+# Div Cards: Exalt
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -337,16 +337,16 @@ Show
 #------------------------------------------------------------------------------
 Hide
     Class "Divination Card"
-    BaseType "The Metalsmith's Gift" "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Hermit" "Thunderous Skies" "Turn the Other Cheek" "Cartographer's Delight" "The Battle Born" "The Betrayal" "Anarchy's Price" "The Inoculated" "Audacity" "The Visionary" "The Twins" "Volatile Power" "The Web" "Hubris" "Death" "Light and Truth" "The Wolf's Shadow" "Assassin's Favour" "The Gemcutter" "The Warden" "The Scarred Meadow" "Lantador's Lost Love" "The Watcher" "Call to the First Ones" "The Wolverine" "Might is Right" "The Tower" "The Feast" "The Sun" "The Gladiator" "Loyalty" "The Incantation" "Destined to Crumble" "The Lion" "The Scholar" "Rats" "Shard of Fate" "The Catalyst" "Mitts" "The Pack Leader" "Doedre's Madness" "The Coming Storm" "The Summoner" "The Lunaris Priestess" "Blind Venture" "The Lich" "The Surgeon" "The Rabid Rhoa" "Hunter's Resolve" "Dying Anguish" "Rain of Chaos" "The Oath" "Prosperity" "The Endurance" "The Gentleman" "Rain Tempter" "The Lord in Black" "Tranquillity" "The Avenger" "The Lover" "The Sigil" "The Explorer" "Birth of the Three" "The Doppelganger" "The Calling" "The Siren" "The Conduit" "The Mercenary" "Road to Power" "The Wind" "The Throne" "The Encroaching Darkness" "The Arena Champion" "The Fox" "The Demoness" "Three Faces in the Dark" "The Flora's Gift"
+    BaseType "Treasure Hunter" "The Fox" "The Road to Power" "The Dragon" "The Encroaching Darkness" "The Spoiled Prince" "Grave Knowledge" "The One With All" "Gift of the Gemling Queen" "The Battle Born" "The Avenger" "The Harvester" "The Throne" "The Arena Champion" "The Garish Power" "The Conduit" "The Opulent" "The Summoner" "Three Faces in the Dark" "The Siren" "The Demoness" "The Calling" "The Watcher" "Birth of the Three" "The Explorer" "The Sigil" "The Scavenger" "Tranquillity" "The Pact" "The Lord in Black" "The Mercenary" "Rain Tempter" "The Hermit" "Prosperity" "The Oath" "Rain of Chaos" "Dying Anguish" "Hunter's Resolve" "The Rabid Rhoa" "The Surgeon" "The Lich" "The King's Blade" "Blind Venture" "Struck by Lightning" "The Gambler" "The Coming Storm" "Doedre's Madness" "The Pack Leader" "The Catalyst" "Mitts" "The Scholar" "Rats" "Shard of Fate" "The Lion" "Destined to Crumble" "The Incantation" "Loyalty" "The Gladiator" "The Sun" "The Penitent" "The Feast" "The Tower" "Might is Right" "The Wolverine" "Call to the First Ones" "The Drunken Aristocrat" "Turn the Other Cheek" "The Traitor" "Her Mask" "Lantador's Lost Love" "The Scarred Meadow" "Boundless Realms" "The Gemcutter" "Assassin's Favour" "The Doppelganger" "The Wolf's Shadow" "Light and Truth" "Hubris" "Death" "Thunderous Skies" "Coveted Possession" "Audacity" "Anarchy's Price" "The Lover" "The Carrion Crow" "Volatile Power" "The Gentleman" "The Endurance" "The Metalsmith's Gift" "The Warden" "The Visionary" "The Inoculated" "The Betrayal" "The Twins" "The Lunaris Priestess" "The Web" "Cartographer's Delight" "The Flora's Gift"
     SetBackgroundColor 017 017 017 040
 Show
     Class "Divination Card"
-    BaseType "House of Mirrors" "The Doctor" "The Fiend" "The Immortal" "The Queen" "The Offering" "Abandoned Wealth" "The Dragon's Heart"
+    BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Immortal" "The Queen"
     PlayAlertSound 5 300
     SetFontSize 40
 Show
     Class "Divination Card"
-    BaseType "Wealth and Power" "Mawr Blaidd" "The Spark and the Flame" "Hunter's Reward" "The Last One Standing" "The Ethereal" "The Artist" "Bowyer's Dream" "The Polymath" "The Saint's Treasure" "The Celestial Justicar" "Last Hope" "The Thaumaturgist" "The Hunger" "The Valkyrie" "The Sephirot" "The Enlightened" "The Void" "The Brittle Emperor" "The Vast" "Pride Before the Fall" "The Hoarder" "The King's Heart" "Lucky Deck" "Chaotic Disposition" "The Aesthete" "The Fletcher" "Heterochromia" "The Cartographer" "The Dapper Prodigy" "The Valley of Steel Boxes" "The Risk" "The Porcupine" "The Wolven King's Bite" "Lingering Remnants" "The Chains that Bind" "The Stormcaller" "The Cursed King" "The Standoff" "The Wretched" "The Warlord" "The Dark Mage" "Scholar of the Seas" "The Tyrant" "Humility" "The Union"
+    BaseType "Abandoned Wealth" "The Offering" "The Dragon's Heart" "Wealth and Power" "The Spark and the Flame" "The Celestial Justicar" "The Ethereal" "Bowyer's Dream" "Hunter's Reward" "The Last One Standing" "The Polymath" "The Artist" "The Saint's Treasure" "The Thaumaturgist" "Last Hope" "The Sephirot" "The Valkyrie" "The Hunger" "The Enlightened" "The Void" "The Brittle Emperor" "The Vast" "The Hoarder" "The King's Heart" "Pride Before the Fall" "Chaotic Disposition" "The Valley of Steel Boxes" "Lucky Deck" "The Cartographer" "The Aesthete" "The Dapper Prodigy" "Heterochromia" "The Stormcaller" "The Porcupine" "The Risk" "The Cursed King" "The Wolven King's Bite" "Time-Lost Relic" "Emperor of Purity" "Merciless Armament" "The Standoff" "The Wretched" "The Warlord"
     PlayAlertSound 1 290
     SetFontSize 40
 Show
@@ -601,7 +601,7 @@ Show
 #    SetFontSize 40
 
 #------------------------------------------------------------------------------
-# 2.3 RARES: Weapons + Quivers
+# 2.3 RARES: Weapons
 #------------------------------------------------------------------------------
 Show
     Rarity = Rare
