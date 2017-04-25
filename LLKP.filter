@@ -634,10 +634,10 @@ Show
     SetBackgroundColor 250 250 250 240
     PlayAlertSound 1 290
     SetFontSize 40
-Show
-    LinkedSockets = 5
-    DropLevel >= 60
-    SetFontSize 40
+#Show
+#    LinkedSockets = 5
+#    DropLevel >= 60
+#    SetFontSize 40
 
 #------------------------------------------------------------------------------
 # 2.6 RECIPES: 6S etc
