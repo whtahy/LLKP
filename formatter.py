@@ -1,4 +1,5 @@
-import fileinput, re
+import fileinput
+import re
 
 
 def toc(file='LLKP.filter',
@@ -16,7 +17,7 @@ def toc(file='LLKP.filter',
                 index = index_start
                 restart = True
             if pattern.match(line):
-                index_str = str(index/10).zfill(digits)
+                index_str = str(index / 10).zfill(digits)
                 line = pattern.sub(replacement.format(index_str), line)
                 index += 1
             print(line, end='')
