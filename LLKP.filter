@@ -1,945 +1,395 @@
-#------------------------------------------------------------------------------
-# LLKP FILTER v2.6e
-#------------------------------------------------------------------------------
-# LONG LIVE KAIPI!
-# Updated for Patch 2.6 Legacy
-#------------------------------------------------------------------------------
+# LLKP
+# Updated for Patch 3.6 Synthesis
 
-#------------------------------------------------------------------------------
 # TODO
-#------------------------------------------------------------------------------
-# "DisableDropSound"
-# Tier list: uniques
-# GLANCE VALUE
-# Early / mid / late game versioning/tiering
-#------------------------------------------------------------------------------
+# Table of Contents
+# Font size
 
-#------------------------------------------------------------------------------
-# TABLE OF CONTENTS
-#------------------------------------------------------------------------------
-# 0.0 Settings: Font Size
-# 0.1 Settings: Sound
-# 0.2 Settings: Color
-# 0.3 Exceptions
-# 0.4 Current League
-# 0.5 Misc: Quest + Fishing + MTX
-# 0.6 Labyrinth
-# 0.7 Currency: Crafting + Atlas
-# 0.8 Currency: Essence
-# 0.9 Currency: Prophey + Perandus + Breach
-# 1.0 Div Cards
-# 1.1 Gems
-# 1.2 Maps: Fragments + Breachstones
-# 1.3 Maps: T1 + T2 + T3
-# 1.4 Uniques
-# 1.5 Jewels
-# 1.6 Talismans
-# 1.7 Rares: RAB
-# 1.8 Rares: Chests
-# 1.9 Rares: Shields
-# 2.0 Rares: Boots
-# 2.1 Rares: Gloves
-# 2.2 Rares: Helms
-# 2.3 Rares: Weapon
-# 2.4 Bases: ilvl + Atlas
-# 2.5 Link: 5L + 6L
-# 2.6 Recipes: 6S etc
-# 2.7 Flasks
-# 2.8 Leveling: Life + Mana Flasks
-# 2.9 Leveling: Hybrid Flasks
-# 3.0 Leveling: 3L + 4L
-# 3.1 Leveling: RAB
-# 3.2 Leveling: Rarity + DropLevel
-# 3.3 Hidden + Backup
-# 3.4 Reference
-#------------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-# 0.0 SETTINGS: Font Size
-#------------------------------------------------------------------------------
-# SetFontSize 40
-#------------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-# 0.1 SETTINGS: Sound
-#------------------------------------------------------------------------------
-#
-# MISC: PlayAlertSound 3 250
-#------------------------------------------------------------------------------
-# Leaguestone: White + low ilvl
-#
-# LOW:  PlayAlertSound 2 250
-#------------------------------------------------------------------------------
-# Quest
-# Labyrinth
-# Currency: Alchemy
-# Leaguestone: Breach + Magic
-# Breachstone
-# Uniques + Unique Maps
-# Jewels
-# Talismans
-# Recipe: 6S
-# Gems: Empower etc
-# Div Cards: 1c
-#
-# MID:  PlayAlertSound 1 290
-#------------------------------------------------------------------------------
-# Currency: Atlas
-# Currency: Chaos
-# Essence: Corruption
-# Essence: T5
-# Breach: Blessing
-# Maps: Shaper
-# Maps: Uber Atziri
-# Maps: T16
-# Maps: Red
-# Gear: ilvl
-# Gear: Atlas Bases
-# Recipe: 6L
-# Div Cards: 2-60c
-#
-# HIGH: PlayAlertSound 5 300
-#------------------------------------------------------------------------------
-# Reliquary Key
-# Fishing Rod + MTX
-# Currency: Exalt
-# Div Cards: Exalt
-#------------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-# 0.2 SETTINGS: Color
-#------------------------------------------------------------------------------
-#
-# DEFAULT
-#------------------------------------------------------------------------------
-# Quest
-# MTX
-# Div Card
-# Currency: Alchemy + Alteration + Wisdom etc
-# Gems
-# Rares
+# REFRESH
+# Divination Cards
 # Uniques
-# Talismans
-# Leveling
-#
-# MODIFIED
-#------------------------------------------------------------------------------
-# Reliquary Key + Currency: Exalt
-#     SetTextColor 207 000 015 255
-#     SetBackgroundColor 255 255 255 253
-# Currency: Atlas + Chaos + 6S
-#     SetTextColor 130 096 037 255
-#     SetBackgroundColor 250 250 250 240
-# Breachstone
-#     SetTextColor 102 051 153 255
-#     SetBackgroundColor 250 250 250 240
-# Breach: Blessing
-#     SetTextColor 238 238 238 255
-#     SetBackgroundColor 065 020 080 240
-#------------------------------------------------------------------------------
-# Maps: Unique
-#     SetBorderColor 255 255 255 240
-# Maps: Atziri + Pale Council
-#     SetBorderColor 255 255 255 241
-#     SetBackgroundColor 110 000 000 240
-# Maps: T16 + Shaper + Uber Atziri
-#     SetTextColor 170 000 000 255
-#     SetBorderColor 000 000 000 000
-#     SetBackgroundColor 250 250 250 240
-#------------------------------------------------------------------------------
-# Maps: T1
-#     SetTextColor 236 236 236 242
-#     SetBorderColor 255 255 255 241
-# Maps: Yellow
-#     SetTextColor 245 215 110 242
-#     SetBorderColor 255 255 255 241
-# Maps: Red
-#     SetTextColor 215 000 015 242
-#     SetBorderColor 255 255 255 241
-#------------------------------------------------------------------------------
-# 6L
-#     SetTextColor 130 096 037 255
-#     SetBackgroundColor 250 250 250 240
-# Jewels
-#     SetTextColor 238 238 238 255
-#     SetBackgroundColor 034 049 105 240
-# Recipes: RGB etc
-#     SetTextColor 238 238 238 255
-#     SetBackgroundColor 160 160 160 200
-#------------------------------------------------------------------------------
-# Gear: ilvl + Atlas Bases
-#     SetTextColor 200 247 197 255
-# Leaguestone
-#     SetTextColor 000 133 222 255
-# Prophecy
-#     SetTextColor 149 165 200 255
-# Perandus
-#     SetTextColor 244 179 080 255
-# Breach: Splinter
-#     SetTextColor 166 090 255 255
-# Fishing Rod + Labyrinth
-#     SetTextColor 074 230 058 255
-#------------------------------------------------------------------------------
-# Essence: Corruption
-#     SetTextColor 255 013 152 255
-# Essence: T5
-#     SetTextColor 255 178 186 255
-# Essence: T1
-#     SetTextColor 250 222 241 255
-#------------------------------------------------------------------------------
-# Talismans
-#     SetBackgroundColor 004 034 011 240
-#------------------------------------------------------------------------------
-# Hidden
-#     SetBackgroundColor 017 017 017 040
-#------------------------------------------------------------------------------
+# Identified Items
 
-#------------------------------------------------------------------------------
-# 0.3 EXCEPTIONS
-#------------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 0.4 CURRENT LEAGUE
-#------------------------------------------------------------------------------
-Show
-    BaseType "Ancient Reliquary Key"
-    SetTextColor 207 000 015 255
-    SetBackgroundColor 255 255 255 253
-    PlayAlertSound 5 300
-    SetFontSize 40
-Show
-    Class "Leaguestone"
-    ItemLevel >= 68
-    BaseType "Breach"
-    SetTextColor 000 133 222 255
-    PlayAlertSound 2 250
-    SetFontSize 40
-Show
-    Class "Leaguestone"
-    Rarity >= Magic
-    ItemLevel >= 68
-    SetTextColor 000 133 222 255
-    PlayAlertSound 2 250
-    SetFontSize 40
-Show
-    Class "Leaguestone"
-    SetTextColor 000 133 222 255
-    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 0.5 MISC: Quest + Fishing + MTX
-#------------------------------------------------------------------------------
-Show
-    Class "Fishing Rod"
-    SetTextColor 074 230 058 255
-    SetFontSize 40
-    PlayAlertSound 5 300
-Show
-    Class "Quest"
-    PlayAlertSound 2 250
-    SetFontSize 40
-Show
-    Class "Microtransaction" "Doodad"
-    PlayAlertSound 5 300
-    SetFontSize 40
+# Chaos Recipe -----------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 0.6 LABYRINTH
-#------------------------------------------------------------------------------
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Helm"
+#    ItemLevel >= 60
 Show
-    Class "Labyrinth"
-    SetTextColor 074 230 058 255
-    PlayAlertSound 2 250
-    SetFontSize 40
+    Rarity = Rare
+    Identified False
+    Class "Gloves"
+    ItemLevel >= 60
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Boots"
+#    ItemLevel >= 60
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Body Armour"
+#    ItemLevel >= 60
+#    DropLevel >= 65
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
+#    Height = 3
+#    Width = 1
+#    ItemLevel >= 60
+#    DropLevel >= 50
+#-------------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 0.7 CURRENCY: Crafting + Atlas
-#------------------------------------------------------------------------------
-Show
-    Class "Currency"
-    BaseType "Mirror" "Rhoa" "Eternal" "Imprint" "Exalted"
-    SetTextColor 207 000 015 255
-    SetBackgroundColor 255 255 255 253
-    PlayAlertSound 5 300
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Sextant" "Seal" "Unshaping"
-    SetTextColor 130 096 037 255
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Blessed" "Chaos" "Divine" "Gemcutter" "Regal" "Vaal"
-    SetTextColor 130 096 037 255
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Chisel" "Alchemy" "Fusing" "Regret" "Scouring"
-    PlayAlertSound 2 250
-    SetFontSize 40
+
+
+# Currency ---------------------------------------------------------------------
+
 Hide
     Class "Currency"
-    BaseType "Jeweller" "Bauble" "Whetstone" "Alteration" "Chromatic" "Chance" "Transmutation" "Scrap" "Augmentation" "Wisdom" "Portal" "Fragment" "Shard"
-    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 0.8 CURRENCY: Essence
-#------------------------------------------------------------------------------
-Show
-    Class "Currency"
-    BaseType "Remnant" "Hysteria" "Insanity" "Horror" "Delirium"
-    SetTextColor 255 013 152 255
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Screaming" "Shrieking" "Deafening"
-    SetTextColor 255 178 186 255
-    PlayAlertSound 1 290
-    SetFontSize 40
+    BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
+    DisableDropSound True
 Hide
     Class "Currency"
-    BaseType "Essence"
-    SetTextColor 250 222 241 255
-    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 0.9 CURRENCY: Prophecy + Perandus + Breach
-#------------------------------------------------------------------------------
-Show
-    Class "Currency"
-    BaseType "Prophecy" "Silver Coin"
-    SetTextColor 149 165 200 255
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Perandus"
-    SetTextColor 244 179 080 255
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Splinter"
-    SetTextColor 166 090 255 255
-    SetFontSize 40
-Show
-    Class "Currency"
-    BaseType "Blessing"
-    SetTextColor 238 238 238 255
-    SetBackgroundColor 065 020 080 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 1.0 DIV CARDS
-#------------------------------------------------------------------------------
+    BaseType "Wisdom" "Portal"
+    DisableDropSound True
 Hide
-    Class "Divination Card"
-    BaseType "Treasure Hunter" "The Fox" "The Road to Power" "The Dragon" "The Encroaching Darkness" "The Spoiled Prince" "Grave Knowledge" "The One With All" "Gift of the Gemling Queen" "The Battle Born" "The Avenger" "The Harvester" "The Throne" "The Arena Champion" "The Garish Power" "The Conduit" "The Opulent" "The Summoner" "Three Faces in the Dark" "The Siren" "The Demoness" "The Calling" "The Watcher" "Birth of the Three" "The Explorer" "The Sigil" "The Scavenger" "Tranquillity" "The Pact" "The Lord in Black" "The Mercenary" "Rain Tempter" "The Hermit" "Prosperity" "The Oath" "Rain of Chaos" "Dying Anguish" "Hunter's Resolve" "The Rabid Rhoa" "The Surgeon" "The Lich" "The King's Blade" "Blind Venture" "Struck by Lightning" "The Gambler" "The Coming Storm" "Doedre's Madness" "The Pack Leader" "The Catalyst" "Mitts" "The Scholar" "Rats" "Shard of Fate" "The Lion" "Destined to Crumble" "The Incantation" "Loyalty" "The Gladiator" "The Sun" "The Penitent" "The Feast" "The Tower" "Might is Right" "The Wolverine" "Call to the First Ones" "The Drunken Aristocrat" "Turn the Other Cheek" "The Traitor" "Her Mask" "Lantador's Lost Love" "The Scarred Meadow" "Boundless Realms" "The Gemcutter" "Assassin's Favour" "The Doppelganger" "The Wolf's Shadow" "Light and Truth" "Hubris" "Death" "Thunderous Skies" "Coveted Possession" "Audacity" "Anarchy's Price" "The Lover" "The Carrion Crow" "Volatile Power" "The Gentleman" "The Endurance" "The Metalsmith's Gift" "The Warden" "The Visionary" "The Inoculated" "The Betrayal" "The Twins" "The Lunaris Priestess" "The Web" "Cartographer's Delight" "The Flora's Gift"
-    SetBackgroundColor 017 017 017 040
-Show
-    Class "Divination Card"
-    BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Immortal" "The Queen"
-    PlayAlertSound 5 300
-    SetFontSize 40
-Show
-    Class "Divination Card"
-    BaseType "Abandoned Wealth" "The Offering" "The Dragon's Heart" "Wealth and Power" "The Spark and the Flame" "The Celestial Justicar" "The Ethereal" "Bowyer's Dream" "Hunter's Reward" "The Last One Standing" "The Polymath" "The Artist" "The Saint's Treasure" "The Thaumaturgist" "Last Hope" "The Sephirot" "The Valkyrie" "The Hunger" "The Enlightened" "The Void" "The Brittle Emperor" "The Vast" "The Hoarder" "The King's Heart" "Pride Before the Fall" "Chaotic Disposition" "The Valley of Steel Boxes" "Lucky Deck" "The Cartographer" "The Aesthete" "The Dapper Prodigy" "Heterochromia" "The Stormcaller" "The Porcupine" "The Risk" "The Cursed King" "The Wolven King's Bite" "Time-Lost Relic" "Emperor of Purity" "Merciless Armament" "The Standoff" "The Wretched" "The Warlord"
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Divination Card"
-    PlayAlertSound 2 250
-    SetFontSize 40
+    Class "Currency"
+    BaseType "Scrap" "Whetstone" "Augmentation" "Chromatic" "Jeweller" "Chance"
+    DisableDropSound True
+Hide
+    Class "Currency"
+    BaseType "Transmutation" "Alteration" "Bauble"
+    DisableDropSound True
 Show
     Class "Currency"
-    BaseType "Stacked Deck"
-    SetTextColor 014 186 255 255
-    SetFontSize 40
+    MinimapIcon 0 Blue Star
 
-#------------------------------------------------------------------------------
-# 1.1 GEMS
-#------------------------------------------------------------------------------
-Show
-    Class "Gem"
-    BaseType "Empower" "Enhance" "Enlighten" "Item Quantity"
-    PlayAlertSound 2 250
-    SetFontSize 40
-Show
-    Class "Gem"
-    BaseType "Added Chaos" "Detonate Mines" "Portal" "Cast when Damage Taken" "Clarity"
-    SetFontSize 40
-Show
-    Class "Gem"
-    BaseType "Vaal"
-    SetFontSize 40
-Show
-    Class "Gem"
-    Quality >= 20
-    PlayAlertSound 1 290
-    SetFontSize 40
-Hide
-    Class "Gem"
-    DropLevel >= 34
-    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 1.2 MAPS: Fragments + Breachstones
-#------------------------------------------------------------------------------
-Show
-    Class "Map Fragment"
-    BaseType "Hydra" "Phoenix" "Minotaur" "Chimera"
-    SetTextColor 170 000 000 255
-    SetBorderColor 000 000 000 000
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Map Fragment"
-    BaseType "Mortal"
-    SetTextColor 170 000 000 255
-    SetBorderColor 000 000 000 000
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Map Fragment"
-    BaseType "Sacrifice"
-    SetBorderColor 255 255 255 241
-    SetBackgroundColor 110 000 000 240
-    SetFontSize 40
-Show
-    Class "Map Fragment"
-    BaseType "Volkuur" "Eber" "Yriel" "Inya"
-    SetBorderColor 255 255 255 241
-    SetBackgroundColor 110 000 000 240
-    SetFontSize 40
-Show
-    Class "Misc Map"
-    BaseType "Breachstone"
-    SetTextColor 102 051 153 255
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 2 250
-    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 1.3 MAPS: T1 + T2 + T3
-#------------------------------------------------------------------------------
+# Maps -------------------------------------------------------------------------
+
 Show
     Class "Map"
     Rarity = Unique
     SetBorderColor 255 255 255 240
-    PlayAlertSound 2 250
-    SetFontSize 40
+    MinimapIcon 0 Blue Star
 Show
     Class "Map"
-    DropLevel >= 83
-    SetTextColor 170 000 000 255
-    SetBorderColor 000 000 000 000
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-Show
-    Class "Map"
-    DropLevel >= 78
+    MapTier > 10
     SetTextColor 215 000 015 242
-    SetBorderColor 255 255 255 241
-    PlayAlertSound 1 290
-    SetFontSize 40
+    MinimapIcon 0 Blue Star
 Show
     Class "Map"
-    DropLevel >= 73
+    MapTier > 5
     SetTextColor 245 215 110 242
-    SetBorderColor 255 255 255 241
-    SetFontSize 40
-Hide
+    DisableDropSound True
+Show
     Class "Map"
-    DropLevel >= 1
     SetTextColor 236 236 236 242
-    SetBorderColor 255 255 255 241
-    SetFontSize 40
+    DisableDropSound True
 
-#------------------------------------------------------------------------------
-# 1.4 UNIQUES
-#------------------------------------------------------------------------------
-Show
-    Rarity = Unique
-    PlayAlertSound 2 250
-    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 1.5 JEWELS
-#------------------------------------------------------------------------------
-Show
-    Class "Jewel"
-    SetTextColor 238 238 238 255
-    SetBackgroundColor 034 049 105 240
-    PlayAlertSound 2 250
-    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 1.6 TALISMANS
-#------------------------------------------------------------------------------
-Show
-    Class "Amulet"
-    BaseType "Talisman"
-    PlayAlertSound 2 250
-    SetFontSize 40
+# Gems -------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 1.7 RARES: RAB
-#------------------------------------------------------------------------------
 Show
-    Rarity = Rare
-    Class "Ring" "Amulet" "Belt"
-    SetFontSize 40
+    BaseType "Empower" "Enhance" "Enlighten" "Portal"
+    MinimapIcon 0 Blue Star
+Hide
+    Class "Active Skill Gem" "Support Skill Gem"
+    Quality < 10
+    DisableDropSound True
 
-#------------------------------------------------------------------------------
-# 1.8 RARES: Chests
-#------------------------------------------------------------------------------
-Show
-    Rarity = Rare
-    BaseType "Glorious Plate" "Astral Plate"
-    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Assassin's Garb" "Zodiac Leather"
-#    SetFontSize 40
-Show
-    Rarity = Rare
-    BaseType "Vaal Regalia" "Widowsilk Robe" "Occultist's Vestment"
-    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Triumphant Lamellar" "General's Brigandine" "Full Dragonscale"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Saintly Chainmail" "Saint's Hauberk"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Carnal Armour" "Sadist Garb"
-#    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 1.9 RARES: Shields
-#------------------------------------------------------------------------------
-#Show
-#    Rarity = Rare
-#    BaseType "Pinnacle Tower" "Colossal Tower" "Ezomyte Tower"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Imperial Buckler" "Crusader Buckler" "Vaal Buckler" "Lacquered Buckler"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Titanium Spirit" "Harmonic Spirit" "Vaal Spirit" "Fossilised Spirit"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Cardinal Round"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Archon Kite" "Mosaic Kite" "Champion Kite" "Branded Kite"
-#    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Supreme Spiked"
-#    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 2.0 RARES: Boots
-#------------------------------------------------------------------------------
-Show
-    Rarity = Rare
-    BaseType "Two-Toned Boots"
-    SetFontSize 40
-Show
-    Rarity = Rare
-    BaseType "Titan Greaves" "Slink Boots" "Sorcerer Boots"
-    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Dragonscale Boots" "Crusader Boots" "Murder Boots" "Assassin's Boots"
-#    SetFontSize 40
+# Gear -------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 2.1 RARES: Gloves
-#------------------------------------------------------------------------------
 Show
-    Rarity = Rare
-    BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
-    SetFontSize 40
-Show
-    Rarity = Rare
-    BaseType "Titan Gauntlets" "Slink Gloves" "Sorcerer Gloves"
-    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts"
-#    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 2.2 RARES: Helmets
-#------------------------------------------------------------------------------
-Show
-    Rarity = Rare
-    BaseType "Bone Helmet"
-    SetFontSize 40
-Show
-    Rarity = Rare
-    BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet"
-    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    BaseType "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Vaal Mask" "Deicide Mask"
-#    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 2.3 RARES: Weapons
-#------------------------------------------------------------------------------
-Show
-    Rarity = Rare
-    Height = 3
-    Width = 1
+    FracturedItem True
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Claw" "Bow"
     DropLevel >= 60
-    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 2.4 BASES: ilvl + Atlas
-#------------------------------------------------------------------------------
 Show
-    BaseType "Sacrificial Garb" "Steel Ring" "Opal Ring" "Crystal Belt"
-    SetTextColor 200 247 197 255
-    PlayAlertSound 1 290
-    SetFontSize 40
+    FracturedItem True
+    Class "Sceptre" "Dagger" "Wand" "Staves" "Quiver" "Shield" "Flask"
 Show
-    ItemLevel >= 84
-    BaseType "Bone Helmet" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Two-Toned Boots"
-    SetTextColor 200 247 197 255
-    PlayAlertSound 1 290
-    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 2.5 LINK: 5L + 6L
-#------------------------------------------------------------------------------
+    ElderItem True
+    MinimapIcon 0 Blue Star
 Show
-    LinkedSockets = 6
-    SetTextColor 130 096 037 255
-    SetBackgroundColor 250 250 250 240
-    PlayAlertSound 1 290
-    SetFontSize 40
-#Show
-#    LinkedSockets = 5
-#    DropLevel >= 60
-#    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 2.6 RECIPES: 6S etc
-#------------------------------------------------------------------------------
+    ShaperItem True
+    MinimapIcon 0 Blue Star
 Show
     Sockets = 6
-    SetTextColor 238 238 238 255
-    SetBackgroundColor 160 160 160 200
-    PlayAlertSound 2 250
-    SetFontSize 40
+    MinimapIcon 0 Blue Star
 Show
-    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+    LinkedSockets = 6
+    MinimapIcon 0 Blue Star
+Show
+    Quality > 20
+    MinimapIcon 0 Blue Star
+Show
+    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+    Quality >= 10
     Rarity = Normal
-    Quality >= 15
-    ItemLevel >= 68
-    SetTextColor 238 238 238 255
-    SetBackgroundColor 160 160 160 200
-    SetFontSize 40
-#Show
-#    Class "Flask"
-#    Quality >= 20
-#    SetTextColor 238 238 238 255
-#    SetBackgroundColor 160 160 160 200
-#    SetFontSize 40
-#Show
-#    SocketGroup "RGB"
-#    Height = 2
-#    SetTextColor 238 238 238 255
-#    SetBackgroundColor 160 160 160 200
-#    SetFontSize 40
-#Show
-#    SocketGroup "RGB"
-#    Height = 3
-#    Width = 1
-#    SetTextColor 238 238 238 255
-#    SetBackgroundColor 160 160 160 200
-#    SetFontSize 40
+#-------------------------------------------------------------------------------
+Show
+    Class "Abyss Jewel"
+    MinimapIcon 0 Blue Star
+Show
+    BaseType "Talisman" "Stygian Vise" "Sacrificial Garb"
+    MinimapIcon 0 Blue Star
+Show
+    BaseType "Steel Ring" "Opal Ring"
+    MinimapIcon 0 Blue Star
+Show
+    Class "Jewel"
+    Rarity = Rare
+    MinimapIcon 0 Blue Star
+Show
+    BaseType "Amulet"
+    Rarity = Rare
+    MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel >= 86
+    BaseType "Blue Pearl Amulet"
+    MinimapIcon 0 Blue Star
+Show
+    ItemLevel >= 84
+    BaseType "Marble Amulet" "Crystal Belt" "Bone Helm" "Two-Toned Boots"
+    MinimapIcon 0 Blue Star
+Show
+    ItemLevel >= 84
+    BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+    MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 2.7 FLASKS
-#------------------------------------------------------------------------------
-#Show
-#    Class "Life Flask" "Mana Flask"
-#    DropLevel >= 60
-#    SetFontSize 40
-#Show
-#    Class "Hybrid Flask"
-#    DropLevel >= 60
-#    SetFontSize 40
-#Show
-#    Class "Utility Flask"
-#    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 2.8 LEVELING: Life + Mana Flasks
-#------------------------------------------------------------------------------
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 6
-    DropLevel >= 0
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 12
-    DropLevel >= 6
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 18
-    DropLevel >= 12
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 24
-    DropLevel >= 18
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 30
-    DropLevel >= 24
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 36
-    DropLevel >= 30
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 42
-    DropLevel >= 36
-    SetFontSize 40
-Show
-    Class "Life Flask" "Mana Flask"
-    ItemLevel < 60
-    DropLevel >= 42
-    SetFontSize 40
 
-#------------------------------------------------------------------------------
-# 2.9 LEVELING: Hybrid Flasks
-#------------------------------------------------------------------------------
-#Show
-#    Class "Hybrid Flask"
-#    ItemLevel < 20
-#    DropLevel >= 0
-#    SetFontSize 40
-#Show
-#    Class "Hybrid Flask"
-#    ItemLevel < 30
-#    DropLevel >= 20
-#    SetFontSize 40
-#Show
-#    Class "Hybrid Flask"
-#    ItemLevel < 40
-#    DropLevel >= 30
-#    SetFontSize 40
-#Show
-#    Class "Hybrid Flask"
-#    ItemLevel < 50
-#    DropLevel >= 40
-#    SetFontSize 40
-#Show
-#    Class "Hybrid Flask"
-#    ItemLevel < 60
-#    DropLevel >= 50
-#    SetFontSize 40
+# Uniques ----------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 3.0 LEVELING: 3L + 4L
-#------------------------------------------------------------------------------
-#Show
-#    LinkedSockets >= 4
-#    Class "Helm" "Boots" "Gloves" "Armour"
-#    ItemLevel <= 44
-#    SetFontSize 40
-#Show
-#    LinkedSockets >= 3
-#    Class "Helm" "Boots" "Gloves" "Armour"
-#    ItemLevel <= 23
-#    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 3.1 LEVELING: RAB
-#------------------------------------------------------------------------------
-#Show
-#    Class "Ring"
-#    BaseType "Coral" "Sapphire"
-#    Rarity >= Normal
-#    ItemLevel <= 13
-#    SetFontSize 40
-#Show
-#    Class "Ring"
-#    BaseType "Sapphire" "Ruby" "Topaz" "Two-Stone" "Prismatic"
-#    Rarity = Magic
-#    ItemLevel <= 40
-#    SetFontSize 40
-#Show
-#    Class "Amulet"
-#    Rarity = Magic
-#    ItemLevel <= 33
-#    SetFontSize 40
-
-#------------------------------------------------------------------------------
-# 3.2 LEVELING: Rarity + DropLevel
-#------------------------------------------------------------------------------
 Show
-    Rarity = Normal
-    ItemLevel <= 3
-    ItemLevel >= 1
-    SetFontSize 40
-#Show
-#    Rarity = Rare
-#    ItemLevel <= 44
-#    Class "Helm" "Gloves" "Boots" "Armour"
-#    SetFontSize 40
-#Show
-#    Rarity >= Magic
-#    ItemLevel <= 6
-#    DropLevel >= 0
-#    SetFontSize 40
-#Show
-#    Rarity >= Magic
-#    ItemLevel <= 13
-#    DropLevel >= 4
-#    SetFontSize 40
-#Show
-#    Rarity >= Magic
-#    ItemLevel <= 23
-#    DropLevel >= 14
-#    SetFontSize 40
-#Show
-#    Rarity >= Magic
-#    ItemLevel <= 33
-#    DropLevel >= 24
-#    SetFontSize 40
-#Show
-#    Rarity >= Magic
-#    ItemLevel <= 40
-#    DropLevel >= 31
-#    SetFontSize 40
+    Rarity = Unique
+    Class "Ring" "Amulet" "Jewel"
+    MinimapIcon 0 Blue Star
+Show
+    Rarity = Unique
+    BaseType "Quartz Flask" "Ruby Flask" "Stibnite Flask" "Sapphire Flask" "Bismuth Flask" "Grand Mana Flask" "Silver Flask" "Topaz Flask" "Granite Flask"
+    MinimapIcon 0 Blue Star
+Show
+    Rarity = Unique
+    BaseType "Leather Belt" "Chain Belt" "Heavy Belt" "Cloth Belt" "Studded Belt"
+    MinimapIcon 0 Blue Star
+Show
+    Rarity = Unique
+    BaseType "Ambush Mitts" "Ancient Gauntlets" "Arcanist Gloves" "Arcanist Slippers" "Archon Kite Shield" "Assassin's Boots" "Blunt Arrow Quiver" "Callous Mask" "Callous Mask Piece" "Carnal Armour" "Carnal Boots" "Carnal Mitts" "Crusader Boots" "Crusader Plate" "Ebony Tower Shield" "Elegant Ringmail" "Ezomyte Tower Shield" "Fire Arrow Quiver" "Full Dragonscale" "Glorious Plate" "Goathide Boots" "Goathide Gloves" "Golden Buckler" "Golden Plate" "Great Crown" "Harlequin Mask" "Iron Circlet" "Iron Mask" "Jingling Spirit Shield" "Leather Hood" "Legion Gloves" "Magistrate Crown" "Murder Boots" "Nightmare Bascinet" "Nubuck Boots" "Occultist's Vestment" "Penetrating Arrow Quiver" "Pinnacle Tower Shield" "Plank Kite Shield" "Prophet Crown" "Rawhide Boots" "Rawhide Tower Shield" "Reinforced Greaves" "Riveted Gloves" "Sacrificial Garb" "Sadist Garb" "Sharktooth Arrow Quiver" "Sorcerer Boots" "Steelscale Gauntlets" "Tarnished Spirit Shield" "Thorium Spirit Shield" "Titan Greaves" "Triumphant Lamellar" "Two-Point Arrow Quiver" "Vaal Gauntlets" "Vaal Regalia" "Vaal Spirit Shield" "Widowsilk Robe" "Zodiac Leather"
+Show
+    Rarity = Unique
+    BaseType "Assassin Bow" "Blood Sceptre" "Carved Wand" "Citadel Bow" "Cleaver" "Crude Bow" "Crystal Wand" "Cutlass" "Death Bow" "Despot Axe" "Elegant Sword" "Eternal Sword" "Ezomyte Staff" "Fiend Dagger" "Gavel" "Gemstone Sword" "Gnarled Branch" "Highborn Staff" "Imperial Bow" "Imperial Claw" "Imperial Maul" "Imperial Staff" "Infernal Sword" "Infernal Sword" "Iron Sceptre" "Jade Hatchet" "Jewelled Foil" "Judgement Staff" "Legion Sword" "Long Bow" "Maelström Staff" "Midnight Blade" "Nightmare Mace" "Ornate Sword" "Prophecy Wand" "Reaver Sword" "Royal Axe" "Royal Bow" "Rusted Sword" "Sage Wand" "Tornado Wand" "Vaal Axe" "Vaal Blade" "Vaal Rapier" "Vaal Sceptre" "War Hammer" "Woodsplitter"
+Hide
+    Rarity = Unique
+    DisableDropSound True
 
-#------------------------------------------------------------------------------
-# 3.3 HIDDEN + BACKUP
-#------------------------------------------------------------------------------
+
+
+# Divination Cards --------------------------------------------------------------
+
+Hide
+    Class "Divination Card"
+    BaseType "The Wolf's Shadow"
+    DisableDropSound True
+Show
+    Class "Divination Card"
+    BaseType "The Scholar" "The Survivalist" "Coveted Possession" "Loyalty" "Three Faces in the Dark" "Vinia's Token" "The Gemcutter" "The Encroaching Darkness"
+    MinimapIcon 0 Blue Star
+Show
+    Class "Divination Card"
+    BaseType "House of Mirrors" "The Doctor" "Beauty Through Death" "The Fiend" "Immortal Resolve" "The Immortal" "The Nurse" "Abandoned Wealth" "The Spark and the Flame" "The Iron Bard" "The Wolven King's Bite" "Hunter's Reward" "The Samurai's Eye" "The World Eater" "The Dragon's Heart" "Wealth and Power" "Pride Before the Fall" "Mawr Blaidd" "A Dab of Ink" "The Queen" "The Mayor" "The Ethereal" "The Endless Darkness" "The Risk" "The King's Heart" "The Brittle Emperor" "The Saint's Treasure" "The Enlightened" "The Offering" "The Celestial Stone" "The Master" "The Artist" "The Celestial Justicar" "The Polymath" "The Sacrifice" "The Formless Sea" "The Thaumaturgist" "The Hoarder" "The Professor" "The Last One Standing" "The Sephirot" "The Wolf" "The Hunger" "Chaotic Disposition" "The Dapper Prodigy" "The Undaunted" "The Undisputed" "The Wind" "The Valkyrie" "Boon of the First Ones" "Heterochromia" "The Jeweller's Boon" "The Throne" "Perfection" "The Valley of Steel Boxes" "The Breach" "Emperor of Purity" "Last Hope" "Left to Fate" "The Dreamer" "The Obscured" "The Porcupine" "The Vast" "The Void" "The Cartographer" "The Innocent" "The Gladiator" "Bowyer's Dream" "Lingering Remnants" "Rebirth" "The Beast" "The Chains that Bind" "The Cursed King" "The Hale Heart" "The Penitent" "The Price of Protection" "The Wilted Rose" "Harmony of Souls" "Time-Lost Relic" "Humility" "The Wrath" "The Body" "Atziri's Arsenal" "Audacity" "Blessing of God" "Boundless Realms" "Dialla's Subjugation" "Glimmer of Hope" "Jack in the Box" "Lost Worlds" "Lucky Connections" "Lucky Deck" "Lysah's Respite" "Merciless Armament" "No Traces" "The Arena Champion" "The Avenger" "The Cacophony" "The Dark Mage" "The Demoness" "The Feast" "The Fletcher" "The Inventor" "The Jester" "The Lion" "The Master Artisan" "The Mercenary" "The One With All" "The Pack Leader" "The Realm" "The Rite of Elements" "The Road to Power" "The Stormcaller" "The Surveyor" "The Traitor" "The Trial" "The Twilight Moon" "The Tyrant" "The Union" "The Warlord" "The Insatiable" "The Darkest Dream" "The Harvester" "Gemcutter's Promise"
+    MinimapIcon 0 Blue Star
+Hide
+    Class "Divination Card"
+    DisableDropSound True
+
+
+
+# Identified Items - Credit to NeverSink ---------------------------------------
+
 Show
     Identified True
-Hide
-    SetBackgroundColor 017 017 017 040
+    Rarity = Rare
+Show
+    HasExplicitMod "Veil"
+Show
+    HasExplicitMod "of Crafting" "of Spellcraft" "of Weaponcraft"
+Show
+    HasExplicitMod "of the Underground" "Subterranean"
+Show
+    HasExplicitMod "of Farrul" "of Craiceann" "of Fenumus" "of Saqawal"
+Show
+    HasExplicitMod "Tacati" "Citaqualotl" "Matatl" "Topotante" "Xopec" "Guatelitzi" "Puhuarte"
+Show
+    HasExplicitMod "Brinerot" "Mutewind" "Redblade" "Betrayer's" "Deceiver's" "Turncoat's"
+#-------------------------------------------------------------------------------
+Show
+    HasExplicitMod "Merciless"
+Show
+    HasExplicitMod "Flaring" "Tempered" "Dictator's" "Emperor's" "Electrocuting" "Cremating" "Entombing" "Malicious" "Tyrannical" "Merciless"
+    HasExplicitMod "of Rending" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "of Celebration"
+Show
+    Class "Dagger" "Sceptre"
+    HasExplicitMod "Runic" "Xoph's" "Esh's"
+Show
+    Class "Dagger" "Sceptre" "Wand"
+    HasExplicitMod "Runic" "Glyphic" "Lich's" "Cremating" "Electrocuting" "Entombing" "Runic" "Xoph's" "Esh's" "Tul's"
+    HasExplicitMod "of Destruction" "of Celebration" "of Finesse" "of Sortilege" "of Unmaking" "of Ruin" "of Ashes" "of Glaciation" "of Arcing"
+Show
+    HasExplicitMod "Necromancer's"
+Show
+    HasExplicitMod "Hellion's" "Cheetah's" "Seething" "Unassailable"
+    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast"
+Show
+    HasExplicitMod "Prime" "Resplendent" "Unfaltering" "Unassailable"
+    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast"
+Show
+    HasExplicitMod "Athlete's" "Seething" "Unassailable"
+    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast" "of Grandmastery" "of Lioneye" "of the Assassin"
+Show
+    HasExplicitMod "Vigorous" "Xoph's" "Runic" "Esh's" "Unfaltering" "Incandescent" "Tul's"
+    HasExplicitMod "of Ephij" "of Tzteosh" "of Haast" "of Expertise" "of the Span" "of Unmaking"
+Show
+    Class "Quiver"
+    HasExplicitMod "Overpowering" "Devastating" "Fecund"
+    HasExplicitMod "of Ease" "of Rending" "of Destruction"
+Show
+    Class "Helm"
+    HasExplicitMod "Fecund" "Blazing" "Unassailable"
+    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast" "of Lioneye"
+Show
+    Class "Amulet"
+    HasExplicitMod "Athlete's" "Virile" "Dazzling" "Flaring" "Cremating" "Entombing" "Electrocuting" "Unassailable" "Wizard's" "Devastating"
+    HasExplicitMod "of the Gods" "of the Wind" "of the Genius" "of Talent" "of Skill" "of the Assassin" "of Tzteosh" "of Haast" "of Ephij" "of the Rainbow" "of Immolation" "of Floe" "of Discharge" "of Nirvana" "of Destruction" "of Incision" "of the Multiverse" "of Expertise"
+Show
+    Class "Rings"
+    HasExplicitMod "Flawless" "Electrocuting" "Overpowering" "Virile" "Rotund" "Resplendent" "Annealed" "Cremating" "Entombing"
+    HasExplicitMod "of the Gods" "of the Wind" "of the Genius" "of the Comet" "of Talent" "of Skill" "of the Assassin" "of Tzteosh" "of Haast" "of Ephij" "of the Rainbow" "of Flames" "of Rime" "of Voltage"
+Show
+    Class "Jewel"
+    HasExplicitMod "Vivid" "Shimmering"
+Show
+    Class "Belts"
+    HasExplicitMod "Fecund" "Dazzling" "Devastating" "Overpowering" "Enveloped"
+    HasExplicitMod "of the Gods" "of the Godslayer" "of Tzteosh" "of Haast" "of Ephij" "of Overflowing" "of Sipping" "of Savouring"
+Show
+    Class "Bow" "Staves"
+    HasExplicitMod "Sharpshooter's" "Anarchist's" "Lava Caller's" "Tempest King's" "Winterbringer's" "Paragon's"
+#-------------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
-# 3.4 REFERENCE
-#------------------------------------------------------------------------------
-#
-# LINK
-#------------------------------------------------------------------------------
-# 3L 15
-# 4L 28
-# 5L 35
-# 6L 50
-#
-# MAP
-#------------------------------------------------------------------------------
-# T1 01-05 68-72
-# T2 06-10 73-77
-# T3 11-16 78-83
-#
-# ZONE
-#------------------------------------------------------------------------------
-# NA1: 13
-# NA2: 23
-# NA3: 33
-# NA4: 40
-#
-# CA1: 44
-# CA2: 48
-# CA3: 54
-# CA4: 57
-#
-# MA1: 59
-# MA2: 63
-# MA3: 67
-# MA4: 70
-#
-# ITEM CLASS
-#------------------------------------------------------------------------------
-# Fishing Rod
-# Hideout Doodad
-# Microtransaction
-#
-# Currency
-# Stackable Currency
-#
-# Quest Items
-#
-# Divination Card
-# Leaguestone
-# Unarmed
-#
-# Maps
-# Map Fragments
-# Misc Map Item
-#
-# Small Relic
-# Medium Relic
-# Large Relic
-#
-# Labyrinth Item
-# Labyrinth Trinket
-# Labyrinth Map Item
-#
-# Active Skill Gem
-# Support Skill Gem
-#
-# Amulet
-# Ring
-# Belt
-# Jewel
-#
-# Helmet
-# Gloves
-# Boots
-# Body Armour
-#
-# Claw
-# Dagger
-# Wand
-# One Hand Sword
-# Thrusting One Hand Sword
-# One Hand Axe
-# One Hand Mace
-# Bow
-# Staves
-# Two Hand Sword
-# Two Hand Axe
-# Two Hand Mace
-# Sceptre
-#
-# Quiver
-# Shield
-#
-# Life Flask
-# Mana Flask
-# Utility Flask
-# Critical Utility Flask
-# Hybrid Flask
+
+
+# Hide --------------------------------------------------------------------------
+
+Hide
+    Class "Jewel"
+    Rarity = Magic
+    DisableDropSound True
+Hide
+    Class "Ring" "Amulet" "Belt"
+    Rarity = Normal Magic
+    DisableDropSound True
+Hide
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
+    ItemLevel >= 60
+    DisableDropSound True
+#-------------------------------------------------------------------------------
+
+
+
+# Leveling ----------------------------------------------------------------------
+
+Show
+    ItemLevel = 1 2
+#Show
+#    Class "Utility Flask"
+#    Rarity = Normal
+#Show
+#    Class "Active Skill Gem" "Support Skill Gem"
+Show
+    LinkedSockets = 5
+#Show
+#    LinkedSockets = 4
+#    Class "Helm" "Gloves" "Boots"
+#Show
+#    SocketGroup RGB
+#    Height = 3
+#    Width = 1
+#-------------------------------------------------------------------------------
+Hide
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+#-------------------------------------------------------------------------------
+Hide
+    ItemLevel > 12
+    Rarity = Normal Magic
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
+    DisableDropSound True
+#-------------------------------------------------------------------------------
+Hide
+    ItemLevel >= 60
+    DropLevel < 60
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 55
+    DropLevel < 50
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 50
+    DropLevel < 45
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 45
+    DropLevel < 40
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 40
+    DropLevel < 35
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 35
+    DropLevel < 30
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 30
+    DropLevel < 25
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 25
+    DropLevel < 20
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 20
+    DropLevel < 15
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 15
+    DropLevel < 10
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Hide
+    ItemLevel >= 10
+    DropLevel < 5
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+#-------------------------------------------------------------------------------

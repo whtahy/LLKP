@@ -1,0 +1,59 @@
+#-------------------------------------------------------------------------------
+# Filters
+#-------------------------------------------------------------------------------
+# Rarity                    Normal, Magic, Rare, Unique
+# ItemLevel                 0-100
+# DropLevel                 0-100
+# Quality                   0-20
+# Sockets                   0-6
+# LinkedSockets             0-6
+# GemLevel                  1-21
+# MapTier                   1-17
+# Height                    1-4
+# Width                     1-2
+
+# StackSize                 1-n
+
+# Identified                True, False
+# Corrupted                 True, False
+# ElderItem                 True, False
+# ShaperItem                True, False
+# ShapedMap                 True, False
+
+# HasExplicitMod
+# BaseType
+
+# Class
+#       Quest Item
+#       Currency, Stackable Currency
+#       Leaguestone, Piece, Incursion Item, Delve Socketable Currency
+#       Labyrinth Item, Labyrinth Trinket, Labyrinth Map Item
+#       Map, Map Fragment, Misc Map Item
+#       Jewel, Abyss Jewel
+#       Divination Card
+#       Pantheon Soul
+#       Active Skill Gem, Support Skill Gem
+#       Life Flask, Mana Flask, Hybrid Flask, Utility Flask, Critical Utility Flask
+#       Amulet, Ring
+#       Helmet, Gloves, Boots, Belt, Body Armour
+#       Sceptre, Claw, Dagger, Wand, Bow, Staves, Quiver, Shield, Unarmed
+#       One Hand Sword, Thrusting One Hand Sword, One Hand Axe, One Hand Mace
+#       Two Hand Sword, Two Hand Axe, Two Hand Mace
+#       Hideout Doodad, Microtransaction
+#       Fishing Rod
+
+#-------------------------------------------------------------------------------
+# Function                  Args            Values
+#-------------------------------------------------------------------------------
+# DisableDropSound                          True, False
+# SetFontSize                               18-45
+# PlayAlertSound            Id Volume       1-n 0-300
+# PlayAlertSoundPositional  Id Volume       1-n 0-300
+# SetBorderColor            R G B A         0-255
+# SetTextColor              R G B A         0-255
+
+# MinimapIcon               Size            0-2
+#                           Color           Red, Green, Blue, Brown, White, Yellow
+#                           Shape           Circle, Diamond, Hexagon, Square, Star, Triangle
+
+# PlayEffect                Color [Temp]    Red, Green, Blue, Brown, White, Yellow

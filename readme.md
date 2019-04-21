@@ -11,4 +11,4 @@ https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt
 
 # Patch
 
-2.6 Legacy
+3.6 Synthesis
