@@ -12,6 +12,8 @@
 
 
 
+
+
 # Chaos Recipe -----------------------------------------------------------------
 
 #Show
@@ -47,12 +49,10 @@ Show
 
 
 
+
+
 # Currency ---------------------------------------------------------------------
 
-Hide
-    Class "Currency"
-    BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
-    DisableDropSound True
 Hide
     Class "Currency"
     BaseType "Wisdom" "Portal"
@@ -65,9 +65,15 @@ Hide
     Class "Currency"
     BaseType "Transmutation" "Alteration" "Bauble"
     DisableDropSound True
+Hide
+    Class "Currency"
+    BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
+    DisableDropSound True
 Show
     Class "Currency"
     MinimapIcon 0 Blue Star
+
+
 
 
 
@@ -95,6 +101,8 @@ Show
 
 
 
+
+
 # Gems -------------------------------------------------------------------------
 
 Show
@@ -107,15 +115,12 @@ Hide
 
 
 
+
+
 # Gear -------------------------------------------------------------------------
 
 Show
     FracturedItem True
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Claw" "Bow"
-    DropLevel >= 60
-Show
-    FracturedItem True
-    Class "Sceptre" "Dagger" "Wand" "Staves" "Quiver" "Shield" "Flask"
 Show
     ElderItem True
     MinimapIcon 0 Blue Star
@@ -170,6 +175,8 @@ Show
 
 
 
+
+
 # Uniques ----------------------------------------------------------------------
 
 Show
@@ -196,7 +203,9 @@ Hide
 
 
 
-# Divination Cards --------------------------------------------------------------
+
+
+# Divination Cards -------------------------------------------------------------
 
 Hide
     Class "Divination Card"
@@ -213,6 +222,8 @@ Show
 Hide
     Class "Divination Card"
     DisableDropSound True
+
+
 
 
 
@@ -290,7 +301,9 @@ Show
 
 
 
-# Hide --------------------------------------------------------------------------
+
+
+# Hide -------------------------------------------------------------------------
 
 Hide
     Class "Jewel"
@@ -308,7 +321,9 @@ Hide
 
 
 
-# Leveling ----------------------------------------------------------------------
+
+
+# Leveling ---------------------------------------------------------------------
 
 Show
     ItemLevel = 1 2
