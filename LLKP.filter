@@ -1,5 +1,5 @@
 # LLKP
-# Updated for Patch 3.6 Synthesis
+# Updated for Patch 3.10 Delirium, 2020 March
 
 # TODO
 # Table of Contents
@@ -16,35 +16,43 @@
 
 # Chaos Recipe -----------------------------------------------------------------
 
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Helm"
-#    ItemLevel >= 60
+Show
+    Rarity = Rare
+    Identified False
+    Class "Helm"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DropLevel >= 60
 Show
     Rarity = Rare
     Identified False
     Class "Gloves"
     ItemLevel >= 60
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Boots"
-#    ItemLevel >= 60
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Body Armour"
-#    ItemLevel >= 60
-#    DropLevel >= 65
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
-#    Height = 3
-#    Width = 1
-#    ItemLevel >= 60
-#    DropLevel >= 50
+    ItemLevel <= 74
+    DropLevel >= 60
+Show
+    Rarity = Rare
+    Identified False
+    Class "Boots"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DropLevel >= 60
+Show
+    Rarity = Rare
+    Identified False
+    Class "Body Armour"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DropLevel >= 60
+Show
+    Rarity = Rare
+    Identified False
+    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
+    Height = 3
+    Width = 1
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DropLevel >= 50
 #-------------------------------------------------------------------------------
 
 
@@ -53,19 +61,23 @@ Show
 
 # Currency ---------------------------------------------------------------------
 
-Hide
+Show
     Class "Currency"
     BaseType "Wisdom" "Portal"
     DisableDropSound True
-Hide
+Show
     Class "Currency"
     BaseType "Scrap" "Whetstone" "Augmentation" "Chromatic" "Jeweller" "Chance"
     DisableDropSound True
-Hide
+Show
     Class "Currency"
-    BaseType "Transmutation" "Alteration" "Bauble"
+    BaseType "Transmutation" "Bauble"
     DisableDropSound True
-Hide
+Show
+    Class "Currency"
+    BaseType "Alteration"
+    DisableDropSound True
+Show
     Class "Currency"
     BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
     DisableDropSound True
@@ -79,6 +91,9 @@ Show
 
 # Maps -------------------------------------------------------------------------
 
+Show
+    Class "Map Fragment"
+    MinimapIcon 0 Blue Star
 Show
     Class "Map"
     Rarity = Unique
@@ -106,26 +121,38 @@ Show
 # Gems -------------------------------------------------------------------------
 
 Show
-    BaseType "Empower" "Enhance" "Enlighten" "Portal"
+    Class "Skill Gem"
+    Quality >= 10
     MinimapIcon 0 Blue Star
-Hide
-    Class "Active Skill Gem" "Support Skill Gem"
-    Quality < 10
+Show
+    Class "Skill Gem"
+    GemLevel >= 10
+    MinimapIcon 0 Blue Star
+Show
+    Class "Skill Gem"
+    DropLevel >= 30
+    MinimapIcon 0 Blue Star
+Show
+    BaseType "Empower" "Enhance" "Enlighten" "Portal"
+    DisableDropSound True
+Show
+    Class "Skill Gem"
     DisableDropSound True
 
 
 
 
 
-# Gear -------------------------------------------------------------------------
+# Misc -------------------------------------------------------------------------
 
 Show
     FracturedItem True
 Show
-    ElderItem True
-    MinimapIcon 0 Blue Star
+    SynthesisedItem True
 Show
-    ShaperItem True
+    Identified True
+Show
+    HasInfluence Shaper Elder Crusader Hunter Redeemer Warlord
     MinimapIcon 0 Blue Star
 Show
     Sockets = 6
@@ -136,40 +163,33 @@ Show
 Show
     Quality > 20
     MinimapIcon 0 Blue Star
-Show
-    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
-    Quality >= 10
-    Rarity = Normal
 #-------------------------------------------------------------------------------
 Show
-    Class "Abyss Jewel"
+    Class "Abyss" "Atlas" "Incubator" "Delve" "Incursion" "Labyrinth" "Leaguestone" "Metamorph" "Pantheon" "Shard" "UniqueFragment"
     MinimapIcon 0 Blue Star
 Show
-    BaseType "Talisman" "Stygian Vise" "Sacrificial Garb"
-    MinimapIcon 0 Blue Star
-Show
-    BaseType "Steel Ring" "Opal Ring"
+    Class "Jewel"
+    BaseType "Cluster"
     MinimapIcon 0 Blue Star
 Show
     Class "Jewel"
     Rarity = Rare
     MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
 Show
-    BaseType "Amulet"
+    BaseType "Talisman" "Stygian Vise" "Sacrificial Garb"
+    MinimapIcon 0 Blue Star
+Show
+    BaseType "Ring" "Amulet" "Belt"
     Rarity = Rare
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
-    ItemLevel >= 86
-    BaseType "Blue Pearl Amulet"
+    BaseType "Steel Ring" "Opal Ring"
     MinimapIcon 0 Blue Star
 Show
-    ItemLevel >= 84
-    BaseType "Marble Amulet" "Crystal Belt" "Bone Helm" "Two-Toned Boots"
-    MinimapIcon 0 Blue Star
-Show
-    ItemLevel >= 84
-    BaseType "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+    #ItemLevel >= 86
+    BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 
@@ -185,20 +205,6 @@ Show
     MinimapIcon 0 Blue Star
 Show
     Rarity = Unique
-    BaseType "Quartz Flask" "Ruby Flask" "Stibnite Flask" "Sapphire Flask" "Bismuth Flask" "Grand Mana Flask" "Silver Flask" "Topaz Flask" "Granite Flask"
-    MinimapIcon 0 Blue Star
-Show
-    Rarity = Unique
-    BaseType "Leather Belt" "Chain Belt" "Heavy Belt" "Cloth Belt" "Studded Belt"
-    MinimapIcon 0 Blue Star
-Show
-    Rarity = Unique
-    BaseType "Ambush Mitts" "Ancient Gauntlets" "Arcanist Gloves" "Arcanist Slippers" "Archon Kite Shield" "Assassin's Boots" "Blunt Arrow Quiver" "Callous Mask" "Callous Mask Piece" "Carnal Armour" "Carnal Boots" "Carnal Mitts" "Crusader Boots" "Crusader Plate" "Ebony Tower Shield" "Elegant Ringmail" "Ezomyte Tower Shield" "Fire Arrow Quiver" "Full Dragonscale" "Glorious Plate" "Goathide Boots" "Goathide Gloves" "Golden Buckler" "Golden Plate" "Great Crown" "Harlequin Mask" "Iron Circlet" "Iron Mask" "Jingling Spirit Shield" "Leather Hood" "Legion Gloves" "Magistrate Crown" "Murder Boots" "Nightmare Bascinet" "Nubuck Boots" "Occultist's Vestment" "Penetrating Arrow Quiver" "Pinnacle Tower Shield" "Plank Kite Shield" "Prophet Crown" "Rawhide Boots" "Rawhide Tower Shield" "Reinforced Greaves" "Riveted Gloves" "Sacrificial Garb" "Sadist Garb" "Sharktooth Arrow Quiver" "Sorcerer Boots" "Steelscale Gauntlets" "Tarnished Spirit Shield" "Thorium Spirit Shield" "Titan Greaves" "Triumphant Lamellar" "Two-Point Arrow Quiver" "Vaal Gauntlets" "Vaal Regalia" "Vaal Spirit Shield" "Widowsilk Robe" "Zodiac Leather"
-Show
-    Rarity = Unique
-    BaseType "Assassin Bow" "Blood Sceptre" "Carved Wand" "Citadel Bow" "Cleaver" "Crude Bow" "Crystal Wand" "Cutlass" "Death Bow" "Despot Axe" "Elegant Sword" "Eternal Sword" "Ezomyte Staff" "Fiend Dagger" "Gavel" "Gemstone Sword" "Gnarled Branch" "Highborn Staff" "Imperial Bow" "Imperial Claw" "Imperial Maul" "Imperial Staff" "Infernal Sword" "Infernal Sword" "Iron Sceptre" "Jade Hatchet" "Jewelled Foil" "Judgement Staff" "Legion Sword" "Long Bow" "Maelström Staff" "Midnight Blade" "Nightmare Mace" "Ornate Sword" "Prophecy Wand" "Reaver Sword" "Royal Axe" "Royal Bow" "Rusted Sword" "Sage Wand" "Tornado Wand" "Vaal Axe" "Vaal Blade" "Vaal Rapier" "Vaal Sceptre" "War Hammer" "Woodsplitter"
-Hide
-    Rarity = Unique
     DisableDropSound True
 
 
@@ -207,117 +213,14 @@ Hide
 
 # Divination Cards -------------------------------------------------------------
 
-Hide
-    Class "Divination Card"
-    BaseType "The Wolf's Shadow"
-    DisableDropSound True
 Show
     Class "Divination Card"
-    BaseType "The Scholar" "The Survivalist" "Coveted Possession" "Loyalty" "Three Faces in the Dark" "Vinia's Token" "The Gemcutter" "The Encroaching Darkness"
+    BaseType "Abandoned Wealth" "Alluring Bounty" "Chaotic Disposition" "Coveted Posesseion" "Demigod's Wager" "Emperor's Luck" "Harmony of Souls" "House of Mirrors" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Seven Years Bad Luck" "The Cacophony" "The Cartographer" "The Catalyst" "The Fool" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Immortal" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Puzzle" "The Saint's Treasure" "The Scholar" "The Seeker" "The Sephirot" "The Survivalist" "The Tinkerer's Table" "The Union" "The Wrath" "Three Faces in the Dark" "Underground Forest" "Vinia's Token"
     MinimapIcon 0 Blue Star
 Show
     Class "Divination Card"
-    BaseType "House of Mirrors" "The Doctor" "Beauty Through Death" "The Fiend" "Immortal Resolve" "The Immortal" "The Nurse" "Abandoned Wealth" "The Spark and the Flame" "The Iron Bard" "The Wolven King's Bite" "Hunter's Reward" "The Samurai's Eye" "The World Eater" "The Dragon's Heart" "Wealth and Power" "Pride Before the Fall" "Mawr Blaidd" "A Dab of Ink" "The Queen" "The Mayor" "The Ethereal" "The Endless Darkness" "The Risk" "The King's Heart" "The Brittle Emperor" "The Saint's Treasure" "The Enlightened" "The Offering" "The Celestial Stone" "The Master" "The Artist" "The Celestial Justicar" "The Polymath" "The Sacrifice" "The Formless Sea" "The Thaumaturgist" "The Hoarder" "The Professor" "The Last One Standing" "The Sephirot" "The Wolf" "The Hunger" "Chaotic Disposition" "The Dapper Prodigy" "The Undaunted" "The Undisputed" "The Wind" "The Valkyrie" "Boon of the First Ones" "Heterochromia" "The Jeweller's Boon" "The Throne" "Perfection" "The Valley of Steel Boxes" "The Breach" "Emperor of Purity" "Last Hope" "Left to Fate" "The Dreamer" "The Obscured" "The Porcupine" "The Vast" "The Void" "The Cartographer" "The Innocent" "The Gladiator" "Bowyer's Dream" "Lingering Remnants" "Rebirth" "The Beast" "The Chains that Bind" "The Cursed King" "The Hale Heart" "The Penitent" "The Price of Protection" "The Wilted Rose" "Harmony of Souls" "Time-Lost Relic" "Humility" "The Wrath" "The Body" "Atziri's Arsenal" "Audacity" "Blessing of God" "Boundless Realms" "Dialla's Subjugation" "Glimmer of Hope" "Jack in the Box" "Lost Worlds" "Lucky Connections" "Lucky Deck" "Lysah's Respite" "Merciless Armament" "No Traces" "The Arena Champion" "The Avenger" "The Cacophony" "The Dark Mage" "The Demoness" "The Feast" "The Fletcher" "The Inventor" "The Jester" "The Lion" "The Master Artisan" "The Mercenary" "The One With All" "The Pack Leader" "The Realm" "The Rite of Elements" "The Road to Power" "The Stormcaller" "The Surveyor" "The Traitor" "The Trial" "The Twilight Moon" "The Tyrant" "The Union" "The Warlord" "The Insatiable" "The Darkest Dream" "The Harvester" "Gemcutter's Promise"
+    BaseType
     MinimapIcon 0 Blue Star
-Hide
-    Class "Divination Card"
-    DisableDropSound True
-
-
-
-
-
-# Identified Items - Credit to NeverSink ---------------------------------------
-
-Show
-    Identified True
-    Rarity = Rare
-Show
-    HasExplicitMod "Veil"
-Show
-    HasExplicitMod "of Crafting" "of Spellcraft" "of Weaponcraft"
-Show
-    HasExplicitMod "of the Underground" "Subterranean"
-Show
-    HasExplicitMod "of Farrul" "of Craiceann" "of Fenumus" "of Saqawal"
-Show
-    HasExplicitMod "Tacati" "Citaqualotl" "Matatl" "Topotante" "Xopec" "Guatelitzi" "Puhuarte"
-Show
-    HasExplicitMod "Brinerot" "Mutewind" "Redblade" "Betrayer's" "Deceiver's" "Turncoat's"
-#-------------------------------------------------------------------------------
-Show
-    HasExplicitMod "Merciless"
-Show
-    HasExplicitMod "Flaring" "Tempered" "Dictator's" "Emperor's" "Electrocuting" "Cremating" "Entombing" "Malicious" "Tyrannical" "Merciless"
-    HasExplicitMod "of Rending" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "of Celebration"
-Show
-    Class "Dagger" "Sceptre"
-    HasExplicitMod "Runic" "Xoph's" "Esh's"
-Show
-    Class "Dagger" "Sceptre" "Wand"
-    HasExplicitMod "Runic" "Glyphic" "Lich's" "Cremating" "Electrocuting" "Entombing" "Runic" "Xoph's" "Esh's" "Tul's"
-    HasExplicitMod "of Destruction" "of Celebration" "of Finesse" "of Sortilege" "of Unmaking" "of Ruin" "of Ashes" "of Glaciation" "of Arcing"
-Show
-    HasExplicitMod "Necromancer's"
-Show
-    HasExplicitMod "Hellion's" "Cheetah's" "Seething" "Unassailable"
-    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast"
-Show
-    HasExplicitMod "Prime" "Resplendent" "Unfaltering" "Unassailable"
-    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast"
-Show
-    HasExplicitMod "Athlete's" "Seething" "Unassailable"
-    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast" "of Grandmastery" "of Lioneye" "of the Assassin"
-Show
-    HasExplicitMod "Vigorous" "Xoph's" "Runic" "Esh's" "Unfaltering" "Incandescent" "Tul's"
-    HasExplicitMod "of Ephij" "of Tzteosh" "of Haast" "of Expertise" "of the Span" "of Unmaking"
-Show
-    Class "Quiver"
-    HasExplicitMod "Overpowering" "Devastating" "Fecund"
-    HasExplicitMod "of Ease" "of Rending" "of Destruction"
-Show
-    Class "Helm"
-    HasExplicitMod "Fecund" "Blazing" "Unassailable"
-    HasExplicitMod "of the Lightning" "of Ephij" "of Tzteosh" "of the Magma" "of the Ice" "of Haast" "of Lioneye"
-Show
-    Class "Amulet"
-    HasExplicitMod "Athlete's" "Virile" "Dazzling" "Flaring" "Cremating" "Entombing" "Electrocuting" "Unassailable" "Wizard's" "Devastating"
-    HasExplicitMod "of the Gods" "of the Wind" "of the Genius" "of Talent" "of Skill" "of the Assassin" "of Tzteosh" "of Haast" "of Ephij" "of the Rainbow" "of Immolation" "of Floe" "of Discharge" "of Nirvana" "of Destruction" "of Incision" "of the Multiverse" "of Expertise"
-Show
-    Class "Rings"
-    HasExplicitMod "Flawless" "Electrocuting" "Overpowering" "Virile" "Rotund" "Resplendent" "Annealed" "Cremating" "Entombing"
-    HasExplicitMod "of the Gods" "of the Wind" "of the Genius" "of the Comet" "of Talent" "of Skill" "of the Assassin" "of Tzteosh" "of Haast" "of Ephij" "of the Rainbow" "of Flames" "of Rime" "of Voltage"
-Show
-    Class "Jewel"
-    HasExplicitMod "Vivid" "Shimmering"
-Show
-    Class "Belts"
-    HasExplicitMod "Fecund" "Dazzling" "Devastating" "Overpowering" "Enveloped"
-    HasExplicitMod "of the Gods" "of the Godslayer" "of Tzteosh" "of Haast" "of Ephij" "of Overflowing" "of Sipping" "of Savouring"
-Show
-    Class "Bow" "Staves"
-    HasExplicitMod "Sharpshooter's" "Anarchist's" "Lava Caller's" "Tempest King's" "Winterbringer's" "Paragon's"
-#-------------------------------------------------------------------------------
-
-
-
-
-
-# Hide -------------------------------------------------------------------------
-
-Hide
-    Class "Jewel"
-    Rarity = Magic
-    DisableDropSound True
-Hide
-    Class "Ring" "Amulet" "Belt"
-    Rarity = Normal Magic
-    DisableDropSound True
-Hide
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
-    ItemLevel >= 60
-    DisableDropSound True
-#-------------------------------------------------------------------------------
 
 
 
@@ -326,23 +229,87 @@ Hide
 # Leveling ---------------------------------------------------------------------
 
 Show
-    ItemLevel = 1 2
-#Show
-#    Class "Utility Flask"
-#    Rarity = Normal
-#Show
-#    Class "Active Skill Gem" "Support Skill Gem"
+    AreaLevel = 1 2
+Show
+    Class "Utility Flask"
+Show
+    Class "Skill Gem"
+Show
+    SocketGroup RGB
 Show
     LinkedSockets = 5
-#Show
-#    LinkedSockets = 4
-#    Class "Helm" "Gloves" "Boots"
-#Show
-#    SocketGroup RGB
-#    Height = 3
-#    Width = 1
+Show
+    LinkedSockets = 4
+    Class "Helm" "Gloves" "Boots"
 #-------------------------------------------------------------------------------
-Hide
+Show
+    AreaLevel <= 5
+    DropLevel >= 3
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 8
+    DropLevel >= 6
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 11
+    DropLevel >= 9
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 14
+    DropLevel >= 12
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 17
+    DropLevel >= 15
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 20
+    DropLevel >= 18
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 25
+    DropLevel >= 20
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 30
+    DropLevel >= 25
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 35
+    DropLevel >= 30
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 40
+    DropLevel >= 35
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 45
+    DropLevel >= 40
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 50
+    DropLevel >= 45
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel <= 55
+    DropLevel >= 50
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    DisableDropSound True
+Show
+    AreaLevel < 60
+    DropLevel >= 55
     Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
     DisableDropSound True
 #-------------------------------------------------------------------------------
@@ -353,58 +320,34 @@ Hide
     DisableDropSound True
 #-------------------------------------------------------------------------------
 Hide
-    ItemLevel >= 60
-    DropLevel < 60
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 55
-    DropLevel < 50
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 50
-    DropLevel < 45
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 45
-    DropLevel < 40
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 40
-    DropLevel < 35
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 35
-    DropLevel < 30
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 30
-    DropLevel < 25
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 25
-    DropLevel < 20
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 20
-    DropLevel < 15
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 15
-    DropLevel < 10
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
-    DisableDropSound True
-Hide
-    ItemLevel >= 10
-    DropLevel < 5
     Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
     DisableDropSound True
 #-------------------------------------------------------------------------------
+
+
+
+
+
+# Hide -------------------------------------------------------------------------
+
+#Hide
+#    Class "Jewel"
+#    Rarity = Magic
+#    DisableDropSound True
+#Hide
+#    Class "Ring" "Amulet" "Belt"
+#    Rarity = Normal Magic
+#    DisableDropSound True
+#Hide
+#    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
+#    ItemLevel >= 60
+#    DisableDropSound True
+#-------------------------------------------------------------------------------
+
+
+
+
+
+# Catch ------------------------------------------------------------------------
+Show
+    SetBackgroundColor 250 230 250 155
