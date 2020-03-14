@@ -9,6 +9,7 @@
 # Divination Cards
 # Uniques
 # Identified Items
+# Prophecies
 
 
 
@@ -16,6 +17,12 @@
 
 # Chaos Recipe -----------------------------------------------------------------
 
+Show
+    Rarity = Rare
+    Identified False
+    Class "Ring" "Amulet" "Belt"
+    ItemLevel >= 60
+    ItemLevel <= 74
 Show
     Rarity = Rare
     Identified False
@@ -59,6 +66,30 @@ Show
 
 
 
+# Early League -----------------------------------------------------------------
+
+Show
+    Class "Utility Flask"
+Show
+    Class "Skill Gem"
+Show
+    SocketGroup RGB
+Show
+    LinkedSockets = 5
+Show
+    LinkedSockets = 4
+    Class "Helm" "Gloves" "Boots"
+Show
+    Class "Flask"
+    Rarity = Normal
+    BaseType "Quicksilver" "Diamond" "Sulphur" "Ruby" "Topaz" "Sapphire" "Granite" "Basalt" "Jade" "Stibnite" "Quartz" "Divine Life" "Eternal Life" "Divine Mana" "Eternal Mana"
+    MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
+
+
+
+
+
 # Currency ---------------------------------------------------------------------
 
 Show
@@ -84,6 +115,7 @@ Show
 Show
     Class "Currency"
     MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
 
 
 
@@ -113,6 +145,7 @@ Show
     Class "Map"
     SetTextColor 236 236 236 242
     DisableDropSound True
+#-------------------------------------------------------------------------------
 
 
 
@@ -138,6 +171,7 @@ Show
 Show
     Class "Skill Gem"
     DisableDropSound True
+#-------------------------------------------------------------------------------
 
 
 
@@ -165,7 +199,7 @@ Show
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
-    Class "Abyss" "Atlas" "Incubator" "Delve" "Incursion" "Labyrinth" "Leaguestone" "Metamorph" "Pantheon" "Shard" "UniqueFragment"
+    Class "Abyss" "Atlas" "Incubator" "Delve" "Incursion" "Labyrinth" "Leaguestone" "Metamorph" "Pantheon" "Shard" "Piece"
     MinimapIcon 0 Blue Star
 Show
     Class "Jewel"
@@ -201,11 +235,12 @@ Show
 
 Show
     Rarity = Unique
-    Class "Ring" "Amulet" "Jewel"
+    Class "Flask" "Ring" "Amulet" "Jewel"
     MinimapIcon 0 Blue Star
 Show
     Rarity = Unique
     DisableDropSound True
+#-------------------------------------------------------------------------------
 
 
 
@@ -215,12 +250,12 @@ Show
 
 Show
     Class "Divination Card"
-    BaseType "Abandoned Wealth" "Alluring Bounty" "Chaotic Disposition" "Coveted Posesseion" "Demigod's Wager" "Emperor's Luck" "Harmony of Souls" "House of Mirrors" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Seven Years Bad Luck" "The Cacophony" "The Cartographer" "The Catalyst" "The Fool" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Immortal" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Puzzle" "The Saint's Treasure" "The Scholar" "The Seeker" "The Sephirot" "The Survivalist" "The Tinkerer's Table" "The Union" "The Wrath" "Three Faces in the Dark" "Underground Forest" "Vinia's Token"
+    BaseType "Abandoned Wealth" "Alluring Bounty" "Chaotic Disposition" "Coveted Possession" "Demigod's Wager" "Emperor's Luck" "Harmony of Souls" "House of Mirrors" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Seven Years Bad Luck" "The Cacophony" "The Cartographer" "The Catalyst" "The Fool" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Immortal" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Puzzle" "The Saint's Treasure" "The Scholar" "The Seeker" "The Sephirot" "The Survivalist" "The Tinkerer's Table" "The Union" "The Wrath" "Three Faces in the Dark" "Underground Forest" "Vinia's Token"
     MinimapIcon 0 Blue Star
 Show
     Class "Divination Card"
-    BaseType
     MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
 
 
 
@@ -230,17 +265,12 @@ Show
 
 Show
     AreaLevel = 1 2
-Show
-    Class "Utility Flask"
-Show
-    Class "Skill Gem"
-Show
-    SocketGroup RGB
-Show
-    LinkedSockets = 5
-Show
-    LinkedSockets = 4
-    Class "Helm" "Gloves" "Boots"
+#-------------------------------------------------------------------------------
+Hide
+    ItemLevel > 12
+    Rarity = Normal Magic
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
+    DisableDropSound True
 #-------------------------------------------------------------------------------
 Show
     AreaLevel <= 5
@@ -314,12 +344,6 @@ Show
     DisableDropSound True
 #-------------------------------------------------------------------------------
 Hide
-    ItemLevel > 12
-    Rarity = Normal Magic
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
-    DisableDropSound True
-#-------------------------------------------------------------------------------
-Hide
     Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
     DisableDropSound True
 #-------------------------------------------------------------------------------
@@ -351,3 +375,4 @@ Hide
 # Catch ------------------------------------------------------------------------
 Show
     SetBackgroundColor 250 230 250 155
+#-------------------------------------------------------------------------------
