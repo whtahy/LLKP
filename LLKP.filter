@@ -23,34 +23,23 @@ Show
     Class "Ring" "Amulet" "Belt"
     ItemLevel >= 60
     ItemLevel <= 74
+    MinimapIcon 0 Blue Star
 Show
     Rarity = Rare
     Identified False
-    Class "Helm"
+    Class "Helm" "Gloves" "Boots"
     ItemLevel >= 60
     ItemLevel <= 74
     DropLevel >= 60
-Show
-    Rarity = Rare
-    Identified False
-    Class "Gloves"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DropLevel >= 60
-Show
-    Rarity = Rare
-    Identified False
-    Class "Boots"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DropLevel >= 60
+    DisableDropSound True
 Show
     Rarity = Rare
     Identified False
     Class "Body Armour"
     ItemLevel >= 60
     ItemLevel <= 74
-    DropLevel >= 60
+    DropLevel >= 64
+    DisableDropSound True
 Show
     Rarity = Rare
     Identified False
@@ -59,7 +48,8 @@ Show
     Width = 1
     ItemLevel >= 60
     ItemLevel <= 74
-    DropLevel >= 50
+    DropLevel >= 60
+    DisableDropSound True
 #-------------------------------------------------------------------------------
 
 
@@ -69,20 +59,22 @@ Show
 # Early League -----------------------------------------------------------------
 
 Show
-    Class "Utility Flask"
-Show
-    Class "Skill Gem"
-Show
-    SocketGroup RGB
-Show
     LinkedSockets = 5
-Show
-    LinkedSockets = 4
-    Class "Helm" "Gloves" "Boots"
+    MinimapIcon 0 Blue Star
+#Show
+#    SocketGroup RGB
+#    Height = 3
+#    Width = 1
+#    DisableDropSound True
+#Show
+#    SocketGroup RGB
+#    Height = 2
+#    Width = 2
+#    DisableDropSound True
 Show
     Class "Flask"
     Rarity = Normal
-    BaseType "Quicksilver" "Diamond" "Sulphur" "Ruby" "Topaz" "Sapphire" "Granite" "Basalt" "Jade" "Stibnite" "Quartz" "Divine Life" "Eternal Life" "Divine Mana" "Eternal Mana"
+    BaseType "Quicksilver" "Diamond" "Sulphur" "Sapphire" "Basalt" # "Divine Mana" "Eternal Life" "Eternal Mana" "Stibnite" "Quartz" "Topaz" "Ruby" "Divine Life" "Jade" "Granite"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 
@@ -92,26 +84,26 @@ Show
 
 # Currency ---------------------------------------------------------------------
 
-Show
-    Class "Currency"
-    BaseType "Wisdom" "Portal"
-    DisableDropSound True
-Show
-    Class "Currency"
-    BaseType "Scrap" "Whetstone" "Augmentation" "Chromatic" "Jeweller" "Chance"
-    DisableDropSound True
-Show
-    Class "Currency"
-    BaseType "Transmutation" "Bauble"
-    DisableDropSound True
-Show
-    Class "Currency"
-    BaseType "Alteration"
-    DisableDropSound True
-Show
+Hide
     Class "Currency"
     BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
     DisableDropSound True
+Hide
+    Class "Currency"
+    BaseType "Wisdom"
+    DisableDropSound True
+Hide
+    Class "Currency"
+    BaseType "Portal"
+    DisableDropSound True
+Show
+    Class "Currency"
+    BaseType "Augmentation" "Chance" "Chromatic" "Jeweller" "Scrap" "Silver Coin" "Transmutation" "Whetstone"
+    DisableDropSound True
+Show
+    Class "Currency"
+    BaseType "Alteration" "Bauble"
+    MinimapIcon 0 Blue Star
 Show
     Class "Currency"
     MinimapIcon 0 Blue Star
@@ -161,14 +153,19 @@ Show
     Class "Skill Gem"
     GemLevel >= 10
     MinimapIcon 0 Blue Star
+#Show
+#    Class "Skill Gem"
+#    DropLevel >= 30
+#    MinimapIcon 0 Blue Star
 Show
     Class "Skill Gem"
-    DropLevel >= 30
+    BaseType "Awakened"
     MinimapIcon 0 Blue Star
 Show
-    BaseType "Empower" "Enhance" "Enlighten" "Portal"
+    Class "Skill Gem"
+    BaseType "Empower" "Enhance" "Enlighten" "Portal" "Vaal"
     DisableDropSound True
-Show
+Hide
     Class "Skill Gem"
     DisableDropSound True
 #-------------------------------------------------------------------------------
@@ -222,7 +219,7 @@ Show
     BaseType "Steel Ring" "Opal Ring"
     MinimapIcon 0 Blue Star
 Show
-    #ItemLevel >= 86
+    ItemLevel >= 82
     BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
@@ -248,6 +245,10 @@ Show
 
 # Divination Cards -------------------------------------------------------------
 
+Hide
+    Class "Divination Card"
+    BaseType "The Hermit" "Light and Truth" "The King's Blade" "Lantador's Lost Love" "Rain of Chaos" "The Carrion Crow" "The Metalsmith's Gift" "Thunderous Skies" "Scarred Meadow"
+    DisableDropSound True
 Show
     Class "Divination Card"
     BaseType "Abandoned Wealth" "Alluring Bounty" "Chaotic Disposition" "Coveted Possession" "Demigod's Wager" "Emperor's Luck" "Harmony of Souls" "House of Mirrors" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Seven Years Bad Luck" "The Cacophony" "The Cartographer" "The Catalyst" "The Fool" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Immortal" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Puzzle" "The Saint's Treasure" "The Scholar" "The Seeker" "The Sephirot" "The Survivalist" "The Tinkerer's Table" "The Union" "The Wrath" "Three Faces in the Dark" "Underground Forest" "Vinia's Token"
@@ -266,85 +267,106 @@ Show
 Show
     AreaLevel = 1 2
 #-------------------------------------------------------------------------------
+Show
+    LinkedSockets = 4
+    Class "Helm" "Gloves" "Boots"
+    AreaLevel <= 48
+Show
+    LinkedSockets = 3
+    Class "Helm" "Gloves" "Boots" "Wand"
+    AreaLevel <= 28
+#-------------------------------------------------------------------------------
+Show
+    Class "Ring" "Amulet" "Belt"
+    AreaLevel < 14
+    DisableDropSound True
+Show
+    Rarity = Rare
+    AreaLevel < 60
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Quiver" "Shield" "Staves" "Sceptre" "Wand"
+    DisableDropSound True
+#-------------------------------------------------------------------------------
 Hide
     ItemLevel > 12
     Rarity = Normal Magic
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield"
     DisableDropSound True
 #-------------------------------------------------------------------------------
 Show
     AreaLevel <= 5
     DropLevel >= 3
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 8
     DropLevel >= 6
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 11
     DropLevel >= 9
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 14
     DropLevel >= 12
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 17
     DropLevel >= 15
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 20
     DropLevel >= 18
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 25
     DropLevel >= 20
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 30
     DropLevel >= 25
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 35
     DropLevel >= 30
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 40
     DropLevel >= 35
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 45
     DropLevel >= 40
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 50
     DropLevel >= 45
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel <= 55
     DropLevel >= 50
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 Show
     AreaLevel < 60
     DropLevel >= 55
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound True
 #-------------------------------------------------------------------------------
 Hide
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Sword" "Axe" "Mace" "Sceptre" "Claw" "Dagger" "Wand" "Bow" "Staves" "Quiver" "Shield" "Flask"
+    Class "Ring" "Amulet" "Belt"
+    DisableDropSound True
+Hide
+    Class "Flask" "Axe" "Bow" "Claw" "Dagger" "Mace" "Sword" "Helm" "Gloves" "Boots" "Body Armour" "Quiver" "Shield" "Staves" "Sceptre" "Wand"
     DisableDropSound True
 #-------------------------------------------------------------------------------
 
