@@ -28,39 +28,39 @@ Show
 
 # Chaos Recipe -----------------------------------------------------------------
 
-Show
-    Rarity = Rare
-    Identified False
-    Class "Ring" "Amulet" "Belt"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    MinimapIcon 0 Blue Star
-Show
-    Rarity = Rare
-    Identified False
-    Class "Helm" "Gloves" "Boots"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DropLevel >= 30
-    DisableDropSound True
-Show
-    Rarity = Rare
-    Identified False
-    Class "Body Armour"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DropLevel >= 60
-    DisableDropSound True
-Show
-    Rarity = Rare
-    Identified False
-    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
-    Height = 3
-    Width = 1
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DropLevel >= 1
-    DisableDropSound True
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Ring" "Amulet" "Belt"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    MinimapIcon 0 Blue Star
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Helm" "Gloves" "Boots"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DropLevel >= 30
+#    DisableDropSound True
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Body Armour"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DropLevel >= 60
+#    DisableDropSound True
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
+#    Height = 3
+#    Width = 1
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DropLevel >= 1
+#    DisableDropSound True
 #-------------------------------------------------------------------------------
 
 
@@ -98,9 +98,10 @@ Show
 Show
     Class "Currency"
     StackSize > 1
-Hide
+Show
     Class "Currency"
-    BaseType "Splinter of Xoph" "Splinter of Tul" "Splinter of Esh"
+    BaseType "Splinter of Xoph" "Splinter of Tul" "Splinter of Esh" "Splinter of Uul-Netol"
+    DisableDropSound True
 Hide
     Class "Currency"
     BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
@@ -117,9 +118,17 @@ Hide
     Class "Currency"
     BaseType "Augmentation" "Chance" "Jeweller" "Scrap" "Transmutation" "Whetstone"
     DisableDropSound True
+Hide
+    Class "Currency"
+    BaseType "Bauble" "Chromatic"
+    DisableDropSound True
 Show
     Class "Currency"
-    BaseType "Alteration" "Bauble" "Chromatic" "Silver Coin"
+    BaseType "Alteration" "Silver Coin"
+    MinimapIcon 0 Blue Star
+Show
+    Class "Currency"
+    BaseType "Scour" "Fusing"
     MinimapIcon 0 Blue Star
 Show
     Class "Currency"
@@ -145,12 +154,13 @@ Show
     MapTier >= 11
     SetTextColor 215 000 015 242
     MinimapIcon 0 Cyan Star
-Show
+Hide
     Class "Map"
     MapTier >= 6
     SetTextColor 245 215 110 242
-    MinimapIcon 0 Blue Star
-Show
+#    MinimapIcon 0 Blue Star
+    DisableDropSound True
+Hide
     Class "Map"
     SetTextColor 236 236 236 242
     DisableDropSound True
@@ -185,6 +195,26 @@ Show
 Hide
     Class "Skill Gem"
     DisableDropSound True
+#-------------------------------------------------------------------------------
+
+
+
+
+
+# Uniques ----------------------------------------------------------------------
+
+Show
+    Rarity = Unique
+    Class "Flask" "Ring" "Amulet" "Jewel"
+    MinimapIcon 0 Blue Star
+Show
+    Rarity = Unique
+    PlayAlertSound None
+    CustomAlertSound "None"
+    PlayAlertSoundPositional None
+    PlayEffect None
+    DisableDropSound True
+    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 
 
@@ -227,34 +257,19 @@ Show
     BaseType "Talisman" "Stygian Vise" "Sacrificial Garb"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
+Hide
+    Class "Ring" "Amulet" "Belt"
+    BaseType "Studded Belt" "Cloth Belt" "Chain Belt"
+    ItemLevel >= 84
+    DisableDropSound True
 Show
     Class "Ring" "Amulet" "Belt"
     Rarity = Rare
-    ItemLevel >= 82
+    ItemLevel >= 84
     MinimapIcon 0 Blue Star
 Show
-    ItemLevel >= 82
+    ItemLevel >= 84
     BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
-    MinimapIcon 0 Blue Star
-#-------------------------------------------------------------------------------
-
-
-
-
-
-# Uniques ----------------------------------------------------------------------
-
-Show
-    Rarity = Unique
-    Class "Flask" "Ring" "Amulet" "Jewel"
-    MinimapIcon 0 Blue Star
-Show
-    Rarity = Unique
-    PlayAlertSound None
-    CustomAlertSound "None"
-    PlayAlertSoundPositional None
-    PlayEffect None
-    DisableDropSound True
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 
@@ -264,26 +279,26 @@ Show
 
 # Divination Cards -------------------------------------------------------------
 
-Hide
-    Class "Divination Card"
-    BaseType "The Hermit" "Light and Truth" "The King's Blade" "Lantador's Lost Love" "Rain of Chaos" "The Carrion Crow" "The Metalsmith's Gift" "Thunderous Skies" "Scarred Meadow"
-    DisableDropSound True
-Show
-    Class "Divination Card"
-    BaseType "House of Mirrors" "The Doctor" "The Demon" "The Fiend" "Beauty Through Death" "The Cheater" "Succor of the Sinless" "The World Eater" "The Nurse" "The Immortal" "Alluring Bounty" "The Samurai's Eye" "The Progeny of Lunaris" "Pride of the First Ones" "Immortal Resolve" "Nook's Crown" "The Iron Bard" "Abandoned Wealth" "The Dragon's Heart" "The Strategist" "Wealth and Power" "Seven Years Bad Luck" "The Spark and the Flame" "The Price of Loyalty" "Hunter's Reward" "The Queen" "The Escape" "The Enlightened" "The Celestial Justicar" "The Saint's Treasure" "The Offering" "Void of the Elements" "The Craving" "The Eye of Terror" "The Life Thief" "Etched in Blood" "Council of Cats" "The Ethereal" "Blessing of God" "The Celestial Stone" "The Eldritch Decay" "The Polymath" "The Bargain" "The Damned" "Azyran's Reward" "Dark Dreams" "Pride Before the Fall" "The Soul"
-    MinimapIcon 0 Cyan Star
 Show
     Class "Divination Card"
     BaseType "Abandoned Wealth" "Alluring Bounty" "Chaotic Disposition" "Coveted Possession" "Demigod's Wager" "Emperor's Luck" "Harmony of Souls" "House of Mirrors" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Seven Years Bad Luck" "The Cacophony" "The Cartographer" "The Catalyst" "The Fool" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Immortal" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Puzzle" "The Saint's Treasure" "The Scholar" "The Seeker" "The Sephirot" "The Survivalist" "The Tinkerer's Table" "The Union" "The Wrath" "Three Faces in the Dark" "Underground Forest" "Vinia's Token" "Humility"
     MinimapIcon 0 Blue Star
 Show
     Class "Divination Card"
-    BaseType "Perfection" "The Cursed King" "The Hale Heart" "The Hoarder" "Burning Blood" "Squandered Prosperity" "The Endless Darkness" "The Lord of Celebration" "The Mayor" "The Wolven King's Bite" "The Sephirot" "The King's Heart" "The Sacrifice" "The Undaunted" "Chaotic Disposition" "Remembrance" "The Artist" "The Dapper Prodigy" "The Valkyrie" "Bowyer's Dream" "Echoes of Love" "The Landing" "The Last One Standing" "The Pact" "The Porcupine" "The Professor" "The Undisputed" "The Warlord" "Arrogance of the Vaal" "Cameria's Cut" "Divine Justice" "Earth Drinker" "Last Hope" "Mawr Blaidd" "Rebirth" "The Breach" "The Risk" "The Vast"
+    BaseType "Perfection" "The Cursed King" "The Hale Heart" "The Hoarder" "Burning Blood" "Squandered Prosperity" "The Endless Darkness" "The Lord of Celebration" "The Mayor" "The Wolven King's Bite" "The Sephirot" "The King's Heart" "The Sacrifice" "The Undaunted" "Chaotic Disposition" "Remembrance" "The Artist" "The Dapper Prodigy" "The Valkyrie" "Bowyer's Dream" "Echoes of Love" "The Landing" "The Porcupine" "The Professor" "The Undisputed" "The Warlord" "Arrogance of the Vaal" "Cameria's Cut" "Divine Justice" "Mawr Blaidd" "Rebirth" "The Risk"
     MinimapIcon 0 Blue Star
 Hide
     Class "Divination Card"
+    BaseType "The Last One Standing" "The Pact" "Earth Drinker" "Last Hope" "The Breach" "The Vast"
+    DisableDropSound True
+Hide
+    Class "Divination Card"
     BaseType "The Wolf" "A Dab of Ink" "Boon of the First Ones" "Buried Treasure" "Deathly Designs" "Emperor of Purity" "Heterochromia" "Lucky Deck" "More is Never Enough" "Sambodhi's Vow" "The Aesthete" "The Cartographer" "The Chains that Bind" "The Chosen" "The Dark Mage" "The Dreamer" "The Easy Stroll" "The Encroaching Darkness" "The Fishmonger" "The Fool" "The Formless Sea" "The Gemcutter" "The Heroic Shot" "The Innocent" "The Jeweller's Boon" "The Old Man" "The Puzzle" "The Realm" "The Throne" "The Tinkerer's Table" "The Union" "The Void" "The Wrath" "The Wretched" "Time-Lost Relic" "Loyalty" "Vinia's Token" "The Opulent" "The Thaumaturgist" "Boon of Justice" "Three Voices" "Harmony of Souls" "Struck by Lightning" "The Surgeon" "Three Faces in the Dark" "Rain of Chaos" "A Mother's Parting Gift" "Akil's Prophecy" "Alone in the Darkness" "Assassin's Favour" "Atziri's Arsenal" "Audacity" "Baited Expectations" "Blind Venture" "Boundless Realms" "Call to the First Ones" "Cartographer's Delight" "Coveted Possession" "Dark Temptation" "Demigod's Wager" "Destined to Crumble" "Dialla's Subjugation" "Doedre's Madness" "Emperor's Luck" "Forbidden Power" "Friendship" "Gemcutter's Promise" "Gift of the Gemling Queen" "Glimmer of Hope" "Grave Knowledge" "Her Mask" "Hope" "Hubris" "Humility" "Hunter's Resolve" "Imperial Legacy" "Jack in the Box" "Left to Fate" "Light and Truth" "Lingering Remnants" "Lost Worlds" "Lucky Connections" "Lysah's Respite" "Merciless Armament" "Mitts" "Monochrome" "No Traces" "Prosperity" "Rain Tempter" "Rats" "Scholar of the Seas" "Shard of Fate" "The Admirer" "The Archmage's Right Hand" "The Arena Champion" "The Army of Blood" "The Avenger" "The Battle Born" "The Beast" "The Betrayal" "The Blazing Fire" "The Body" "The Bones" "The Brittle Emperor" "The Cacophony" "The Calling" "The Carrion Crow" "The Cataclysm" "The Catalyst" "The Coming Storm" "The Conduit" "The Darkest Dream" "The Deal" "The Deceiver" "The Deep Ones" "The Demoness" "The Doppelganger" "The Dragon" "The Dreamland" "The Drunken Aristocrat" "The Endurance" "The Explorer" "The Eye of the Dragon" "The Fathomless Depths" "The Feast" "The Fletcher" "The Flora's Gift" "The Forsaken" "The Fox" "The Garish Power" "The Gentleman" "The Gladiator" "The Golden Era" "The Harvester" "The Hunger" "The Incantation" "The Inoculated" "The Insatiable" "The Inventor" "The Jester" "The Journey" "The King's Blade" "The Lich" "The Lion" "The Lord in Black" "The Lunaris Priestess" "The Mad King" "The Master" "The Master Artisan" "The Mercenary" "The Messenger" "The Metalsmith's Gift" "The Mountain" "The Oath" "The Obscured" "The One With All" "The Pack Leader" "The Penitent" "The Poet" "The Price of Protection" "The Primordial" "The Rabid Rhoa" "The Rite of Elements" "The Road to Power" "The Ruthless Ceinture" "The Scarred Meadow" "The Scavenger" "The Scholar" "The Seeker" "The Side Quest" "The Sigil" "The Siren" "The Skeleton" "The Spoiled Prince" "The Standoff" "The Stormcaller" "The Summoner" "The Sun" "The Surveyor" "The Survivalist" "The Sword King's Salute" "The Tower" "The Traitor" "The Trial" "The Twilight Moon" "The Twins" "The Tyrant" "The Valley of Steel Boxes" "The Visionary" "The Warden" "The Wilted Rose" "The Wind" "The Witch" "The Wolf's Legacy" "The Wolf's Shadow" "The Wolverine" "Thirst for Knowledge" "Tranquillity" "Treasure Hunter" "Vanity" "Vile Power" "Volatile Power" "The Lover" "Thunderous Skies" "The Web" "The Watcher" "Death" "Anarchy's Price" "Lantador's Lost Love" "Might is Right" "The Gambler" "The Hermit" "Turn the Other Cheek"
-
+    DisableDropSound True
+Show
+    Class "Divination Card"
+    BaseType "House of Mirrors" "The Doctor" "The Demon" "The Fiend" "Beauty Through Death" "The Cheater" "Succor of the Sinless" "The World Eater" "The Nurse" "The Immortal" "Alluring Bounty" "The Samurai's Eye" "The Progeny of Lunaris" "Pride of the First Ones" "Immortal Resolve" "Nook's Crown" "The Iron Bard" "Abandoned Wealth" "The Dragon's Heart" "The Strategist" "Wealth and Power" "Seven Years Bad Luck" "The Spark and the Flame" "The Price of Loyalty" "Hunter's Reward" "The Queen" "The Escape" "The Enlightened" "The Celestial Justicar" "The Saint's Treasure" "The Offering" "Void of the Elements" "The Craving" "The Eye of Terror" "The Life Thief" "Etched in Blood" "Council of Cats" "The Ethereal" "Blessing of God" "The Celestial Stone" "The Eldritch Decay" "The Polymath" "The Bargain" "The Damned" "Azyran's Reward" "Dark Dreams" "Pride Before the Fall" "The Soul"
+    MinimapIcon 0 Cyan Star
 Show
     Class "Divination Card"
     MinimapIcon 0 Blue Star
