@@ -8,7 +8,6 @@ https://creativecommons.org/publicdomain/zero/1.0/
 #### Legal Code
 https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt
 
-
 # Patch
 
-3.10 Delirium, 2020 March
+3.13 Echoes of the Atlas + Ritual League
