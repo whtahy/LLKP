@@ -15,10 +15,11 @@
 # 05. Skill Gems
 # 06. Uniques
 # 07. Cluster Jewel
-# 08. Misc
-# 09. Div Cards
-# 10. Leveling
-# 11. Catch
+# 08. Flasks
+# 09. Misc
+# 10. Div Cards
+# 11. Leveling
+# 12. Catch
 
 #-------------------------------------------------------------------------------#
 # 01. Global
@@ -26,15 +27,6 @@
 Show
     SetFontSize 45
     Continue
-#-------------------------------------------------------------------------------
-Show
-    Class "Flask"
-    Rarity = Normal
-    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
-Show
-    Class "Flask"
-    BaseType "Granite" "Silver" # "Diamond" "Quicksilver" "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Basalt" "Stibnite" "Sulphur" "Jade"
-    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
     Class "Helm"
@@ -108,18 +100,17 @@ Show
 #    SetFontSize 32
 #    SetBackgroundColor 0 0 0 125
 #    BaseType "Glorious" "Assassin" "Vaal Regalia" "Sadist"
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
-#    Height = 3
-#    Width = 1
-#    ItemLevel >= 60
-#    ItemLevel <= 74
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-#    DropLevel > 60
+Show
+    Rarity = Rare
+    Identified False
+    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
+    Height = 3
+    Width = 1
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
 
 #-------------------------------------------------------------------------------#
 # 03. Currency
@@ -296,7 +287,62 @@ Hide
     SetBackgroundColor 0 0 0 125
 
 #-------------------------------------------------------------------------------#
-# 08. Misc
+# 08. Flasks
+#-------------------------------------------------------------------------------#
+#Show
+#    Class "Flask"
+#    Rarity = Normal
+#    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
+Show
+    Class "Flask"
+    BaseType "Granite" "Silver" # "Diamond" "Quicksilver" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Basalt" "Stibnite" "Sulphur" "Jade"
+    MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 3
+    AreaLevel <= 6
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 6
+    AreaLevel <= 12
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 12
+    AreaLevel <= 18
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 18
+    AreaLevel <= 24
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 24
+    AreaLevel <= 30
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 30
+    AreaLevel <= 36
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 36
+    AreaLevel <= 42
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 42
+    AreaLevel <= 50
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 50
+    AreaLevel <= 60
+#-------------------------------------------------------------------------------
+Hide
+    Class "Flask"
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+
+#-------------------------------------------------------------------------------#
+# 09. Misc
 #-------------------------------------------------------------------------------#
 Show
     Class "Heist" "Blueprint" "Contract" "Trinket"
@@ -356,7 +402,7 @@ Show
     SetBackgroundColor 0 0 0 125
 
 #-------------------------------------------------------------------------------#
-# 09. Divination Cards
+# 10. Divination Cards
 #-------------------------------------------------------------------------------#
 Show
     Class "Divination Card"
@@ -373,7 +419,7 @@ Hide
     BaseType "A Dab of Ink" "A Mother's Parting Gift" "Akil's Prophecy" "Alone in the Darkness" "Anarchy's Price" "Assassin's Favour" "Atziri's Arsenal" "Audacity" "Blind Venture" "Boon of Justice" "Boundless Realms" "Call to the First Ones" "Cartographer's Delight" "Cursed Words" "Dark Temptation" "Death" "Destined to Crumble" "Dialla's Subjugation" "Doedre's Madness" "Earth Drinker" "Echoes of Love" "Emperor's Luck" "Forbidden Power" "Friendship" "Gift of the Gemling Queen" "Glimmer of Hope" "Grave Knowledge" "Harmony of Souls" "Her Mask" "Hope" "Hubris" "Hunter's Resolve" "Lantador's Lost Love" "Last Hope" "Light and Truth" "Lysah's Respite" "Might is Right" "Mitts" "Prosperity" "Rain of Chaos" "Rain Tempter" "Rats" "Sambodhi's Vow" "Scholar of the Seas" "Shard of Fate" "Struck by Lightning" "The Admirer" "The Aesthete" "The Archmage's Right Hand" "The Arena Champion" "The Army of Blood" "The Avenger" "The Battle Born" "The Bear Woman" "The Beast" "The Blazing Fire" "The Body" "The Brittle Emperor" "The Cache" "The Calling" "The Carrion Crow" "The Cataclysm" "The Catalyst" "The Coming Storm" "The Conduit" "The Cursed King" "The Darkest Dream" "The Deal" "The Deceiver" "The Deep Ones" "The Demoness" "The Dragon" "The Dreamer" "The Dreamland" "The Drunken Aristocrat" "The Easy Stroll" "The Encroaching Darkness" "The Endurance" "The Explorer" "The Eye of the Dragon" "The Fathomless Depths" "The Feast" "The Fletcher" "The Flora's Gift" "The Formless Sea" "The Forsaken" "The Fox" "The Garish Power" "The Gentleman" "The Gladiator" "The Golden Era" "The Harvester" "The Hermit" "The Incantation" "The Inoculated" "The Insatiable" "The Jester" "The Journalist" "The King's Blade" "The Last One Standing" "The Lich" "The Lion" "The Long Watch" "The Lord in Black" "The Lord of Celebration" "The Lover" "The Lunaris Priestess" "The Mad King" "The Master" "The Mercenary" "The Messenger" "The Metalsmith's Gift" "The Mountain" "The Oath" "The Obscured" "The One With All" "The Opulent" "The Pack Leader" "The Penitent" "The Poet" "The Price of Protection" "The Professor" "The Puzzle" "The Rabid Rhoa" "The Rite of Elements" "The Road to Power" "The Ruthless Ceinture" "The Scarred Meadow" "The Scavenger" "The Side Quest" "The Sigil" "The Siren" "The Skeleton" "The Spoiled Prince" "The Standoff" "The Stormcaller" "The Summoner" "The Sun" "The Surgeon" "The Sword King's Salute" "The Thaumaturgist" "The Tower" "The Traitor" "The Tumbleweed" "The Twilight Moon" "The Twins" "The Tyrant" "The Unexpected Prize" "The Valley of Steel Boxes" "The Visionary" "The Warden" "The Watcher" "The Web" "The Wilted Rose" "The Wind" "The Witch" "The Wolf" "The Wolf's Legacy" "The Wolf's Shadow" "The Wolven King's Bite" "The Wolverine" "Thirst for Knowledge" "Three Faces in the Dark" "Three Voices" "Thunderous Skies" "Tranquillity" "Treasure Hunter" "Turn the Other Cheek" "Vile Power"
 
 #-------------------------------------------------------------------------------#
-# 10. Leveling
+# 11. Leveling
 #-------------------------------------------------------------------------------#
 Show
     AreaLevel = 1
@@ -400,48 +446,6 @@ Show
     AreaLevel < 50
 Hide
     Class "Ring" "Amulet" "Belt" "Helm" "Gloves" "Boots" "Body Armour" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-#-------------------------------------------------------------------------------
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 3
-    AreaLevel <= 6
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 6
-    AreaLevel <= 12
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 12
-    AreaLevel <= 18
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 18
-    AreaLevel <= 24
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 24
-    AreaLevel <= 30
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 30
-    AreaLevel <= 36
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 36
-    AreaLevel <= 42
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 42
-    AreaLevel <= 50
-Show
-    Class "Life Flask" "Mana Flask"
-    DropLevel >= 50
-    AreaLevel <= 60
-Hide
-    Class "Life Flask" "Mana Flask"
     DisableDropSound
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
