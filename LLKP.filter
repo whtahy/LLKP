@@ -27,6 +27,8 @@
 Show
     SetFontSize 45
     Continue
+Show
+    Class "Quest"
 #-------------------------------------------------------------------------------
 Show
     Class "Helm"
@@ -293,10 +295,10 @@ Hide
 #    Class "Flask"
 #    Rarity = Normal
 #    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
-Show
-    Class "Flask"
-    BaseType "Granite" "Silver" # "Diamond" "Quicksilver" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Basalt" "Stibnite" "Sulphur" "Jade"
-    MinimapIcon 0 Blue Star
+#Show
+#    Class "Flask"
+#    BaseType "Diamond" "Quicksilver" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Granite" "Basalt" "Jade" "Stibnite" "Sulphur" "Silver"
+#    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
     Class "Life Flask" "Mana Flask"
@@ -397,9 +399,31 @@ Show
     AreaLevel < 68
 #-------------------------------------------------------------------------------
 Show
-    Identified True
+    Mirrored True
+    Rarity = Rare
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
+Hide
+    Mirrored True
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+Show
+    Corrupted True
+    Rarity = Rare
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+Hide
+    Corrupted True
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+#-------------------------------------------------------------------------------
+Show
+    Identified True
 
 #-------------------------------------------------------------------------------#
 # 10. Divination Cards
@@ -442,7 +466,7 @@ Show
     AreaLevel < 50
 Show
     Rarity = Rare
-    Class "Quiver" "Bow" # "Shield" "Staves" "Sceptre" "Wand"
+    Class "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand"
     AreaLevel < 50
 Hide
     Class "Ring" "Amulet" "Belt" "Helm" "Gloves" "Boots" "Body Armour" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand"
