@@ -424,6 +424,11 @@ Hide
 #-------------------------------------------------------------------------------
 Show
     Identified True
+    ItemLevel >= 82
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
 
 #-------------------------------------------------------------------------------#
 # 10. Divination Cards
