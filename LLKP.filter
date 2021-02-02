@@ -286,14 +286,14 @@ Hide
 #-------------------------------------------------------------------------------#
 # 08. Flasks
 #-------------------------------------------------------------------------------#
-#Show
-#    Class "Flask"
-#    Rarity = Normal
-#    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
-#Show
-#    Class "Flask"
-#    BaseType "Diamond" "Quicksilver" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Granite" "Basalt" "Jade" "Stibnite" "Sulphur" "Silver"
-#    MinimapIcon 0 Blue Star
+Show
+    Class "Flask"
+    Rarity = Normal
+    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
+Show
+    Class "Flask"
+    BaseType "Diamond" "Quicksilver" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Granite" "Basalt" "Jade" "Stibnite" "Sulphur" "Silver"
+    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
     Class "Life Flask" "Mana Flask"
@@ -474,62 +474,62 @@ Hide
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
 #-------------------------------------------------------------------------------
-#Show
-#    AreaLevel <= 12
-#    DropLevel >= 6
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 15
-#    DropLevel >= 9
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 18
-#    DropLevel >= 12
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 21
-#    DropLevel >= 15
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 24
-#    DropLevel >= 18
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 27
-#    DropLevel >= 21
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 30
-#    DropLevel >= 24
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 33
-#    DropLevel >= 27
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 36
-#    DropLevel >= 30
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 39
-#    DropLevel >= 33
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 42
-#    DropLevel >= 36
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 45
-#    DropLevel >= 39
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 48
-#    DropLevel >= 42
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
-#Show
-#    AreaLevel <= 51
-#    DropLevel >= 45
-#    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 12
+    DropLevel >= 6
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 15
+    DropLevel >= 9
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 18
+    DropLevel >= 12
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 21
+    DropLevel >= 15
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 24
+    DropLevel >= 18
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 27
+    DropLevel >= 21
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 30
+    DropLevel >= 24
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 33
+    DropLevel >= 27
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 36
+    DropLevel >= 30
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 39
+    DropLevel >= 33
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 42
+    DropLevel >= 36
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 45
+    DropLevel >= 39
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 48
+    DropLevel >= 42
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
+Show
+    AreaLevel <= 51
+    DropLevel >= 45
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword"
 Hide
     Class "Axe" "Claw" "Dagger" "Mace" "Sword"
     DisableDropSound
