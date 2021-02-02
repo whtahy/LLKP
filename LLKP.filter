@@ -61,47 +61,42 @@ Show
     ItemLevel <= 74
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
-    #BaseType "Rustic" "Heavy" "Leather"
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Helm"
-#    ItemLevel >= 60
-#    ItemLevel <= 74
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-#    DropLevel > 60
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Gloves"
-#    ItemLevel >= 60
-#    ItemLevel <= 74
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-#    DropLevel > 60
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Boots"
-#    ItemLevel >= 60
-#    ItemLevel <= 74
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-#    #DropLevel > 60
-#Show
-#    Rarity = Rare
-#    Identified False
-#    Class "Body Armour"
-#    ItemLevel >= 60
-#    ItemLevel <= 74
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-#    BaseType "Glorious" "Assassin" "Vaal Regalia" "Sadist"
+Show
+    Rarity = Rare
+    Identified False
+    Class "Helm"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+Show
+    Rarity = Rare
+    Identified False
+    Class "Gloves"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+Show
+    Rarity = Rare
+    Identified False
+    Class "Boots"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+Show
+    Rarity = Rare
+    Identified False
+    Class "Body Armour"
+    ItemLevel >= 60
+    ItemLevel <= 74
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
 Show
     Rarity = Rare
     Identified False
