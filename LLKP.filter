@@ -308,7 +308,7 @@ Show
     Class "Heist" "Blueprint" "Contract" "Trinket"
     MinimapIcon 0 Blue Star
 Show
-    Class "Atlas" "Delve" "Fishing" "Harvest" "Incubator" "Incursion" "Labyrinth" "Leaguestone" "Metamorph" "Pantheon" "Piece" "Seed" "Shard" "Unarmed"
+    Class "Atlas" "Delve" "Fishing" "Incubator" "Incursion" "Labyrinth" "Leaguestone" "Metamorph" "Pantheon" "Piece" "Shard"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
