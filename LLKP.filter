@@ -30,71 +30,73 @@ Show
 Show
     Class "Quest"
 #-------------------------------------------------------------------------------
-Show
-    Class "Flask"
-    Rarity = Normal
-    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
-Show
-    Class "Flask"
-    BaseType "Diamond" "Quicksilver" "Ruby" "Sapphire" "Topaz" "Amethyst" "Quartz" "Granite" "Basalt" "Jade" "Stibnite" "Sulphur" "Silver"
-    MinimapIcon 0 Blue Star
-
+#Show
+#    Class "Flask"
+#    Rarity = Normal
+#    BaseType "Divine Life" "Divine Mana" "Eternal Life" "Eternal Mana"
+#Show
+#    Class "Flask"
+#    BaseType "Diamond" "Quicksilver" "Basalt" "Ruby" "Sapphire" "Topaz" "Quartz" "Silver" "Sulphur" "Granite" "Jade" "Stibnite" "Amethyst"
+#    MinimapIcon 0 Blue Star
 
 #-------------------------------------------------------------------------------#
 # 02. Chaos Recipe
 #-------------------------------------------------------------------------------#
-Show
-    Rarity = Rare
-    Identified False
-    Class "Ring" "Amulet"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-    MinimapIcon 0 Blue Star
-Show
-    Rarity = Rare
-    Identified False
-    Class "Belt"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-Show
-    Rarity = Rare
-    Identified False
-    Class "Helm" "Gloves" "Boots"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-Show
-    Rarity = Rare
-    Identified False
-    Class "Body Armour"
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-Show
-    Rarity = Rare
-    Identified False
-    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
-    Height = 3
-    Width = 1
-    ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Ring" "Amulet"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DisableDropSound
+#    SetFontSize 32
+#    SetBackgroundColor 0 0 0 125
+#    MinimapIcon 0 Blue Star
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Belt"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DisableDropSound
+#    SetFontSize 32
+#    SetBackgroundColor 0 0 0 125
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Helm" "Gloves" "Boots"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DisableDropSound
+#    SetFontSize 32
+#    SetBackgroundColor 0 0 0 125
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Body Armour"
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DisableDropSound
+#    SetFontSize 32
+#    SetBackgroundColor 0 0 0 125
+#Show
+#    Rarity = Rare
+#    Identified False
+#    Class "Dagger" "Wand" "Sword" "Axe" "Mace"
+#    Height = 3
+#    Width = 1
+#    ItemLevel >= 60
+#    ItemLevel <= 74
+#    DisableDropSound
+#    SetFontSize 32
+#    SetBackgroundColor 0 0 0 125
 
 #-------------------------------------------------------------------------------#
 # 03. Currency
 #-------------------------------------------------------------------------------#
+Show
+    Class "Currency"
+    BaseType "Silver Coin" "Rogue's Marker"
 Show
     Class "Currency"
     StackSize > 1
@@ -117,8 +119,12 @@ Hide
 #-------------------------------------------------------------------------------
 Show
     Class "Currency"
-    BaseType "Wisdom" "Portal" "Scrap" "Whetstone" "Transmutation" "Augmentation" "Chance" "Jeweller"
+    BaseType "Wisdom" "Jeweller"
     AreaLevel < 68
+Show
+    Class "Currency"
+    BaseType "Augmentation" "Chance" "Portal" "Scrap" "Transmutation" "Whetstone"
+    AreaLevel < 73
 Hide
     Class "Currency"
     BaseType "Wisdom" "Portal" "Scrap" "Whetstone" "Transmutation" "Augmentation" "Chance" "Jeweller"
@@ -138,31 +144,39 @@ Show
 Show
     Class "Map"
     BlightedMap True
+    DisableDropSound
     MinimapIcon 0 Blue Star
 Show
     Class "Map"
     HasInfluence Shaper Elder
+    DisableDropSound
     MinimapIcon 0 Blue Star
 Show
     Class "Map"
     Rarity = Unique
     SetBorderColor 255 255 255 240
+    DisableDropSound
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
     Class "Map"
     MapTier >= 11
     SetTextColor 215 000 015 242
+    DisableDropSound
     MinimapIcon 0 Blue Star
 Show
     Class "Map"
     MapTier >= 6
     AreaLevel < 82
+    DisableDropSound
     SetTextColor 245 215 110 242
+    MinimapIcon 0 Blue Star
 Show
     Class "Map"
     AreaLevel < 78
+    DisableDropSound
     SetTextColor 236 236 236 242
+    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Hide
     Class "Map"
@@ -287,11 +301,11 @@ Show
 Show
     Class "Life Flask" "Mana Flask"
     DropLevel >= 42
-    AreaLevel <= 50
+    AreaLevel <= 46
 Show
     Class "Life Flask" "Mana Flask"
     DropLevel >= 50
-    AreaLevel <= 60
+    AreaLevel <= 54
 #-------------------------------------------------------------------------------
 Hide
     Class "Flask"
@@ -312,6 +326,9 @@ Show
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
+    HasExplicitMod "Veil"
+    MinimapIcon 0 Blue Star
+Show
     Sockets = 6
     MinimapIcon 0 Blue Star
 Show
@@ -330,28 +347,11 @@ Show
     HasInfluence Shaper Elder Crusader Hunter Redeemer Warlord
     MinimapIcon 0 Blue Star
 Show
-    BaseType "Talisman" "Stygian Vise" "Sacrificial Garb" "Grasping Mail"
+    BaseType "Stygian Vise" "Sacrificial Garb" "Grasping Mail" # "Talisman"
     MinimapIcon 0 Blue Star
 Show
+    BaseType "Helm"
     AnyEnchantment True
-    MinimapIcon 0 Blue Star
-#-------------------------------------------------------------------------------
-Show
-    ItemLevel >= 82
-    BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
-    MinimapIcon 0 Blue Star
-#-------------------------------------------------------------------------------
-Show
-    Class "Helm"
-    BaseType "Dreamquest" "Cloudwhisper" "Brimstone" "Nightwind" "Windbreak" "Darksteel" "Duskwalk" "Stormrider" "Basemetal"
-    MinimapIcon 0 Blue Star
-Show
-    Class "Gloves"
-    BaseType "Debilitation" "Gruelling" "Taxing" "Sinistral" "Southswing" "Gauche" "Nexus" "Aetherwind" "Leyline"
-    MinimapIcon 0 Blue Star
-Show
-    Class "Boots"
-    BaseType "Blizzard" "Winter" "Gale" "Archdemon" "Demon" "Imp" "Atonement" "Penitent" "Sorrow"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
@@ -368,6 +368,36 @@ Show
     Height = 2
     Width = 2
     AreaLevel < 68
+#-------------------------------------------------------------------------------
+Show
+    Class "Helm"
+    BaseType "Dreamquest" "Cloudwhisper" "Brimstone" "Nightwind" "Windbreak" "Darksteel" "Duskwalk" "Stormrider" "Basemetal"
+    MinimapIcon 0 Blue Star
+Show
+    Class "Gloves"
+    BaseType "Debilitation" "Gruelling" "Taxing" "Sinistral" "Southswing" "Gauche" "Nexus" "Aetherwind" "Leyline"
+    MinimapIcon 0 Blue Star
+Show
+    Class "Boots"
+    BaseType "Blizzard" "Winter" "Gale" "Archdemon" "Demon" "Imp" "Atonement" "Penitent" "Sorrow"
+    MinimapIcon 0 Blue Star
+#-------------------------------------------------------------------------------
+Show
+    Class "Quiver" "Helm" "Wand" "Belt" "Boots"
+    ItemLevel >= 82
+    BaseType "Artillery Quiver" "Bone Helmet" "Convoking Wand" "Crystal Belt" "Vanguard Belt" "Blessed Boots" "Two-Toned Boots"
+Show
+    Class "Gloves"
+    ItemLevel >= 82
+    BaseType "Apothecary's Gloves" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Spiked Gloves"
+Show
+    Class "Amulet"
+    ItemLevel >= 82
+    BaseType "Blue Pearl Amulet" "Marble Amulet" "Seaglass Amulet"
+Show
+    Class "Ring"
+    ItemLevel >= 82
+    BaseType "Cerulean Ring" "Iolite Ring" "Opal Ring" "Steel Ring" "Vermillion Ring"
 #-------------------------------------------------------------------------------
 Show
     Mirrored True
@@ -395,15 +425,19 @@ Hide
 #-------------------------------------------------------------------------------
 Show
     Identified True
-    ItemLevel >= 82
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
-    DisableDropSound
+    Rarity = Rare
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
 
 #-------------------------------------------------------------------------------#
 # 10. Divination Cards
 #-------------------------------------------------------------------------------#
+Hide
+    Class "Divination Card"
+    BaseType "The Carrion Crow" "The Lover" "The Metalsmith's Gift" "The Flora's Gift" "Lantador's Lost Love" "The Inoculated" "The King's Blade" "The Web" "The Hermit" "The Endurance"
+    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
 Show
     Class "Divination Card"
     MinimapIcon 0 Blue Star
@@ -411,12 +445,8 @@ Show
 Show
     Class "Divination Card"
     BaseType "Acclimatisation" "Arrogance of the Vaal" "Baited Expectations" "Bowyer's Dream" "Buried Treasure" "Cameria's Cut" "Chaotic Disposition" "Coveted Possession" "Deathly Designs" "Demigod's Wager" "Draped in Dreams" "Dying Anguish" "Dying Light" "Emperor of Purity" "Gemcutter's Promise" "Humility" "Imperial Legacy" "Jack in the Box" "Left to Fate" "Lingering Remnants" "Lost Worlds" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "More is Never Enough" "No Traces" "Peaceful Moments" "Perfection" "Prometheus' Armoury" "Rebirth" "Remembrance" "Society's Remorse" "Squandered Prosperity" "The Artist" "The Awakened" "The Cacophony" "The Cartographer" "The Celestial Justicar" "The Celestial Stone" "The Chains that Bind" "The Chosen" "The Dapper Prodigy" "The Dark Mage" "The Doppelganger" "The Eldritch Decay" "The Ethereal" "The Fool" "The Gambler" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Innocent" "The Inventor" "The Jeweller's Boon" "The Journey" "The Landing" "The Master Artisan" "The Old Man" "The Porcupine" "The Risk" "The Sacrifice" "The Scholar" "The Seeker" "The Sephirot" "The Surveyor" "The Survivalist" "The Throne" "The Tinkerer's Table" "The Trial" "The Undaunted" "The Union" "The Valkyrie" "The Void" "The Warlord" "The Wrath" "Triskaidekaphobia" "Underground Forest" "Vanity" "Void of the Elements"
-#Hide
-#    Class "Divination Card"
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-#    BaseType ...
+Show
+    Class "Divination Card"
 
 #-------------------------------------------------------------------------------#
 # 11. Leveling
@@ -427,15 +457,15 @@ Show
 Show
     LinkedSockets = 3
     Class "Helm" "Gloves" "Boots" "Body Armour"
-    AreaLevel < 25
+    AreaLevel < 20
 Show
     LinkedSockets = 4
     Class "Helm" "Gloves" "Boots" "Body Armour"
     AreaLevel < 50
 #-------------------------------------------------------------------------------
 Show
-    Class "Ring" "Amulet" "Belt"
-    AreaLevel < 14
+    Rarity = Rare
+    AreaLevel < 30
 Show
     Rarity = Rare
     Class "Ring" "Amulet" "Belt" "Helm" "Gloves" "Boots" "Body Armour"
