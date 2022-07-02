@@ -1,11 +1,11 @@
-# LLKP Filter 2021.10
-# Updated for Patch 3.16 Scourge
+# LLKP Filter 2022.05
+# Updated for Patch 3.18 Sentinel
 
 # --Refresh--
+# Base Types
 # Divination Cards
-# Uniques
 # Identified Items
-# Prophecies
+# Uniques
 
 # Table of Contents
 # 01. Global
@@ -19,7 +19,8 @@
 # 09. Misc
 # 10. Div Cards
 # 11. Leveling
-# 12. Catch
+# 12. Base Types - Tool Assisted
+# 13. Catch
 
 #-------------------------------------------------------------------------------#
 # 01. Global
@@ -29,14 +30,18 @@ Show
     Continue
 Show
     Class "Quest"
+Show
+    Class "Sentinel"
+    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
     Class "Flask"
-    Rarity Normal
     BaseType "Divine Mana" "Divine Life" "Eternal Mana" "Eternal Life"
+    ItemLevel >= 85
 Show
     Class "Flask"
     BaseType "Amethyst" "Basalt" "Corundum" "Diamond" "Granite" "Quartz" "Quicksilver" "Ruby" "Sapphire" "Silver" "Stibnite" "Sulphur" "Topaz" "Gold" "Jade" "Iron"
+    ItemLevel >= 85
     MinimapIcon 0 Blue Star
 
 #-------------------------------------------------------------------------------#
@@ -47,21 +52,16 @@ Show
     Identified False
     Class "Ring" "Amulet"
     ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    ItemLevel < 75
+    &fade.
     MinimapIcon 0 Blue Star
 Show
     Rarity Rare
     Identified False
     Class "Belt" "Helm" "Body Armour" "Gloves" "Boots"
     ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-    #DropLevel >= 60
+    ItemLevel < 75
+    &fade.
 Show
     Rarity Rare
     Identified False
@@ -69,18 +69,18 @@ Show
     Height 3
     Width 1
     ItemLevel >= 60
-    ItemLevel <= 74
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
-    #DropLevel >= 60
+    ItemLevel < 75
+    &fade.
 
 #-------------------------------------------------------------------------------#
 # 03. Currency
 #-------------------------------------------------------------------------------#
 Show
     Class "Currency"
-    BaseType "Silver Coin" "Rogue's Marker"
+    BaseType "Rogue's Marker"
+Show
+    Class "Currency"
+    BaseType "Xoph" "Tul" "Esh" # "Uul-Netol" "Chayula"
 Show
     Class "Currency"
     StackSize > 1
@@ -88,18 +88,12 @@ Show
 #-------------------------------------------------------------------------------
 Show
     Class "Currency"
-    BaseType "Splinter of Xoph" "Splinter of Tul" "Splinter of Esh" "Splinter of Uul-Netol"
-#-------------------------------------------------------------------------------
-Show
-    Class "Currency"
-    BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
+    BaseType "Whispering" "Muttering" "Weeping" "Wailing"
     AreaLevel < 50
 Hide
     Class "Currency"
-    BaseType "Whispering Essence" "Muttering Essence" "Weeping Essence" "Wailing Essence"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    BaseType "Whispering" "Muttering" "Weeping" "Wailing"
+    &fade.
 #-------------------------------------------------------------------------------
 Show
     Class "Currency"
@@ -127,12 +121,22 @@ Show
 #-------------------------------------------------------------------------------
 Show
     Class "Map"
+    UberBlightedMap True
+    DisableDropSound
+    MinimapIcon 0 Blue Star
+Show
+    Class "Map"
     BlightedMap True
     DisableDropSound
     MinimapIcon 0 Blue Star
 Show
     Class "Map"
     HasInfluence Shaper Elder
+    DisableDropSound
+    MinimapIcon 0 Blue Star
+Show
+    Class "Map"
+    BaseType "Synthesised Map"
     DisableDropSound
     MinimapIcon 0 Blue Star
 Show
@@ -171,9 +175,7 @@ Show
 #-------------------------------------------------------------------------------
 Hide
     Class "Map"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    &fade.
 
 #-------------------------------------------------------------------------------#
 # 05. Skill Gems
@@ -188,11 +190,11 @@ Show
     MinimapIcon 0 Blue Star
 Show
     Class "Skill Gem"
-    GemLevel >= 18
+    GemLevel >= 20
     MinimapIcon 0 Blue Star
 Show
     Class "Skill Gem"
-    Quality >= 18
+    Quality >= 20
     MinimapIcon 0 Blue Star
 Show
     Class "Skill Gem"
@@ -201,13 +203,12 @@ Show
 #-------------------------------------------------------------------------------
 Show
     Class "Skill Gem"
-    AreaLevel < 68
+    Quality >= 15
+    &fade.
 #-------------------------------------------------------------------------------
 Hide
     Class "Skill Gem"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    &fade.
 
 #-------------------------------------------------------------------------------#
 # 06. Uniques
@@ -218,7 +219,15 @@ Show
     MinimapIcon 0 Blue Star
 Show
     Rarity Unique
+    BaseType &uniques_high.
     MinimapIcon 0 Blue Star
+Show
+    Rarity Unique
+    BaseType &uniques_mid.
+Show
+    Rarity Unique
+    BaseType &uniques_low.
+    &fade.
 
 #-------------------------------------------------------------------------------#
 # 07. Jewels
@@ -227,9 +236,11 @@ Show
     Class "Jewel"
     BaseType "Cobalt" "Crimson" "Viridian"
     Rarity Rare
+    &fade.
 Show
     Class "Abyss Jewel"
     ItemLevel >= 82
+    &fade.
 #-------------------------------------------------------------------------------
 Show
     Class "Jewel"
@@ -248,15 +259,11 @@ Show
 Hide
     Class "Jewel"
     BaseType "Cluster"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    &fade.
 #-------------------------------------------------------------------------------
 Hide
     Class "Jewel"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    &fade.
 
 #-------------------------------------------------------------------------------#
 # 08. Flasks
@@ -296,13 +303,11 @@ Show
 Show
     Class "Life Flask" "Mana Flask"
     DropLevel >= 50
-    AreaLevel <= 60
+    AreaLevel <= 54
 #-------------------------------------------------------------------------------
 Hide
     Class "Flask"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    &fade.
 
 #-------------------------------------------------------------------------------#
 # 09. Misc
@@ -314,9 +319,6 @@ Show
     Class "Atlas" "Delve" "Expedition" "Fishing" "Incubator" "Incursion" "Labyrinth" "Leaguestone" "Metamorph" "Pantheon" "Piece" "Shard"
     MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
-Show
-    Scourged True
-    MinimapIcon 0 Blue Star
 Show
     HasExplicitMod "Veil"
     MinimapIcon 0 Blue Star
@@ -347,64 +349,27 @@ Show
     SocketGroup RGB
     Height 3
     Width 1
-    AreaLevel < 60
+    AreaLevel < 50
 Show
     SocketGroup RGB
     Height 2
     Width 2
-    AreaLevel < 60
+    AreaLevel < 50
 #-------------------------------------------------------------------------------
-Show # Misc
+Show
     BaseType "Stygian Vise" "Sacrificial Garb" "Grasping Mail" "Unset Amulet" "Talisman"
     MinimapIcon 0 Blue Star
-Show # Ritual
-    Class "Helm" "Gloves" "Boots"
-    BaseType "Archdemon" "Blizzard" "Penitent" "Debilitation" "Nexus" "Sinistral" "Brimstone" "Dreamquest" "Stormrider"
-    MinimapIcon 0 Blue Star
-Show # Heist
-    BaseType "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Assembler Wand" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Blasting Blade" "Blunt Force Condenser" "Boom Mace" "Capacity Rod" "Capricious Spiritblade" "Cogwork Ring" "Cold-attuned Buckler" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Eventuality Rod" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Geodesic Ring" "Heat-attuned Tower Shield" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Impact Force Propagator" "Infernal Blade" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Psychotic Axe" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Subsuming Spirit Shield" "Transfer-attuned Spirit Shield" "Transformer Staff" "Void Fangs"
-    MinimapIcon 0 Blue Star
-#-------------------------------------------------------------------------------
-Show
-    HasInfluence Shaper Elder Crusader Hunter Redeemer Warlord
-    MinimapIcon 0 Blue Star
-#-------------------------------------------------------------------------------
-Show # Atlas
-    ItemLevel >= 82
-    DropLevel >= 70
-    MinimapIcon 0 Blue Star
-    # "Apothecary's Gloves"
-    # "Fingerless Silk Gloves"
-    # "Fugitive Boots"
-    # "Gripped Gloves"
-    # "Spiked Gloves"
-    # "Two-Toned Boots"
-    # "Convoking Wand"
-    # "Bone Helmet"
-    # "Artillery Quiver"
-    # "Marble Amulet"
-    # "Seaglass Amulet"
-    # "Blue Pearl Amulet"
-    # "Iolite Ring"
-    # "Vanguard Belt"
-    # "Crystal Belt"
-    # "Cerulean Ring"
-    # "Opal Ring"
-    # "Steel Ring"
-    # "Vermillion Ring"
 #-------------------------------------------------------------------------------
 Show
     Mirrored True
     Rarity Rare
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staff" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
 Hide
     Mirrored True
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staff" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
+    &fade.
 Show
     Corrupted True
     Rarity Rare
@@ -412,10 +377,8 @@ Show
     SetBackgroundColor 0 0 0 125
 Hide
     Corrupted True
-    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Ring" "Amulet" "Belt" "Quiver" "Bow" "Shield" "Staff" "Sceptre" "Wand" "Axe" "Claw" "Dagger" "Mace" "Sword"
+    &fade.
 #-------------------------------------------------------------------------------
 Show
     Identified True
@@ -426,39 +389,55 @@ Show
 #-------------------------------------------------------------------------------#
 # 10. Divination Cards
 #-------------------------------------------------------------------------------#
-#Hide # Static
-#    Class "Divination Card"
-#    BaseType ...
-#    DisableDropSound
-#    SetFontSize 32
-#    SetBackgroundColor 0 0 0 125
-Show # Dynamic
+Hide
     Class "Divination Card"
-    MinimapIcon 0 Blue Star
-    BaseType "House of Mirrors" "The Doctor" "The Demon" "The Fiend" "Unrequited Love" "Brother's Stash" "The Cheater" "Deadly Joy" "The Immortal" "Love Through Ice" "The Nurse" "Succor of the Sinless" "Gift of Asenath" "Alluring Bounty" "Immortal Resolve" "The Samurai's Eye" "Desecrated Virtue" "Luminous Trove" "Seven Years Bad Luck" "Abandoned Wealth" "Nook's Crown" "The Price of Loyalty" "Pride of the First Ones" "The Iron Bard" "The White Knight" "A Note in the Wind" "The Greatest Intentions" "Winter's Embrace" "Wealth and Power" "Burning Blood" "The Long Con" "Beauty Through Death" "Keeper's Corruption" "The Spark and the Flame" "The Strategist" "The Progeny of Lunaris" "Hunter's Reward" "The Sacrifice" "Azyran's Reward" "The Sustenance" "The Patient" "The Saint's Treasure" "The Dragon's Heart" "The Academic" "The Escape" "The Craving" "The Eye of Terror" "Broken Promises" "Council of Cats" "Draped in Dreams" "The Enlightened" "The Gulf" "The Bitter Blossom" "The Enthusiasts" "The Celestial Justicar" "The Hoarder" "The Sephirot" "The Bargain" "Remembrance" "Fateful Meeting" "The Eternal War" "Brotherhood in Exile" "The Pact" "Void of the Elements" "A Familiar Call" "The Astromancer" "The Soul" "The Polymath" "Blessing of God" "The World Eater" "The Primordial" "Dark Dreams" "The Offering" "The Undaunted" "The Eldritch Decay" "Peaceful Moments" "The Hive of Knowledge" "The Whiteout" "Chaotic Disposition" "Pride Before the Fall" "The Artist" "The Dapper Prodigy" "The Ethereal" "The Mayor" "The Celestial Stone" "The Endless Darkness" "Echoes of Love" "Squandered Prosperity" "Unchained" "Dying Light" "A Modest Request"
-Show # Static
-    Class "Divination Card"
-    BaseType "A Modest Request" "A Sea of Blue" "Acclimatisation" "Ambitious Obsession" "Arrogance of the Vaal" "Baited Expectations" "Bowyer's Dream" "Broken Promises" "Brush, Paint and Palette" "Buried Treasure" "Cameria's Cut" "Chaotic Disposition" "Costly Curio" "Coveted Possession" "Deadly Joy" "Deathly Designs" "Dementophobia" "Demigod's Wager" "Draped in Dreams" "Dying Anguish" "Dying Light" "Emperor of Purity" "Gemcutter's Promise" "Humility" "Imperial Legacy" "Jack in the Box" "Left to Fate" "Lingering Remnants" "Lost Worlds" "Loyalty" "Lucky Connections" "Lucky Deck" "Luminous Trove" "Monochrome" "More is Never Enough" "No Traces" "Peaceful Moments" "Perfection" "Prometheus' Armoury" "Rebirth" "Remembrance" "Sambodhi's Wisdom" "Society's Remorse" "Squandered Prosperity" "The Artist" "The Awakened" "The Cacophony" "The Card Sharp" "The Cartographer" "The Celestial Justicar" "The Celestial Stone" "The Chains that Bind" "The Chosen" "The Dapper Prodigy" "The Dark Mage" "The Doppelganger" "The Eldritch Decay" "The Enthusiasts" "The Eternal War" "The Ethereal" "The Fool" "The Gambler" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Hook" "The Innocent" "The Inventor" "The Jeweller's Boon" "The Journalist" "The Journey" "The Landing" "The Master Artisan" "The Old Man" "The Porcupine" "The Price of Prescience" "The Risk" "The Sacrifice" "The Scholar" "The Seeker" "The Sephirot" "The Shortcut" "The Surveyor" "The Survivalist" "The Throne" "The Tinkerer's Table" "The Trial" "The Undaunted" "The Union" "The Valkyrie" "The Void" "The Warlord" "The Wrath" "Triskaidekaphobia" "Underground Forest" "Vanity" "Void of the Elements" "Winter's Embrace"
-#Hide # Dynamic
-#    Class "Divination Card"
-#    BaseType ...
+    BaseType "Carrion Crow"
+    &fade.
 Show
     Class "Divination Card"
+    BaseType &div_cards_high.
+    MinimapIcon 0 Blue Star
+Show
+    Class "Divination Card"
+    BaseType &div_cards_mid.
+Show
+    Class "Divination Card" # currency
+    &fade.
+    BaseType "A Sea of Blue", "Abandoned Wealth", "Acclimatisation", "Alluring Bounty", "Ambitious Obsession", "Brother's Stash", "Chaotic Disposition", "Coveted Possession", "Darker Half", "Dementophobia", "Demigod's Wager", "Disdain", "Emperor's Luck", "Harmony of Souls", "House of Mirrors", "Loyalty", "Lucky Connections", "Lucky Deck", "Monochrome", "No Traces", "Parasitic Passengers", "Rain of Chaos", "Rebirth and Renewal", "Seven Years Bad Luck", "Society's Remorse", "The Cacophony", "The Cartographer", "The Catalyst", "The Fool", "The Gemcutter", "The Heroic Shot", "The Hoarder", "The Immortal", "The Innocent", "The Inventor", "The Journey", "The Long Con", "The Master Artisan", "The Puzzle", "The Rabbit's Foot", "The Saint's Treasure", "The Scholar", "The Scout", "The Seeker", "The Sephirot", "The Side Quest", "The Survivalist", "The Tinkerer's Table", "The Tireless Extractor", "The Union", "The Wrath", "Three Faces in the Dark", "Three Voices", "Underground Forest", "Unrequited Love", "Vinia's Token"
+Show
+    Class "Divination Card" # maps
+    &fade.
+    BaseType "A Fate Worse Than Death", "Boundless Realms", "Cartographer's Delight", "Guardian's Challenge", "Her Mask", "Justified Ambition", "Last Hope", "Left to Fate", "Lingering Remnants", "Lost Worlds", "Rain Tempter", "Sambodhi's Vow", "Scholar of the Seas", "The Arena Champion", "The Bargain", "The Dreamland", "The Easy Stroll", "The Encroaching Darkness", "The Explorer", "The Eye of Terror", "The Landing", "The Obscured", "The Price of Prescience", "The Price of Protection", "The Professor", "The Puzzle", "The Surveyor", "The Trial", "The Twilight Moon", "The Wolf's Legacy", "Treasure Hunter", "Triskaidekaphobia"
+Show
+    Class "Divination Card" # 6-links
+    &fade.
+    BaseType "Bowyer's Dream", "Draped in Dreams", "Emperor of Purity", "Humility", "Immortal Resolve", "Imperial Legacy", "Rebirth", "The Celestial Justicar", "The Chains that Bind", "The Dapper Prodigy", "The Dark Mage", "The Ethereal", "The Porcupine", "The Sacrifice", "The Warlord", "The White Knight", "Vanity"
+Show
+    Class "Divination Card" # gems
+    &fade.
+    BaseType "Volatile Power", "Dialla's Subjugation", "The Summoner", "The Bones", "The Magma Crab", "Deathly Designs", "The Cataclysm", "Terrible Secret of Space", "The Rite of Elements", "The Hook", "The Bitter Blossom", "The Wilted Rose", "Gift of the Gemling Queen", "The Fox", "Dying Anguish", "Desecrated Virtue", "The Cheater", "Wealth and Power", "The Artist", "The Dragon's Heart", "The Enlightened", "The Skeleton", "Gemcutter's Promise", "The Emptiness", "The Doppelganger", "Grave Knowledge", "The Realm", "Home",
+Show
+    Class "Divination Card" # other
+    &fade.
+    BaseType "Brush, Paint and Palette", "The Patient", "Duality", "The Deal", "The Card Sharp", "More is Never Enough", "Cameria's Cut", "Buried Treasure", "Eldritch Decay", "The Void"
+Hide
+    Class "Divination Card"
+    &fade.
+    BaseType &div_cards_low.
 
 #-------------------------------------------------------------------------------#
 # 11. Leveling
 #-------------------------------------------------------------------------------#
 Show
     AreaLevel 1
+Show
+    Class "Skill Gem"
+    AreaLevel < 50
 #-------------------------------------------------------------------------------
 Show
-    Class "Amulet"
-    BaseType "Amber" "Jade" "Lapis" "Agate" "Citrine" "Turquoise" "Onyx"
-    AreaLevel <= 30
-Show
-    Class "Ring"
-    BaseType "Coral" "Sapphire" "Topaz" "Ruby" "Two-Stone" "Prismatic"
-    AreaLevel <= 30
+    AreaLevel < 13 # Merveil
+    Class "Ring" "Amulet"
+    BaseType "Coral" "Sapphire" "Topaz" "Ruby" "Two-Stone" "Prismatic" "Iron" "Amber" "Jade" "Lapis" "Agate" "Citrine" "Turquoise" "Onyx"
 #-------------------------------------------------------------------------------
 Show
     LinkedSockets 3
@@ -470,105 +449,99 @@ Show
     AreaLevel < 50
 #-------------------------------------------------------------------------------
 Show
-    Rarity Magic
-    Height 3
-    Width 1
-    AreaLevel < 20
-Show
-    Rarity Rare
-    Height 3
-    Width 1
-    AreaLevel < 30
-#-------------------------------------------------------------------------------
-Show
-    Rarity Magic
-    Height 2
-    Width 2
-    AreaLevel < 20
-Show
-    Rarity Rare
-    Height 2
-    Width 2
-    AreaLevel < 30
-#-------------------------------------------------------------------------------
-Show
-    Rarity Rare
-    Class "Ring" "Amulet" "Belt" "Helm" "Gloves" "Boots" "Body Armour"
+    Rarity >= Magic
+    Class "Ring" "Amulet"
     AreaLevel < 50
 Show
     Rarity Rare
-    Class "Quiver" "Bow" # "Shield" "Staves" "Sceptre" "Wand"
+    Class "Helm" "Gloves" "Boots" "Body Armour" "Belt"
     AreaLevel < 50
-Hide
-    Class "Ring" "Amulet" "Belt" "Helm" "Gloves" "Boots" "Body Armour" "Quiver" "Bow" "Shield" "Staves" "Sceptre" "Wand" "Warstaves"
-    DisableDropSound
     SetFontSize 32
     SetBackgroundColor 0 0 0 125
+#Show
+#    Rarity Rare
+#    Class "Quiver" "Bow" # "Shield" "Staff" "Sceptre" "Wand"
+#    AreaLevel < 50
+Hide
+    Class "Ring" "Amulet" "Belt" "Helm" "Gloves" "Boots" "Body Armour" "Quiver" "Bow" "Shield" "Staff" "Sceptre" "Wand" "Warstaff"
+    &fade.
 #-------------------------------------------------------------------------------
+Show
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+    Continue
 Show
     AreaLevel <= 12
-    DropLevel >= 6
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 9
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 15
-    DropLevel >= 9
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 12
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 18
-    DropLevel >= 12
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 15
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 21
-    DropLevel >= 15
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 18
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 24
-    DropLevel >= 18
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 21
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 27
-    DropLevel >= 21
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 24
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 30
-    DropLevel >= 24
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 27
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 33
-    DropLevel >= 27
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 30
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 36
-    DropLevel >= 30
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 33
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 39
-    DropLevel >= 33
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 36
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 42
-    DropLevel >= 36
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 39
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 45
-    DropLevel >= 39
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 42
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 48
-    DropLevel >= 42
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 45
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Show
     AreaLevel <= 51
-    DropLevel >= 45
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
+    DropLevel >= 48
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
 Hide
-    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaves"
-    DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125
+    Class "Axe" "Claw" "Dagger" "Mace" "Sword" "Warstaff"
+    &fade.
 
 #-------------------------------------------------------------------------------#
-# 12. Catch
+# 12. BaseTypes
+#-------------------------------------------------------------------------------#
+&base_types_high.
+#-------------------------------------------------------------------------------
+&base_types_mid.
+#-------------------------------------------------------------------------------
+&base_types_low.
+
+#-------------------------------------------------------------------------------#
+# 13. Catch
 #-------------------------------------------------------------------------------#
 Show
     SetBackgroundColor 250 230 250 155
+    MinimapIcon 0 Red Star
