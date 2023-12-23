@@ -1,0 +1,10 @@
+# block
+*.*
+*/target/*
+
+# allow
+!.gitignore
+!*.md
+!*.txt
+!*.rs
+!*.toml

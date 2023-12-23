@@ -1,11 +1,11 @@
-# LLKP Filter 2022.05
-# Updated for Patch 3.18 Sentinel
+# LLKP Filter 2023.12
+# Updated for Patch 3.23 Affliction
 
-# --Refresh--
-# Base Types
-# Divination Cards
-# Identified Items
-# Uniques
+# Refresh
+# a. Base Types
+# b. Divination Cards
+# c. Identified Items
+# d. Uniques
 
 # Table of Contents
 # 01. Global
@@ -30,9 +30,6 @@ Show
     Continue
 Show
     Class "Quest"
-Show
-    Class "Sentinel"
-    MinimapIcon 0 Blue Star
 #-------------------------------------------------------------------------------
 Show
     Class "Flask"
