@@ -1,5 +1,5 @@
 # Patch
-3.23 Affliction
+3.24 Necropolis
 
 # License: CC0
 - Summary: https://creativecommons.org/publicdomain/zero/1.0/
