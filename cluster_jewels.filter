@@ -1,0 +1,244 @@
+# Cluster Jewels
+# ilvl 84 75 68
+
+# 01. Large
+# 02. Medium
+# 03. Small
+# 04. Cleanup
+
+Show
+    Class Jewel
+    BaseType Cluster
+    &minimap.
+    Continue
+
+#-------------------------------------------------------------------------------
+# 01. Large
+# EnchantmentPassiveNum 8 9 10 11 12
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 8
+    EnchantmentPassiveNode &large_ilvl_84_passive_8.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 9
+    EnchantmentPassiveNode &large_ilvl_84_passive_9.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 10
+    EnchantmentPassiveNode &large_ilvl_84_passive_10.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 11
+    EnchantmentPassiveNode &large_ilvl_84_passive_11.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 12
+    EnchantmentPassiveNode &large_ilvl_84_passive_12.
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 8
+    EnchantmentPassiveNode &large_ilvl_75_passive_8.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 9
+    EnchantmentPassiveNode &large_ilvl_75_passive_9.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 10
+    EnchantmentPassiveNode &large_ilvl_75_passive_10.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 11
+    EnchantmentPassiveNode &large_ilvl_75_passive_11.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 12
+    EnchantmentPassiveNode &large_ilvl_75_passive_12.
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 8
+    EnchantmentPassiveNode &large_ilvl_68_passive_8.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 9
+    EnchantmentPassiveNode &large_ilvl_68_passive_9.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 10
+    EnchantmentPassiveNode &large_ilvl_68_passive_10.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 11
+    EnchantmentPassiveNode &large_ilvl_68_passive_11.
+Show
+    Class Jewel
+    BaseType "Large Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 12
+    EnchantmentPassiveNode &large_ilvl_68_passive_12.
+
+#-------------------------------------------------------------------------------
+# 02. Medium
+# EnchantmentPassiveNum 4 5 6
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 4
+    EnchantmentPassiveNode &medium_ilvl_84_passive_4.
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 5
+    EnchantmentPassiveNode &medium_ilvl_84_passive_5.
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 6
+    EnchantmentPassiveNode &medium_ilvl_84_passive_6.
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 4
+    EnchantmentPassiveNode &medium_ilvl_75_passive_4.
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 5
+    EnchantmentPassiveNode &medium_ilvl_75_passive_5.
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 6
+    EnchantmentPassiveNode &medium_ilvl_75_passive_6.
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 4
+    EnchantmentPassiveNode &medium_ilvl_68_passive_4.
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 5
+    EnchantmentPassiveNode &medium_ilvl_68_passive_5.
+Show
+    Class Jewel
+    BaseType "Medium Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 6
+    EnchantmentPassiveNode &medium_ilvl_68_passive_6.
+
+#-------------------------------------------------------------------------------
+# 01. Small
+# EnchantmentPassiveNum 2 3
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Small Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 2
+    EnchantmentPassiveNode &small_ilvl_84_passive_2.
+Show
+    Class Jewel
+    BaseType "Small Cluster"
+    ItemLevel >= 84
+    EnchantmentPassiveNum 3
+    EnchantmentPassiveNode &small_ilvl_84_passive_3.
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Small Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 2
+    EnchantmentPassiveNode &small_ilvl_75_passive_2.
+Show
+    Class Jewel
+    BaseType "Small Cluster"
+    ItemLevel >= 75
+    ItemLevel < 84
+    EnchantmentPassiveNum 3
+    EnchantmentPassiveNode &small_ilvl_75_passive_3.
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    BaseType "Small Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 2
+    EnchantmentPassiveNode &small_ilvl_68_passive_2.
+Show
+    Class Jewel
+    BaseType "Small Cluster"
+    ItemLevel >= 68
+    ItemLevel < 75
+    EnchantmentPassiveNum 3
+    EnchantmentPassiveNode &small_ilvl_68_passive_3.
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# 04. Cleanup
+#-------------------------------------------------------------------------------
+Hide
+    Class Jewel
+    BaseType Cluster
+#-------------------------------------------------------------------------------
+Import "reset.filter"

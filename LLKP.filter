@@ -1,0 +1,575 @@
+# LLKP Filter 2023.12
+# Updated for Patch 3.24 Necropolis
+
+# 01. Global
+# 02. Chaos Recipe
+# 03. Currency
+# 04. Maps and Fragments
+# 05. Divination Cards
+# 06. Gems
+# 07. Misc
+# 08. Uniques
+# 09. Jewels
+# 10. Base Types
+# 11. Flasks
+# 12. Leveling
+# 13. Catch
+
+#-------------------------------------------------------------------------------
+# 01. Global
+#-------------------------------------------------------------------------------
+Import "reset.filter"
+#-------------------------------------------------------------------------------
+Show
+    Class Quest
+Show
+    Class Allflame Corpse
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Gem
+    Quality > 0
+    &fade.
+#-------------------------------------------------------------------------------
+Hide
+    Class Divination Card
+    BaseType "The Demoness"
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class "Utility Flask"
+    Rarity Normal Magic Rare
+    ItemLevel >= 84
+    BaseType Basalt Gold Granite Iron Jade Quartz Ruby Silver Sulphur Amethyst Sapphire Topaz Quicksilver Stibnite Diamond
+    &minimap.
+#Show
+#    Class "Life Flask" # "Mana Flask"
+#    Rarity Normal Magic Rare
+#    BaseType "Hallowed Life" Divine Eternal
+#    ItemLevel >= 83
+#    &fade.
+
+#-------------------------------------------------------------------------------
+# 02. Chaos Recipe
+#-------------------------------------------------------------------------------
+#Show
+#    Class Ring Amulet
+#    &chaos_recipe.
+#    &minimap.
+#Show
+#    Class Belt
+#    &chaos_recipe.
+#Show
+#    Class Body
+#    DropLevel > 65
+#    &chaos_recipe.
+#Show
+#    Class Helm Gloves Boots
+#    DropLevel > 65
+#    &chaos_recipe.
+#Show
+#    Width 1
+#    Height 3
+#    DropLevel > 65
+#    &chaos_recipe.
+#Show
+#    Class Bow
+#    Height 3
+#    DropLevel > 65
+#    &chaos_recipe.
+
+#-------------------------------------------------------------------------------
+# 03. Currency
+#-------------------------------------------------------------------------------
+Show
+    Class Currency
+    BaseType Armourer Augmentation Chance Jeweller Portal Transmutation Whetstone Wisdom
+    AreaLevel < 68
+Show
+    Class Currency
+    BaseType Armourer Portal Transmutation Wisdom
+    StackSize >= 10
+Show
+    Class Currency
+    BaseType Augmentation Chance Whetstone
+    StackSize >= 5
+Show
+    Class Currency
+    BaseType Jeweller
+    StackSize > 1
+Hide
+    Class Currency
+    BaseType Wisdom Jeweller Augmentation Chance Portal Armourer Transmutation Whetstone
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Currency
+    BaseType Whispering Muttering Weeping Wailing
+    AreaLevel < 50
+Hide
+    Class Currency
+    BaseType Whispering Muttering Weeping Wailing
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Currency
+    BaseType Uul-Netol Chayula
+    &minimap.
+Show
+    Class Currency
+    BaseType Xoph Tul Esh
+    StackSize > 1
+    &minimap.
+Show
+    Class Currency
+    BaseType Xoph Tul Esh
+#-------------------------------------------------------------------------------
+Show
+    Class Currency
+    &minimap.
+
+#-------------------------------------------------------------------------------
+# 04. Maps and Fragments
+#-------------------------------------------------------------------------------
+# white     68 to 72
+# yellow    73 to 77
+# red       78 to 83
+#-------------------------------------------------------------------------------
+Show
+    Class Map
+    DisableDropSound
+    &minimap.
+    Continue
+#-------------------------------------------------------------------------------
+Show
+    Class Fragment
+Show
+    Class Map
+    Rarity Unique
+    SetBorderColor 255 255 255 240
+Show
+    Class Map
+    MapTier >= 17
+    SetTextColor 192 128 254 242
+Show
+    Class Map
+    MapTier 14 15 16
+    SetTextColor 215 000 015 242
+Show
+    Class Map
+    MapTier 11 12 13
+    SetTextColor 215 100 064 242
+Show
+    Class Map
+    MapTier 6 7 8 9 10
+    AreaLevel <= 78
+    SetTextColor 245 215 110 242
+Show
+    Class Map
+    MapTier 1 2 3 4 5
+    AreaLevel <= 73
+    SetTextColor 236 236 236 242
+#-------------------------------------------------------------------------------
+Show
+    Class Map
+    AnyEnchantment True
+Show
+    Class Map
+    UberBlightedMap True
+Show
+    Class Map
+    BlightedMap True
+Show
+    Class Map
+    HasInfluence Shaper Elder Crusader Hunter Redeemer Warlord
+#-------------------------------------------------------------------------------
+Hide
+    Class Map
+    &fade.
+#-------------------------------------------------------------------------------
+Import "reset.filter"
+
+#-------------------------------------------------------------------------------
+# 05. Divination Cards
+#-------------------------------------------------------------------------------
+Show
+    Class Divination
+    BaseType &div_cards_show.
+    &minimap.
+#-------------------------------------------------------------------------------
+Show
+    Class Divination
+    &fade.
+    Continue
+Show
+    Class Divination # currency
+    BaseType "A Sea of Blue" "Abandoned Wealth" "Acclimatisation" "Alluring Bounty" "Altered Perception" "Ambitious Obsession" "Brother's Gift" "Brother's Stash" "Chaotic Disposition" "Checkmate" "Coveted Possession" "Darker Half" "Dementophobia" "Demigod's Wager" "Disdain" "Divine Beauty" "Emperor's Luck" "Ever-Changing" "Harmony of Souls" "House of Mirrors" "I See Brothers" "Loyalty" "Lucky Connections" "Lucky Deck" "No Traces" "Parasitic Passengers" "Rain of Chaos" "Seven Years Bad Luck" "Society's Remorse" "The Cacophony" "The Cartographer" "The Catalyst" "The Finishing Touch" "The Fool" "The Fortunate" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Immortal" "The Innocent" "The Inventor" "The Journey" "The Long Con" "The Master Artisan" "The Puzzle" "The Rabbit's Foot" "The Rusted Bard" "The Saint's Treasure" "The Scholar" "The Scout" "The Seeker" "The Sephirot" "The Side Quest" "The Survivalist" "The Tinkerer's Table" "The Tireless Extractor" "The Transformation" "The Union" "The Wrath" "Three Faces in the Dark" "Three Voices" "Unrequited Love" "Vinia's Token"
+Show
+    Class Divination # map
+    BaseType "Azure Rage" "Boundless Realms" "Cartographer's Delight" "Guardian's Challenge" "Her Mask" "Justified Ambition" "Last Hope" "Left to Fate" "Lingering Remnants" "Lost Worlds" "Rain Tempter" "Sambodhi's Vow" "Scholar of the Seas" "The Arena Champion" "The Dreamland" "The Easy Stroll" "The Encroaching Darkness" "The Explorer" "The Eye of Terror" "The Landing" "The Obscured" "The Price of Prescience" "The Price of Protection" "The Professor" "The Puzzle" "The Surveyor" "The Trial" "The Twilight Moon" "The Wolf's Legacy" "Treasure Hunter" "Triskaidekaphobia"
+Show
+    Class Divination # 6-link
+    BaseType "Bowyer's Dream" "Draped in Dreams" "Emperor of Purity" "Humility" "Immortal Resolve" "Imperial Legacy" "Rebirth" "The Celestial Justicar" "The Chains that Bind" "The Dapper Prodigy" "The Dark Mage" "The Ethereal" "The Porcupine" "The Sacrifice" "The Warlord" "The White Knight" "Vanity"
+Show
+    Class Divination # gem
+    BaseType "A Chilling Wind" "Deathly Designs" "Desecrated Virtue" "Dialla's Subjugation" "Doryani's Epiphany" "Dying Anguish" "Gemcutter's Mercy" "Gemcutter's Promise" "Gift of the Gemling Queen" "Grave Knowledge" "Home" "Terrible Secret of Space" "The Artist" "The Bitter Blossom" "The Blessing of Moosh" "The Bones" "The Cataclysm" "The Cheater" "The Doppelganger" "The Dragon's Heart" "The Emptiness" "The Enlightened" "The Fox" "The Hook" "The Magma Crab" "The Realm" "The Rite of Elements" "The Skeleton" "The Summoner" "The Wilted Rose" "Volatile Power" "Wealth and Power"
+Show
+    Class Divination # cortex
+    BaseType "Eternal Bonds" "A Fate Worse Than Death"
+Show
+    Class Divination # other
+    BaseType "Man with Bear" "The Deal" "The Card Sharp" "Buried Treasure" "Cameria's Cut" "The Eldritch Decay" "The Fishmonger" "Boon of Justice" "The Void"
+#-------------------------------------------------------------------------------
+Show
+    Class Divination
+    StackSize > 2
+    BaseType &div_cards_hide.
+Hide
+    Class Divination
+    BaseType &div_cards_hide.
+#-------------------------------------------------------------------------------
+Import "reset.filter"
+
+#-------------------------------------------------------------------------------
+# 06. Gems
+#-------------------------------------------------------------------------------
+Show
+    Class Gem
+    &minimap.
+    Continue
+Show
+    Class Gem
+    TransfiguredGem True
+Show
+    Class Gem
+    BaseType Awakened
+Show
+    Class Gem
+    GemLevel >= 20
+Show
+    Class Gem
+    Quality >= 20
+Show
+    Class Gem
+    BaseType Empower Enhance Enlighten
+#-------------------------------------------------------------------------------
+Show
+    Class Gem
+    &fade.
+    Continue
+Show
+    Class Gem
+    Quality > 0
+    AreaLevel < 73
+Show
+    Class Gem
+    AreaLevel < 50
+#-------------------------------------------------------------------------------
+Hide
+    Class Gem
+#-------------------------------------------------------------------------------
+Import "reset.filter"
+
+#-------------------------------------------------------------------------------
+# 07. Misc
+#-------------------------------------------------------------------------------
+Show
+    &minimap.
+    Continue
+Show
+    Class Heist Blueprint Contract Trinket
+Show
+    Class Atlas Breachstone Delve Fishing Incubator Incursion Labyrinth Logbook Memories Misc Pantheon Piece Relic Sanctum Shard Vault
+Show
+    Class Charm Leaguestone Metamorph Sentinel Tincture
+Show
+    LinkedSockets 6
+#-------------------------------------------------------------------------------
+Show
+    &fade.
+    Continue
+Show
+    FracturedItem True
+Show
+    SynthesisedItem True
+Show
+    Sockets 6
+Show
+    BaseType != Cluster
+    AnyEnchantment True
+Show
+    HasExplicitMod Veil
+    HasExplicitMod Vorici Vagan Catarina # Tora Rin Leo Korell "It That Fled" Haku Gravicius Elreon
+Show
+    HasExplicitMod Veil
+    Class Ring Amulet Belt Helm Gloves Boots Body Flask
+#-------------------------------------------------------------------------------
+Import "reset.filter"
+
+#-------------------------------------------------------------------------------
+# 08. Uniques
+#-------------------------------------------------------------------------------
+Show
+    Rarity Unique
+    &minimap.
+    Continue
+Show
+    Rarity Unique
+    Class Ring Amulet Belt Jewel Flask
+Show
+    Rarity Unique
+    Replica True
+Show
+    Rarity Unique
+    LinkedSockets 5
+    BaseType &uniques_links_eq_5.
+Show
+    Rarity Unique
+    LinkedSockets 1 2 3 4
+    BaseType &uniques_links_le_4.
+Show
+    Rarity Unique
+    BaseType &uniques_low_value.
+    &fade.
+#-------------------------------------------------------------------------------
+Import "reset.filter"
+
+#-------------------------------------------------------------------------------
+# 09. Jewels
+#-------------------------------------------------------------------------------
+Import "cluster_jewels.filter"
+#-------------------------------------------------------------------------------
+Show
+    Class Jewel
+    &fade.
+    Continue
+Show
+    Class Jewel
+    BaseType Searching Murderous Hypnotic Ghastly
+    ItemLevel >= 86
+Hide
+    Class Jewel
+    BaseType Searching Murderous Hypnotic Ghastly
+Hide
+    Class Jewel
+    BaseType Crimson Viridian Cobalt
+
+#-------------------------------------------------------------------------------
+# 10. Base Types
+#-------------------------------------------------------------------------------
+Import "base_types.filter"
+
+#-------------------------------------------------------------------------------
+# 11. Flasks
+#-------------------------------------------------------------------------------
+Hide
+    Class "Hybrid Flask"
+    &fade.
+Hide
+    Class "Utility Flask"
+    &fade.
+
+#-------------------------------------------------------------------------------
+# 12. Leveling
+#-------------------------------------------------------------------------------
+Show
+    AreaLevel 1
+#-------------------------------------------------------------------------------
+Show
+    LinkedSockets 3
+    Class Helm Gloves Boots Body
+    ItemLevel < 25
+Show
+    LinkedSockets 4
+    Class Helm Gloves Boots Body
+    AreaLevel < 50
+#-------------------------------------------------------------------------------
+Show
+    SocketGroup RGB
+    Height 3
+    Width 1
+    AreaLevel < 68
+    &minimap.
+Show
+    SocketGroup RGB
+    Height 2
+    Width 2
+    AreaLevel < 68
+    &minimap.
+#-------------------------------------------------------------------------------
+Show
+    Class Ring
+    AreaLevel < 13
+    BaseType Coral Sapphire Topaz
+Show
+    Class Ring
+    AreaLevel < 50
+    Rarity >= Magic
+    BaseType Coral Sapphire Topaz Ruby Two-Stone Prismatic
+Hide
+    Class Ring
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Amulet
+    AreaLevel < 13
+    BaseType Amber Jade Lapis
+Show
+    Class Amulet
+    AreaLevel < 50
+    Rarity >= Magic
+    BaseType Amber Jade Lapis Agate Citrine Turquoise Onyx
+Hide
+    Class Amulet
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Belt
+    AreaLevel < 13
+    BaseType Chain Rustic Stygian Heavy Leather
+Show
+    Class Belt
+    AreaLevel < 50
+    Rarity >= Magic
+    BaseType Chain Rustic Stygian Heavy Leather
+Hide
+    Class Belt
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Helm Gloves Boots Body
+    Rarity Rare
+    AreaLevel < 50
+Hide
+    Class Helm Gloves Boots Body
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Rarity Rare
+    Class Staff Sceptre Wand # Quiver # Shield
+    AreaLevel < 50
+Hide
+    Class Quiver Sceptre Shield Staff Wand
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 12
+    DropLevel >= 9
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 15
+    DropLevel >= 12
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 18
+    DropLevel >= 15
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 21
+    DropLevel >= 18
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 24
+    DropLevel >= 21
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 27
+    DropLevel >= 24
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 30
+    DropLevel >= 27
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 33
+    DropLevel >= 30
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 36
+    DropLevel >= 33
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 39
+    DropLevel >= 36
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 42
+    DropLevel >= 39
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 45
+    DropLevel >= 42
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 48
+    DropLevel >= 45
+Show
+    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+    AreaLevel <= 51
+    DropLevel >= 48
+Hide
+    Class Axe Bow Claw Dagger Mace Sword Warstaves
+    &fade.
+#-------------------------------------------------------------------------------
+Show
+    Class "Life Flask" "Mana Flask"
+    AreaLevel <= 3
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 3
+    AreaLevel <= 6
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 6
+    AreaLevel <= 12
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 12
+    AreaLevel <= 18
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 18
+    AreaLevel <= 24
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 24
+    AreaLevel <= 30
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 30
+    AreaLevel <= 36
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 36
+    AreaLevel <= 42
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 42
+    AreaLevel <= 46
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 50
+    AreaLevel <= 54
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 60
+    AreaLevel <= 64
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 60
+    AreaLevel <= 64
+Show
+    Class "Life Flask" "Mana Flask"
+    DropLevel >= 65
+    AreaLevel <= 68
+Hide
+    Class "Life Flask" "Mana Flask"
+    &fade.
+
+#-------------------------------------------------------------------------------
+# 13. Catch
+#-------------------------------------------------------------------------------
+Show
+    SetBackgroundColor 250 230 250 155
+    MinimapIcon 0 Red Star

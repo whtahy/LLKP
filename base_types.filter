@@ -1,0 +1,223 @@
+# Base Types
+# ItemLevel >= 82
+
+# 01. Base Types
+# 02. Double Influence
+# 03. No Influence
+# 04. Shaper
+# 05. Elder
+# 06. Crusader
+# 07. Hunter
+# 08. Redeemer
+# 09. Warlord
+# 10. Cleanup
+
+#-------------------------------------------------------------------------------
+# 01. Base Types
+#-------------------------------------------------------------------------------
+Show
+    Class Amulet Belt Body Boots Bow Claw Dagger Gloves Helmet Jewel Axe Mace Sword Quiver Ring Shield Staff Warstaves
+    ItemLevel >= 82
+    &minimap.
+    Continue
+
+#-------------------------------------------------------------------------------
+# 02. Double Influence
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel >= 82
+    HasInfluence Shaper Elder
+    HasInfluence Crusader Hunter Redeemer Warlord
+Show
+    ItemLevel >= 82
+    HasInfluence Shaper
+    HasInfluence Elder
+Show
+    ItemLevel >= 82
+    HasInfluence Crusader
+    HasInfluence Hunter Redeemer Warlord
+Show
+    ItemLevel >= 82
+    HasInfluence Hunter
+    HasInfluence Crusader Redeemer Warlord
+Show
+    ItemLevel >= 82
+    HasInfluence Redeemer
+    HasInfluence Crusader Hunter Warlord
+Show
+    ItemLevel >= 82
+    HasInfluence Warlord
+    HasInfluence Crusader Hunter Redeemer
+
+#-------------------------------------------------------------------------------
+# 03. No Influence
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence None
+    BaseType &ilvl_82_no_influence.
+Show
+    ItemLevel 83
+    HasInfluence None
+    BaseType &ilvl_83_no_influence.
+Show
+    ItemLevel 84
+    HasInfluence None
+    BaseType &ilvl_84_no_influence.
+Show
+    ItemLevel 85
+    HasInfluence None
+    BaseType &ilvl_85_no_influence.
+Show
+    ItemLevel >= 86
+    HasInfluence None
+    BaseType &ilvl_86_no_influence.
+
+#-------------------------------------------------------------------------------
+# 04. Shaper
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence Shaper
+    BaseType &ilvl_82_shaper.
+Show
+    ItemLevel 83
+    HasInfluence Shaper
+    BaseType &ilvl_83_shaper.
+Show
+    ItemLevel 84
+    HasInfluence Shaper
+    BaseType &ilvl_84_shaper.
+Show
+    ItemLevel 85
+    HasInfluence Shaper
+    BaseType &ilvl_85_shaper.
+Show
+    ItemLevel >= 86
+    HasInfluence Shaper
+    BaseType &ilvl_86_shaper.
+
+#-------------------------------------------------------------------------------
+# 05. Elder
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence Elder
+    BaseType &ilvl_82_elder.
+Show
+    ItemLevel 83
+    HasInfluence Elder
+    BaseType &ilvl_83_elder.
+Show
+    ItemLevel 84
+    HasInfluence Elder
+    BaseType &ilvl_84_elder.
+Show
+    ItemLevel 85
+    HasInfluence Elder
+    BaseType &ilvl_85_elder.
+Show
+    ItemLevel >= 86
+    HasInfluence Elder
+    BaseType &ilvl_86_elder.
+
+#-------------------------------------------------------------------------------
+# 06. Crusader
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence Crusader
+    BaseType &ilvl_82_crusader.
+Show
+    ItemLevel 83
+    HasInfluence Crusader
+    BaseType &ilvl_83_crusader.
+Show
+    ItemLevel 84
+    HasInfluence Crusader
+    BaseType &ilvl_84_crusader.
+Show
+    ItemLevel 85
+    HasInfluence Crusader
+    BaseType &ilvl_85_crusader.
+Show
+    ItemLevel >= 86
+    HasInfluence Crusader
+    BaseType &ilvl_86_crusader.
+
+#-------------------------------------------------------------------------------
+# 07. Hunter
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence Hunter
+    BaseType &ilvl_82_hunter.
+Show
+    ItemLevel 83
+    HasInfluence Hunter
+    BaseType &ilvl_83_hunter.
+Show
+    ItemLevel 84
+    HasInfluence Hunter
+    BaseType &ilvl_84_hunter.
+Show
+    ItemLevel 85
+    HasInfluence Hunter
+    BaseType &ilvl_85_hunter.
+Show
+    ItemLevel >= 86
+    HasInfluence Hunter
+    BaseType &ilvl_86_hunter.
+
+#-------------------------------------------------------------------------------
+# 08. Redeemer
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence Redeemer
+    BaseType &ilvl_82_redeemer.
+Show
+    ItemLevel 83
+    HasInfluence Redeemer
+    BaseType &ilvl_83_redeemer.
+Show
+    ItemLevel 84
+    HasInfluence Redeemer
+    BaseType &ilvl_84_redeemer.
+Show
+    ItemLevel 85
+    HasInfluence Redeemer
+    BaseType &ilvl_85_redeemer.
+Show
+    ItemLevel >= 86
+    HasInfluence Redeemer
+    BaseType &ilvl_86_redeemer.
+
+#-------------------------------------------------------------------------------
+# 09. Warlord
+#-------------------------------------------------------------------------------
+Show
+    ItemLevel 82
+    HasInfluence Warlord
+    BaseType &ilvl_82_warlord.
+Show
+    ItemLevel 83
+    HasInfluence Warlord
+    BaseType &ilvl_83_warlord.
+Show
+    ItemLevel 84
+    HasInfluence Warlord
+    BaseType &ilvl_84_warlord.
+Show
+    ItemLevel 85
+    HasInfluence Warlord
+    BaseType &ilvl_85_warlord.
+Show
+    ItemLevel >= 86
+    HasInfluence Warlord
+    BaseType &ilvl_86_warlord.
+
+#-------------------------------------------------------------------------------
+# 10. Cleanup
+#-------------------------------------------------------------------------------
+Import "reset.filter"
