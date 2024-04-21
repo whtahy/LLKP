@@ -1,6 +1,5 @@
 # block
-*.*
-*/target/*
+*
 
 # allow
 !.gitignore

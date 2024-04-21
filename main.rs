@@ -1,339 +1,363 @@
-use std::{fs::read_to_string, fs::write, process::Command};
+use serde::Deserialize;
+use std::{
+    collections::{HashMap, HashSet},
+    path::PathBuf,
+    sync::OnceLock,
+};
 
-const LOW: usize = 4;
-const HIGH: usize = 10;
-const API: &str = "https://poe.ninja/api/data/ItemOverview";
-const LEAGUE: [&str; 4] = ["Standard", "Hardcore", "SSF", "NoParties"];
-const TEMPLATE: &str = "Z:/git/llkp/llkp.filter";
-const FILTER: &str = "./asdf.txt";
-const FADE: &str = "DisableDropSound
-    SetFontSize 32
-    SetBackgroundColor 0 0 0 125";
+type BaseTypes = Vec<BaseType>;
+type Filter = String;
+type Float = f32;
+type Json = String;
+type Todo = HashMap<String, HashSet<String>>;
+
+const CUTOFF: Float = 20.0;
+const MIN_COUNT: usize = 20;
+
+static LEAGUE: OnceLock<String> = OnceLock::new();
+static DEBUG: OnceLock<bool> = OnceLock::new();
+
+const GGG: &str = "https://www.pathofexile.com/api/leagues";
+const NINJA: &str = "https://poe.ninja/api/data/ItemOverview";
+const EXCLUDE: [&str; 6] =
+    ["Standard", "Hardcore", "Solo", "Ruthless", "SSF", "HC"];
+
+const LLKP_FILTER: &str = "LLKP.filter";
+const BASE_TYPES_FILTER: &str = "base_types.filter";
+const CLUSTER_JEWELS_FILTER: &str = "cluster_jewels.filter";
+
+const BASE_TYPES: [&str; 2] = ["BaseType", "./base_types.json"];
+const DIV_CARDS: [&str; 2] = ["DivinationCard", "./div_cards.json"];
+const UNIQUE_WEAPONS: [&str; 2] = ["UniqueWeapon", "./unique_weapons.json"];
+const UNIQUE_ARMOR: [&str; 2] = ["UniqueArmour", "./unique_armor.json"];
+const CLUSTER_JEWELS: [&str; 2] = ["ClusterJewel", "./cluster_jewels.json"];
+
+#[derive(Deserialize, Debug)]
+struct League {
+    id: String,
+}
+
+#[derive(Deserialize, Debug)]
+struct BaseType {
+    #[serde(rename = "baseType")]
+    base_type: String,
+    #[serde(rename = "levelRequired")]
+    ilvl: Option<u8>,
+    #[serde(rename = "chaosValue")]
+    price: Float,
+    name: String,
+    variant: Option<String>,
+    links: Option<u8>,
+    count: usize,
+}
 
 fn main() {
-    let mut filter = read_to_string(TEMPLATE).unwrap();
+    // debug/local mode
+    let _ = DEBUG.set(std::env::args().any(|x| x == "debug" || x == "local"));
 
-    let league = league();
-    println!("{league} league");
-
-    let url = |s: &str| format!("{API}?league={league}&type={s}");
-
-    let u = url("BaseType");
-    println!("- Fetching from {u}");
-    let (low, mid, high) = base_types::filter(&example("base_types"));
-    filter = filter.replace("&base_types_low.", &low);
-    filter = filter.replace("&base_types_mid.", &mid);
-    filter = filter.replace("&base_types_high.", &high);
-
-    let u = url("DivinationCard");
-    println!("- Fetching from {u}");
-    let (low, mid, high) = div_cards::filter(&example("div_cards"));
-    filter = filter.replace("&div_cards_low.", &low);
-    filter = filter.replace("&div_cards_mid.", &mid);
-    filter = filter.replace("&div_cards_high.", &high);
-
-    let u1 = url("UniqueWeapon");
-    let u2 = url("UniqueArmor");
-    println!("- Fetching from {u1}");
-    println!("- Fetching from {u2}");
-    let (low, mid, high) = uniques::filter(
-        &[example("unique_armor"), example("unique_weapons")].concat(),
-    );
-    filter = filter.replace("&uniques_low.", &low);
-    filter = filter.replace("&uniques_mid.", &mid);
-    filter = filter.replace("&uniques_high.", &high);
-
-    filter = filter.replace("&fade.", FADE);
-    write(FILTER, filter).unwrap();
-    println!("Filter output to {FILTER}");
-}
-
-fn example(s: &str) -> String {
-    read_to_string(format!("./{s}.txt")).unwrap()
-}
-
-fn curl(url: &str) -> String {
-    let curl = format!("curl --compressed '{url}'");
-    let cmd = Command::new("bash").arg("-c").arg(curl).output().unwrap();
-    String::from_utf8(cmd.stdout).unwrap()
-}
-
-fn league() -> String {
-    curl("https://www.pathofexile.com/api/leagues")
-        .split(&['{', ','])
-        .map(|s| {
-            s.chars()
-                .filter(|&ch| ch.is_alphabetic() || ch == ':')
-                .collect::<String>()
-        })
-        .flat_map(|s| match s.split_once(':') {
-            Some(("id", b)) => Some(b.to_string()),
-            _ => None,
-        })
-        .find(|league| !LEAGUE.iter().any(|x| league.contains(x)))
+    // challenge league
+    let leagues = serde_json::from_str::<Vec<League>>(&get(GGG))
         .unwrap()
-}
+        .into_iter()
+        .map(|league| league.id)
+        .filter(|league| !EXCLUDE.iter().any(|x| league.contains(x)))
+        .collect::<Vec<_>>();
+    let _ = LEAGUE.set(leagues[0].to_owned());
+    println!("... leagues = [{}]", leagues.join(", "));
 
-fn unquote(s: &str) -> String {
-    s.replace('"', "")
-}
-
-pub mod uniques {
-    use crate::*;
-    use std::collections::{HashMap, HashSet};
-
-    type T = HashSet<String>;
-
-    const JSON_KEYS: [&str; 5] =
-        ["name", "itemType", "baseType", "chaosValue", "links"];
-
-    #[derive(Debug)]
-    struct Unique {
-        base_type: String,
-        replica: bool,
-        links: usize,
-        price: usize,
-    }
-
-    pub fn filter(json: &str) -> (String, String, String) {
-        let (low, mid, high) = low_mid_high(json);
-        println!(
-            "--- Uniques: {} low, {} mid, {} high",
-            low.len(),
-            mid.len(),
-            high.len()
-        );
-
-        let string = |set: HashSet<String>| {
-            set.into_iter().collect::<Vec<_>>().join(" ")
+    // base types
+    let (high_value, _, _) = split(BASE_TYPES);
+    let mut todo = Todo::new();
+    for item in high_value {
+        let ilvl = item.ilvl.unwrap();
+        let influence = if item.variant.is_none() {
+            "no_influence".to_string()
+        } else if item.variant.as_ref().unwrap().contains('/') {
+            continue;
+        } else {
+            item.variant.unwrap().to_lowercase()
         };
-
-        (string(low), string(mid), string(high))
+        todo.entry(format!("&ilvl_{ilvl}_{influence}."))
+            .or_default()
+            .insert(item.base_type);
     }
+    find_and_replace(local(BASE_TYPES_FILTER), remote(BASE_TYPES_FILTER), todo);
+    leftovers(BASE_TYPES_FILTER, "Divine Orb");
 
-    fn low_mid_high(json: &str) -> (T, T, T) {
-        let (mut low, mut mid, mut high) =
-            (HashSet::new(), HashSet::new(), HashSet::new());
-        for unique in json
-            .split(r#"},{"id":"#)
-            .map(parse)
-            .filter(|u| !u.replica && u.links == 0)
-        {
-            if unique.price < LOW {
-                mid.remove(&unique.base_type);
-                if high.remove(&unique.base_type) {
-                    mid.insert(unique.base_type);
-                } else {
-                    low.insert(unique.base_type);
-                };
-            } else if unique.price < HIGH {
-                high.remove(&unique.base_type);
-                mid.insert(unique.base_type);
-            } else if !low.contains(&unique.base_type)
-                && !mid.contains(&unique.base_type)
-            {
-                high.insert(unique.base_type);
-            }
-        }
-        (low, mid, high)
+    // cluster jewels
+    let (high_value, _, _) = split(CLUSTER_JEWELS);
+    let cluster_jewel_names = cluster_jewel_names();
+    let mut todo = Todo::new();
+    for item in high_value {
+        let base = item.base_type.split(' ').next().unwrap().to_lowercase();
+        let ilvl = item.ilvl.unwrap();
+        let n = item.variant.unwrap().split(' ').next().unwrap().to_owned();
+        let enchant = cluster_jewel_names.get(&item.name).unwrap().to_owned();
+        todo.entry(format!("&{base}_ilvl_{ilvl}_passive_{n}."))
+            .or_default()
+            .insert(enchant);
     }
+    find_and_replace(
+        local(CLUSTER_JEWELS_FILTER),
+        remote(CLUSTER_JEWELS_FILTER),
+        todo,
+    );
+    leftovers(CLUSTER_JEWELS_FILTER, "Reservation Efficiency");
 
-    fn parse(json_obj: &str) -> Unique {
-        let map = HashMap::<String, String>::from_iter(
-            json_obj
-                .split(',')
-                .filter_map(|s| s.split_once(':'))
-                .map(|(k, v)| (unquote(k), v.to_string()))
-                .filter(|(k, _)| JSON_KEYS.contains(&k.as_str())),
-        );
+    // main filter
+    let mut todo = Todo::new();
 
-        let string = |k: &str| map.get(k).unwrap().to_string();
-        let int = |k: &str| {
-            map.get(k)
-                .and_then(|s| s.parse::<f32>().ok())
-                .map(|x| x.floor() as usize)
+    // div cards
+    let (high_value, low_value, low_confidence) = split(DIV_CARDS);
+    let f = |v: BaseTypes| v.into_iter().map(|x| x.base_type);
+    todo.insert(
+        "&div_cards_show.".to_string(),
+        f(high_value).chain(f(low_confidence)).collect(),
+    );
+    todo.insert("&div_cards_hide.".to_string(), f(low_value).collect());
+
+    // unique armor
+    let (high_value_a, low_value_a, low_confidence_a) = split(UNIQUE_ARMOR);
+    let (high_value_w, low_value_w, low_confidence_w) = split(UNIQUE_WEAPONS);
+    for item in high_value_a
+        .into_iter()
+        .chain(low_confidence_a.into_iter())
+        .chain(high_value_w.into_iter())
+        .chain(low_confidence_w.into_iter())
+        .filter(|x| !x.name.contains("Replica"))
+    {
+        let k = match item.links {
+            Some(6) => continue,
+            Some(5) => "&uniques_links_eq_5.",
+            _ => "&uniques_links_le_4.",
         };
-
-        Unique {
-            base_type: string("baseType"),
-            replica: string("name").contains("Replica"),
-            links: int("links").unwrap_or(0),
-            price: int("chaosValue").unwrap(),
-        }
+        todo.entry(k.to_string())
+            .or_default()
+            .insert(item.base_type);
     }
+    for item in low_value_a.into_iter().chain(low_value_w.into_iter()) {
+        todo.entry("&uniques_low_value.".to_string())
+            .or_default()
+            .insert(item.base_type.to_string());
+    }
+
+    find_and_replace(local(LLKP_FILTER), remote(LLKP_FILTER), todo);
 }
 
-pub mod div_cards {
-    use crate::*;
-
-    type T = Vec<String>;
-
-    pub fn filter(json: &str) -> (String, String, String) {
-        let (low, mid, high) = low_mid_high(json);
-        println!(
-            "--- Div cards: {} low, {} mid, {} high",
-            low.len(),
-            mid.len(),
-            high.len()
-        );
-
-        (low.join(" "), mid.join(" "), high.join(" "))
-    }
-
-    fn low_mid_high(json: &str) -> (T, T, T) {
-        json.split("},{").map(parse).fold(
-            (Vec::new(), Vec::new(), Vec::new()),
-            |(mut low, mut mid, mut high), (k, v)| {
-                if v < LOW {
-                    low.push(k)
-                } else if v < HIGH {
-                    mid.push(k)
-                } else {
-                    high.push(k);
-                };
-                (low, mid, high)
-            },
-        )
-    }
-
-    fn parse(json_obj: &str) -> (String, usize) {
-        let (mut name, mut price) = (None, None);
-        for (k, v) in json_obj.split(',').filter_map(|s| s.split_once(':')) {
-            let k = unquote(k);
-            if k == "name" {
-                name = Some(v.to_string());
-            } else if k == "chaosValue" {
-                price = Some(v.parse::<f32>().unwrap().floor() as usize)
-            }
-        }
-
-        match (name, price) {
-            (Some(a), Some(b)) => (a, b),
-            _ => unreachable!(),
-        }
-    }
-}
-
-pub mod base_types {
-    use crate::*;
-    use std::collections::HashMap;
-
-    type K = (usize, String, String); // ilvl, class, influence
-    type V = Vec<String>; // base types
-    type T = HashMap<K, V>;
-
-    const INFLUENCE: [&str; 7] = [
-        "None", "Elder", "Shaper", "Crusader", "Hunter", "Redeemer", "Warlord",
+fn local(file_name: &str) -> Filter {
+    let mut filter = std::fs::read_to_string(format!("./{file_name}")).unwrap();
+    let style = [
+        (
+            "\n    &chaos_recipe.",
+            "\n    Rarity Rare
+    Identified False
+    ItemLevel >= 60
+    ItemLevel < 75
+    &fade.",
+        ),
+        (
+            "\n    &fade.",
+            "\n    DisableDropSound
+    SetFontSize 32
+    SetBackgroundColor 0 0 0 125
+    MinimapIcon -1",
+        ),
+        ("\n    &minimap.", "\n    MinimapIcon 0 Blue Star"),
     ];
-    const JSON_KEYS: [&str; 7] = [
-        "itemType",
-        "baseType",
-        "variant",
-        "levelRequired",
-        "chaosValue",
-        "count",
-        "listingCount",
-    ];
-
-    #[derive(Debug)]
-    struct BaseType {
-        class: String,
-        name: String,
-        influence: String,
-        ilvl: usize,
-        price: usize,
-        count: usize,
-        listing_count: usize,
+    for (k, v) in style {
+        filter = filter.replace(k, v);
     }
+    filter
+}
 
-    pub fn filter(json: &str) -> (String, String, String) {
-        let (low, mid, high) = low_mid_high(json);
-        println!(
-            "--- Base types: {} low, {} mid, {} high",
-            low.len(),
-            mid.len(),
-            high.len()
-        );
+fn remote(file_name: &str) -> PathBuf {
+    let root = std::env::var("llkp_path").unwrap();
+    PathBuf::from(format!("{root}/{file_name}",))
+}
 
-        let filter = |map: HashMap<K, V>, tier| {
-            let mut rules = Vec::new();
-            for ((ilvl, class, influence), base_types) in map {
-                let base_types = base_types.join(" ");
-                let mut template = vec![
-                    format!("ItemLevel {ilvl}"),
-                    format!("Class {class}"),
-                    format!("HasInfluence {influence}"),
-                    format!("BaseType {base_types}"),
-                ];
-                let mut s = Vec::new();
-                match tier {
-                    "low" => s.push("Hide".to_string()),
-                    _ => s.push("Show".to_string()),
-                }
-                s.append(&mut template);
-                match tier {
-                    "low" => s.push("&fade.".to_string()),
-                    "high" => s.push("MinimapIcon 0 Blue Star".to_string()),
-                    _ => (),
-                }
-                rules.push(s.join("\r\n    "));
-            }
-            rules.join("\r\n")
-        };
+fn get(url: &str) -> Json {
+    println!("Calling {url} ...");
+    minreq::get(url)
+        .send()
+        .unwrap()
+        .as_str()
+        .unwrap()
+        .to_string()
+}
 
-        (filter(low, "low"), filter(mid, "mid"), filter(high, "high"))
-    }
-
-    fn low_mid_high(json: &str) -> (T, T, T) {
-        json.split("},{")
-            .map(parse)
-            .filter(|bt| INFLUENCE.contains(&bt.influence.as_str()))
-            .filter(|bt| bt.count >= 10 || bt.listing_count >= 10)
-            .fold(
-                (HashMap::new(), HashMap::new(), HashMap::new()),
-                |(mut low, mut mid, mut high), bt| {
-                    let class = format!(" {}", unquote(&bt.class));
-                    let k = (bt.ilvl, bt.class, bt.influence);
-                    let v = bt.name.replace(&class, "").trim().to_string();
-                    if bt.price < LOW {
-                        low.entry(k).or_insert_with(Vec::new).push(v);
-                    } else if bt.price < HIGH {
-                        mid.entry(k).or_insert_with(Vec::new).push(v);
-                    } else {
-                        high.entry(k).or_insert_with(Vec::new).push(v);
-                    }
-                    (low, mid, high)
-                },
-            )
-    }
-
-    fn parse(json_obj: &str) -> BaseType {
-        let clean =
-            |s: &str| s.replace("One Handed ", "").replace("Two Handed ", "");
-
-        let map = HashMap::<String, String>::from_iter(
-            json_obj
-                .split(',')
-                .filter_map(|s| s.split_once(':'))
-                .map(|(k, v)| (unquote(k), clean(v)))
-                .filter(|(k, _)| JSON_KEYS.contains(&k.as_str())),
-        );
-
-        let string = |s: &str| map.get(s).map(ToString::to_string);
-        let int = |s: &str| {
-            map.get(s)
-                .and_then(|s| s.parse::<f32>().ok())
-                .map(|x| x.floor() as usize)
-        };
-
-        BaseType {
-            class: string("itemType").unwrap(),
-            name: string("baseType").unwrap(),
-            influence: string("variant").unwrap_or_else(|| "None".to_string()),
-            ilvl: int("levelRequired").unwrap(),
-            price: int("chaosValue").unwrap(),
-            count: int("count").unwrap_or(0),
-            listing_count: int("listingCount").unwrap_or(0),
+fn split([api, local_file]: [&str; 2]) -> (BaseTypes, BaseTypes, BaseTypes) {
+    let json = if let (true, Ok(json)) =
+        (DEBUG.get().unwrap(), std::fs::read_to_string(local_file))
+    {
+        println!("Calling {local_file} ...");
+        json
+    } else {
+        let league = LEAGUE.get().unwrap();
+        let json = get(&format!("{NINJA}?league={league}&type={api}"));
+        std::fs::write(local_file, &json).unwrap();
+        json
+    };
+    let items = serde_json::from_str::<HashMap<String, BaseTypes>>(&json)
+        .unwrap()
+        .remove("lines")
+        .unwrap();
+    println!("... found {} items", items.len());
+    let (mut high_value, mut low_value, mut low_confidence) =
+        (Vec::new(), Vec::new(), Vec::new());
+    for item in items.into_iter() {
+        if item.count < MIN_COUNT {
+            low_confidence.push(item);
+        } else if item.price >= CUTOFF {
+            high_value.push(item);
+        } else {
+            low_value.push(item);
         }
     }
+    println!("... found {} items >= {CUTOFF} chaos", high_value.len());
+    println!("... found {} items < {CUTOFF} chaos", low_value.len());
+    println!(
+        "... found {} items with count < {MIN_COUNT}",
+        low_confidence.len()
+    );
+    (high_value, low_value, low_confidence)
+}
+
+fn find_and_replace(mut filter: Filter, dest: PathBuf, mut todo: Todo) {
+    for (k, v) in todo.drain() {
+        let items = v
+            .into_iter()
+            .map(|x| format!("\"{x}\""))
+            .collect::<Vec<_>>()
+            .join(" ");
+        filter = filter.replace(&k, &items);
+    }
+    std::fs::write(&dest, filter).unwrap();
+    println!("... writing to {} ...", dest.to_str().unwrap());
+}
+
+fn leftovers(file_name: &str, default: &str) {
+    println!("... filling in leftovers");
+    let path = remote(file_name);
+    let filter = std::fs::read_to_string(&path).unwrap();
+    let mut todo = Todo::new();
+    for leftover in filter
+        .split_whitespace()
+        .filter(|w| w.starts_with('&') && w.ends_with('.'))
+        .collect::<HashSet<_>>()
+    {
+        todo.insert(leftover.to_string(), HashSet::from([default.to_string()]));
+    }
+    find_and_replace(filter, path, todo);
+}
+
+fn cluster_jewel_names() -> HashMap<String, String> {
+    let ninja_names = [
+        "10% increased Area Damage",
+        "15% increased Armour",
+        "10% increased Attack Damage",
+        "12% increased Attack Damage while Dual Wielding",
+        "12% increased Attack Damage while holding a Shield",
+        "Axe Attacks deal 12% increased Damage with Hits and Ailments, Sword Attacks deal 12% increased Damage with Hits and Ailments",
+        "+1% Chance to Block Attack Damage",
+        "1% Chance to Block Spell Damage",
+        "12% increased Damage with Bows, 12% increased Damage Over Time with Bow Skills",
+        "12% increased Brand Damage",
+        "Channelling Skills deal 12% increased Damage",
+        "12% increased Chaos Damage",
+        "12% increased Chaos Damage over Time",
+        "+12% to Chaos Resistance",
+        "12% increased Cold Damage",
+        "12% increased Cold Damage over Time",
+        "+15% to Cold Resistance",
+        "15% increased Critical Strike Chance",
+        "2% increased Effect of your Curses",
+        "Claw Attacks deal 12% increased Damage with Hits and Ailments, Dagger Attacks deal 12% increased Damage with Hits and Ailments",
+        "10% increased Damage over Time",
+        "10% increased Damage while affected by a Herald",
+        "12% increased Damage with Two Handed Weapons",
+        "10% increased Effect of Non-Damaging Ailments",
+        "10% increased Elemental Damage",
+        "6% increased maximum Energy Shield",
+        "15% increased Evasion Rating",
+        "Exerted Attacks deal 20% increased Damage",
+        "12% increased Fire Damage",
+        "12% increased Burning Damage",
+        "+15% to Fire Resistance",
+        "6% increased Flask Effect Duration",
+        "4% increased maximum Life",
+        "12% increased Lightning Damage",
+        "+15% to Lightning Resistance",
+        "Staff Attacks deal 12% increased Damage with Hits and Ailments, Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments",
+        "6% increased maximum Mana",
+        "Minions deal 10% increased Damage",
+        "Minions deal 10% increased Damage while you are affected by a Herald",
+        "Minions have 12% increased maximum Life",
+        "12% increased Physical Damage",
+        "12% increased Physical Damage over Time",
+        "10% increased Projectile Damage",
+        "10% increased Life Recovery from Flasks, 10% increased Mana Recovery from Flasks",
+        "6% increased Mana Reservation Efficiency of Skills",
+        "10% increased Spell Damage",
+        "+2% chance to Suppress Spell Damage",
+        "12% increased Totem Damage",
+        "12% increased Trap Damage, 12% increased Mine Damage",
+        "Wand Attacks deal 12% increased Damage with Hits and Ailments"
+    ];
+    let poe_names = [
+        "Area Damage",
+        "Armour",
+        "Attack Damage",
+        "Attack Damage while Dual Wielding",
+        "Attack Damage while holding a Shield",
+        "Axe and Sword Damage",
+        "Block Attack Damage",
+        "Block Spell Damage",
+        "Bow Damage",
+        "Brand Damage",
+        "Channelling Skill Damage",
+        "Chaos Damage",
+        "Chaos Damage over Time",
+        "Chaos Resistance",
+        "Cold Damage",
+        "Cold Damage over Time",
+        "Cold Resistance",
+        "Critical Chance",
+        "Curse Effect",
+        "Dagger and Claw Damage",
+        "Damage over Time",
+        "Damage while you have a Herald",
+        "Damage with Two Handed Weapons",
+        "Effect of Non-Damaging Ailments",
+        "Elemental Damage",
+        "Energy Shield",
+        "Evasion",
+        "Exerted Attack Damage",
+        "Fire Damage",
+        "Fire Damage over Time",
+        "Fire Resistance",
+        "Flask Duration",
+        "Life",
+        "Lightning Damage",
+        "Lightning Resistance",
+        "Mace and Staff Damage",
+        "Mana",
+        "Minion Damage",
+        "Minion Damage while you have a Herald",
+        "Minion Life",
+        "Physical Damage",
+        "Physical Damage over Time",
+        "Projectile Damage",
+        "Recovery from Flasks",
+        "Reservation Efficiency",
+        "Spell Damage",
+        "Suppress Spell Damage",
+        "Totem Damage",
+        "Trap and Mine Damage",
+        "Wand Damage",
+    ];
+    ninja_names
+        .into_iter()
+        .zip(poe_names)
+        .map(|(k, v)| (k.to_string(), v.to_string()))
+        .collect::<HashMap<_, _>>()
 }

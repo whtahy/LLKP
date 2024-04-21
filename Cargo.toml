@@ -6,3 +6,8 @@ edition = "2021"
 [[bin]]
 name = "llkp"
 path = "main.rs"
+
+[dependencies]
+minreq = { version = "*", features = ["https"] }
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
