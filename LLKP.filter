@@ -23,7 +23,14 @@ Import "reset.filter"
 Show
     Class Quest
 Show
-    Class Allflame Corpse
+    Class Gold
+    &fade.
+Show
+    Class Corpse
+    &minimap.
+Show
+    Quality > 25
+    DropLevel > 68
     &fade.
 #-------------------------------------------------------------------------------
 Show
@@ -31,21 +38,16 @@ Show
     Quality > 0
     &fade.
 #-------------------------------------------------------------------------------
-Hide
-    Class Divination Card
-    BaseType "The Demoness"
-    &fade.
-#-------------------------------------------------------------------------------
 Show
-    Class "Utility Flask"
+    Class Flask Tincture
     Rarity Normal Magic Rare
-    ItemLevel >= 84
-    BaseType Basalt Gold Granite Iron Jade Quartz Ruby Silver Sulphur Amethyst Sapphire Topaz Quicksilver Stibnite Diamond
+    ItemLevel >= 85
+    BaseType Basalt Gold Granite Iron Jade Quartz Ruby Silver Sulphur Amethyst Sapphire Topaz Quicksilver Stibnite Diamond Tincture
     &minimap.
 #Show
 #    Class "Life Flask" # "Mana Flask"
 #    Rarity Normal Magic Rare
-#    BaseType "Hallowed Life" Divine Eternal
+#    BaseType Hallowed Divine Eternal
 #    ItemLevel >= 83
 #    &fade.
 
@@ -65,12 +67,12 @@ Show
 #    &chaos_recipe.
 #Show
 #    Class Helm Gloves Boots
-#    DropLevel > 65
+#    DropLevel > 1
 #    &chaos_recipe.
 #Show
 #    Width 1
 #    Height 3
-#    DropLevel > 65
+#    DropLevel > 1
 #    &chaos_recipe.
 #Show
 #    Class Bow
@@ -87,11 +89,11 @@ Show
     AreaLevel < 68
 Show
     Class Currency
-    BaseType Armourer Portal Transmutation Wisdom
+    BaseType Portal Wisdom
     StackSize >= 10
 Show
     Class Currency
-    BaseType Augmentation Chance Whetstone
+    BaseType Armourer Augmentation Chance Transmutation Whetstone
     StackSize >= 5
 Show
     Class Currency
@@ -167,7 +169,7 @@ Show
 Show
     Class Map
     MapTier 1 2 3 4 5
-    AreaLevel <= 73
+    AreaLevel <= 74
     SetTextColor 236 236 236 242
 #-------------------------------------------------------------------------------
 Show
@@ -192,6 +194,10 @@ Import "reset.filter"
 #-------------------------------------------------------------------------------
 # 05. Divination Cards
 #-------------------------------------------------------------------------------
+Hide
+    Class Divination Card
+    BaseType "The Demoness"
+    &fade.
 Show
     Class Divination
     BaseType &div_cards_show.
@@ -218,7 +224,7 @@ Show
     BaseType "Eternal Bonds" "A Fate Worse Than Death"
 Show
     Class Divination # other
-    BaseType "Man with Bear" "The Deal" "The Card Sharp" "Buried Treasure" "Cameria's Cut" "The Eldritch Decay" "The Fishmonger" "Boon of Justice" "The Void"
+    BaseType "Man with Bear" "More is Never Enough" "Rebirth and Renewal" "The Deal" "The Card Sharp" "Buried Treasure" "Cameria's Cut" "The Eldritch Decay" "The Fishmonger" "Boon of Justice" "The Void"
 #-------------------------------------------------------------------------------
 Show
     Class Divination
@@ -281,7 +287,7 @@ Show
 Show
     Class Atlas Breachstone Delve Fishing Incubator Incursion Labyrinth Logbook Memories Misc Pantheon Piece Relic Sanctum Shard Vault
 Show
-    Class Charm Leaguestone Metamorph Sentinel Tincture
+    Class Charm Leaguestone Metamorph Sentinel
 Show
     LinkedSockets 6
 #-------------------------------------------------------------------------------
@@ -299,10 +305,13 @@ Show
     AnyEnchantment True
 Show
     HasExplicitMod Veil
-    HasExplicitMod Vorici Vagan Catarina # Tora Rin Leo Korell "It That Fled" Haku Gravicius Elreon
+    HasExplicitMod Vorici Vagan Catarina Tora Rin Leo Korell "It That Fled" Haku Gravicius Elreon
 Show
     HasExplicitMod Veil
     Class Ring Amulet Belt Helm Gloves Boots Body Flask
+Show
+    HasExplicitMod Veil
+    Class Staff Sceptre Wand Quiver Shield Ring Amulet Belt Axe Bow Claw Dagger Mace Sword Warstaves
 #-------------------------------------------------------------------------------
 Import "reset.filter"
 
@@ -315,7 +324,7 @@ Show
     Continue
 Show
     Rarity Unique
-    Class Ring Amulet Belt Jewel Flask
+    Class Ring Amulet Belt Jewel Flask Tincture
 Show
     Rarity Unique
     Replica True
@@ -368,6 +377,9 @@ Hide
 Hide
     Class "Utility Flask"
     &fade.
+Hide
+    Class "Tincture"
+    &fade.
 
 #-------------------------------------------------------------------------------
 # 12. Leveling
@@ -398,6 +410,11 @@ Show
     &minimap.
 #-------------------------------------------------------------------------------
 Show
+    Class Helm Gloves Boots Body Staff Sceptre Wand Quiver Shield Ring Amulet Belt Axe Bow Claw Dagger Mace Sword Warstaves
+    &fade.
+    Continue
+#-------------------------------------------------------------------------------
+Show
     Class Ring
     AreaLevel < 13
     BaseType Coral Sapphire Topaz
@@ -408,7 +425,6 @@ Show
     BaseType Coral Sapphire Topaz Ruby Two-Stone Prismatic
 Hide
     Class Ring
-    &fade.
 #-------------------------------------------------------------------------------
 Show
     Class Amulet
@@ -421,7 +437,6 @@ Show
     BaseType Amber Jade Lapis Agate Citrine Turquoise Onyx
 Hide
     Class Amulet
-    &fade.
 #-------------------------------------------------------------------------------
 Show
     Class Belt
@@ -434,7 +449,6 @@ Show
     BaseType Chain Rustic Stygian Heavy Leather
 Hide
     Class Belt
-    &fade.
 #-------------------------------------------------------------------------------
 Show
     Class Helm Gloves Boots Body
@@ -442,7 +456,6 @@ Show
     AreaLevel < 50
 Hide
     Class Helm Gloves Boots Body
-    &fade.
 #-------------------------------------------------------------------------------
 Show
     Rarity Rare
@@ -450,67 +463,65 @@ Show
     AreaLevel < 50
 Hide
     Class Quiver Sceptre Shield Staff Wand
-    &fade.
 #-------------------------------------------------------------------------------
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 12
-    DropLevel >= 9
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 15
-    DropLevel >= 12
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 18
-    DropLevel >= 15
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 21
-    DropLevel >= 18
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 24
-    DropLevel >= 21
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 27
-    DropLevel >= 24
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 30
-    DropLevel >= 27
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 33
-    DropLevel >= 30
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 36
-    DropLevel >= 33
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 39
-    DropLevel >= 36
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 42
-    DropLevel >= 39
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 45
-    DropLevel >= 42
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 48
-    DropLevel >= 45
-Show
-    Class Axe # Bow Claw Dagger Mace Sword Warstaves
-    AreaLevel <= 51
-    DropLevel >= 48
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 12
+#    DropLevel >= 9
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 15
+#    DropLevel >= 12
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 18
+#    DropLevel >= 15
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 21
+#    DropLevel >= 18
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 24
+#    DropLevel >= 21
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 27
+#    DropLevel >= 24
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 30
+#    DropLevel >= 27
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 33
+#    DropLevel >= 30
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 36
+#    DropLevel >= 33
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 39
+#    DropLevel >= 36
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 42
+#    DropLevel >= 39
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 45
+#    DropLevel >= 42
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 48
+#    DropLevel >= 45
+#Show
+#    Class Axe # Bow Claw Dagger Mace Sword Warstaves
+#    AreaLevel <= 51
+#    DropLevel >= 48
 Hide
     Class Axe Bow Claw Dagger Mace Sword Warstaves
-    &fade.
 #-------------------------------------------------------------------------------
 Show
     Class "Life Flask" "Mana Flask"
@@ -562,7 +573,7 @@ Show
 Show
     Class "Life Flask" "Mana Flask"
     DropLevel >= 65
-    AreaLevel <= 68
+    AreaLevel <= 67
 Hide
     Class "Life Flask" "Mana Flask"
     &fade.

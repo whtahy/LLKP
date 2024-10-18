@@ -1,3 +1,4 @@
+use core::str;
 use serde::Deserialize;
 use std::{
     collections::{HashMap, HashSet},
@@ -8,16 +9,14 @@ use std::{
 type BaseTypes = Vec<BaseType>;
 type Filter = String;
 type Float = f32;
-type Json = String;
 type Todo = HashMap<String, HashSet<String>>;
 
-const CUTOFF: Float = 20.0;
-const MIN_COUNT: usize = 20;
+const MIN_COUNT: usize = 30;
 
 static LEAGUE: OnceLock<String> = OnceLock::new();
 static DEBUG: OnceLock<bool> = OnceLock::new();
 
-const GGG: &str = "https://www.pathofexile.com/api/leagues";
+const GGG: &str = "https://www.pathofexile.com/api/leagues?type=main";
 const NINJA: &str = "https://poe.ninja/api/data/ItemOverview";
 const EXCLUDE: [&str; 6] =
     ["Standard", "Hardcore", "Solo", "Ruthless", "SSF", "HC"];
@@ -52,8 +51,14 @@ struct BaseType {
 }
 
 fn main() {
-    // debug/local mode
-    let _ = DEBUG.set(std::env::args().any(|x| x == "debug" || x == "local"));
+    // cli args
+    DEBUG
+        .set(std::env::args().any(|x| x == "debug" || x == "local"))
+        .unwrap();
+    let cutoff = std::env::args()
+        .filter_map(|x| x.parse::<Float>().ok())
+        .next()
+        .unwrap_or(30.0);
 
     // challenge league
     let leagues = serde_json::from_str::<Vec<League>>(&get(GGG))
@@ -62,11 +67,11 @@ fn main() {
         .map(|league| league.id)
         .filter(|league| !EXCLUDE.iter().any(|x| league.contains(x)))
         .collect::<Vec<_>>();
-    let _ = LEAGUE.set(leagues[0].to_owned());
+    LEAGUE.set(leagues[0].to_owned()).unwrap();
     println!("... leagues = [{}]", leagues.join(", "));
 
     // base types
-    let (high_value, _, _) = split(BASE_TYPES);
+    let (high_value, _, _) = split(cutoff, BASE_TYPES);
     let mut todo = Todo::new();
     for item in high_value {
         let ilvl = item.ilvl.unwrap();
@@ -85,7 +90,7 @@ fn main() {
     leftovers(BASE_TYPES_FILTER, "Divine Orb");
 
     // cluster jewels
-    let (high_value, _, _) = split(CLUSTER_JEWELS);
+    let (high_value, _, _) = split(cutoff, CLUSTER_JEWELS);
     let cluster_jewel_names = cluster_jewel_names();
     let mut todo = Todo::new();
     for item in high_value {
@@ -108,22 +113,26 @@ fn main() {
     let mut todo = Todo::new();
 
     // div cards
-    let (high_value, low_value, low_confidence) = split(DIV_CARDS);
+    let (high_value, low_value, low_confidence) = split(5.0, DIV_CARDS);
     let f = |v: BaseTypes| v.into_iter().map(|x| x.base_type);
-    todo.insert(
-        "&div_cards_show.".to_string(),
-        f(high_value).chain(f(low_confidence)).collect(),
-    );
-    todo.insert("&div_cards_hide.".to_string(), f(low_value).collect());
+    if !high_value.is_empty() || !low_confidence.is_empty() {
+        todo.insert(
+            "&div_cards_show.".to_string(),
+            f(high_value).chain(f(low_confidence)).collect(),
+        );
+    }
+    if !low_value.is_empty() {
+        todo.insert("&div_cards_hide.".to_string(), f(low_value).collect());
+    }
 
-    // unique armor
-    let (high_value_a, low_value_a, low_confidence_a) = split(UNIQUE_ARMOR);
-    let (high_value_w, low_value_w, low_confidence_w) = split(UNIQUE_WEAPONS);
-    for item in high_value_a
+    // unique armor and weapons
+    let (hi_val_a, lo_val_a, lo_conf_a) = split(cutoff, UNIQUE_ARMOR);
+    let (hi_val_w, lo_val_w, lo_conf_w) = split(cutoff, UNIQUE_WEAPONS);
+    for item in hi_val_a
         .into_iter()
-        .chain(low_confidence_a.into_iter())
-        .chain(high_value_w.into_iter())
-        .chain(low_confidence_w.into_iter())
+        .chain(hi_val_w.into_iter())
+        .chain(lo_conf_a.into_iter())
+        .chain(lo_conf_w.into_iter())
         .filter(|x| !x.name.contains("Replica"))
     {
         let k = match item.links {
@@ -135,13 +144,13 @@ fn main() {
             .or_default()
             .insert(item.base_type);
     }
-    for item in low_value_a.into_iter().chain(low_value_w.into_iter()) {
+    for item in lo_val_a.into_iter().chain(lo_val_w.into_iter()) {
         todo.entry("&uniques_low_value.".to_string())
             .or_default()
             .insert(item.base_type.to_string());
     }
-
     find_and_replace(local(LLKP_FILTER), remote(LLKP_FILTER), todo);
+    leftovers(LLKP_FILTER, "Divine Orb");
 }
 
 fn local(file_name: &str) -> Filter {
@@ -175,22 +184,25 @@ fn remote(file_name: &str) -> PathBuf {
     PathBuf::from(format!("{root}/{file_name}",))
 }
 
-fn get(url: &str) -> Json {
+fn get(url: &str) -> String {
     println!("Calling {url} ...");
-    minreq::get(url)
-        .send()
+    let mut response = String::with_capacity(1024);
+    ureq::get(url)
+        .call()
         .unwrap()
-        .as_str()
-        .unwrap()
-        .to_string()
+        .into_reader()
+        .read_to_string(&mut response)
+        .unwrap();
+    response
 }
 
-fn split([api, local_file]: [&str; 2]) -> (BaseTypes, BaseTypes, BaseTypes) {
-    let json = if let (true, Ok(json)) =
-        (DEBUG.get().unwrap(), std::fs::read_to_string(local_file))
-    {
+fn split(
+    cutoff: f32,
+    [api, local_file]: [&str; 2],
+) -> (BaseTypes, BaseTypes, BaseTypes) {
+    let json = if *DEBUG.get().unwrap() {
         println!("Calling {local_file} ...");
-        json
+        std::fs::read_to_string(local_file).unwrap()
     } else {
         let league = LEAGUE.get().unwrap();
         let json = get(&format!("{NINJA}?league={league}&type={api}"));
@@ -207,14 +219,14 @@ fn split([api, local_file]: [&str; 2]) -> (BaseTypes, BaseTypes, BaseTypes) {
     for item in items.into_iter() {
         if item.count < MIN_COUNT {
             low_confidence.push(item);
-        } else if item.price >= CUTOFF {
+        } else if item.price >= cutoff {
             high_value.push(item);
         } else {
             low_value.push(item);
         }
     }
-    println!("... found {} items >= {CUTOFF} chaos", high_value.len());
-    println!("... found {} items < {CUTOFF} chaos", low_value.len());
+    println!("... found {} items >= {cutoff} chaos", high_value.len());
+    println!("... found {} items < {cutoff} chaos", low_value.len());
     println!(
         "... found {} items with count < {MIN_COUNT}",
         low_confidence.len()
@@ -258,8 +270,8 @@ fn cluster_jewel_names() -> HashMap<String, String> {
         "12% increased Attack Damage while Dual Wielding",
         "12% increased Attack Damage while holding a Shield",
         "Axe Attacks deal 12% increased Damage with Hits and Ailments, Sword Attacks deal 12% increased Damage with Hits and Ailments",
-        "+1% Chance to Block Attack Damage",
-        "1% Chance to Block Spell Damage",
+        "+2% Chance to Block Attack Damage",
+        "2% Chance to Block Spell Damage",
         "12% increased Damage with Bows, 12% increased Damage Over Time with Bow Skills",
         "12% increased Brand Damage",
         "Channelling Skills deal 12% increased Damage",
@@ -298,7 +310,7 @@ fn cluster_jewel_names() -> HashMap<String, String> {
         "10% increased Life Recovery from Flasks, 10% increased Mana Recovery from Flasks",
         "6% increased Mana Reservation Efficiency of Skills",
         "10% increased Spell Damage",
-        "+2% chance to Suppress Spell Damage",
+        "+4% chance to Suppress Spell Damage",
         "12% increased Totem Damage",
         "12% increased Trap Damage, 12% increased Mine Damage",
         "Wand Attacks deal 12% increased Damage with Hits and Ailments"
