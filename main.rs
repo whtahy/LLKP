@@ -14,7 +14,7 @@ type Todo = HashMap<String, HashSet<String>>;
 const MIN_COUNT: usize = 30;
 
 static LEAGUE: OnceLock<String> = OnceLock::new();
-static DEBUG: OnceLock<bool> = OnceLock::new();
+static LOCAL: OnceLock<bool> = OnceLock::new();
 
 const GGG: &str = "https://www.pathofexile.com/api/leagues?type=main";
 const NINJA: &str = "https://poe.ninja/api/data/ItemOverview";
@@ -51,24 +51,37 @@ struct BaseType {
 }
 
 fn main() {
-    // cli args
-    DEBUG
-        .set(std::env::args().any(|x| x == "debug" || x == "local"))
-        .unwrap();
-    let cutoff = std::env::args()
+    let cli_args = std::env::args().collect::<Vec<_>>();
+
+    // local mode
+    LOCAL.set(cli_args.iter().any(|x| x == "local")).unwrap();
+
+    // custom cutoff
+    let cutoff = cli_args
+        .iter()
         .filter_map(|x| x.parse::<Float>().ok())
         .next()
         .unwrap_or(30.0);
 
-    // challenge league
+    // current league(s)
     let leagues = serde_json::from_str::<Vec<League>>(&get(GGG))
         .unwrap()
         .into_iter()
         .map(|league| league.id)
         .filter(|league| !EXCLUDE.iter().any(|x| league.contains(x)))
         .collect::<Vec<_>>();
-    LEAGUE.set(leagues[0].to_owned()).unwrap();
-    println!("... leagues = [{}]", leagues.join(", "));
+
+    // pick league
+    let league = cli_args
+        .into_iter()
+        .find(|arg| leagues.contains(arg))
+        .unwrap_or(leagues[0].to_owned());
+    LEAGUE.set(league).unwrap();
+    println!(
+        "... leagues = [{}] -> {}",
+        leagues.join(", "),
+        LEAGUE.get().unwrap()
+    );
 
     // base types
     let (high_value, _, _) = split(cutoff, BASE_TYPES);
@@ -200,7 +213,7 @@ fn split(
     cutoff: f32,
     [api, local_file]: [&str; 2],
 ) -> (BaseTypes, BaseTypes, BaseTypes) {
-    let json = if *DEBUG.get().unwrap() {
+    let json = if *LOCAL.get().unwrap() {
         println!("Calling {local_file} ...");
         std::fs::read_to_string(local_file).unwrap()
     } else {
